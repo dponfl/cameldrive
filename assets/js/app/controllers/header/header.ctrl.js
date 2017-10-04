@@ -78,36 +78,21 @@
           text: 'NAV_HOME',
         },
         {
-          href: 'exclusive',
-          text: 'NAV_EXCLUSIVE',
+          href: 'conditions',
+          text: 'NAV_CONDITIONS',
         },
         {
-          href: 'shortterm',
-          text: 'NAV_DAILY',
+          href: 'cars',
+          text: 'NAV_CARS',
         },
         {
-          href: 'longterm',
-          text: 'NAV_LONG_TERM',
-        },
-        {
-          href: 'sale',
-          text: 'NAV_SALES',
-        },
-        {
-          href: 'qa',
-          text: 'NAV_QA',
-        },
-        {
-          href: 'services',
-          text: 'NAV_SERVICES',
-        },
-        {
-          href: 'contacts',
-          text: 'NAV_CONTACTS',
+          href: 'discount',
+          text: 'NAV_DISCOUNT',
         },
       ];
 
       vm.dropdownMenu = [
+/*
         {
           action: 'short',
           text: 'NAV_REQ_DAILY',
@@ -128,6 +113,7 @@
           action: 'sell',
           text: 'NAV_REQ_SELL_PROP',
         },
+*/
       ];
 
     } // activate
@@ -348,9 +334,11 @@
     });
 
     function update () {
+/*
       vm.objList = $rootScope.orangeConfig.objList[$rootScope.lang];
       vm.cityList = $rootScope.orangeConfig.cityList[$rootScope.lang];
       vm.roomList = $rootScope.orangeConfig.roomList[$rootScope.lang];
+*/
     }
 
 

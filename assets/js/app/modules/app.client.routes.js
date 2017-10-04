@@ -36,14 +36,42 @@
             templateUrl: 'templates/view/header/headerClient.html'
           },
           section001: {
-            templateUrl: 'templates/view/conditions.html',
+            templateUrl: 'templates/view/conditions/section001.html',
           },
           footer: {
             templateUrl: 'templates/view/footer/footerClient.html'
           },
         },
-        url: '/exclusive',
+        url: '/conditions',
       })
+      .state('cars', {
+        views: {
+          header: {
+            templateUrl: 'templates/view/header/headerClient.html'
+          },
+          section001: {
+            templateUrl: 'templates/view/cars/section001.html',
+          },
+          footer: {
+            templateUrl: 'templates/view/footer/footerClient.html'
+          },
+        },
+        url: '/cars',
+      })
+      .state('discount', {
+        views: {
+          header: {
+            templateUrl: 'templates/view/header/headerClient.html'
+          },
+          section001: {
+            templateUrl: 'templates/view/discount/section001.html',
+          },
+          footer: {
+            templateUrl: 'templates/view/footer/footerClient.html'
+          },
+        },
+        url: '/discount',
+      });
 
 
     // todo: delete

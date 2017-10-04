@@ -41,9 +41,9 @@ function translateConfig ($translateProvider) {
 
     // Main menu items
     'NAV_HOME': 'Home',
-    'NAV_EXCLUSIVE': 'Exclusive',
-    'NAV_DAILY': 'Daily',
-    'NAV_LONG_TERM': 'Long term',
+    'NAV_CONDITIONS': 'Booking terms',
+    'NAV_CARS': 'Cars',
+    'NAV_DISCOUNT': 'Discount card',
     'NAV_SALES': 'Sales',
     'NAV_QA': 'Q&A',
     'NAV_SERVICES': 'Services',
@@ -260,9 +260,9 @@ function translateConfig ($translateProvider) {
 
     // Main menu items
     'NAV_HOME': 'Главная',
-    'NAV_EXCLUSIVE': 'Эксклюзив',
-    'NAV_DAILY': 'Посуточная аренда',
-    'NAV_LONG_TERM': 'Долгосрочная аренда',
+    'NAV_CONDITIONS': 'Условия проката',
+    'NAV_CARS': 'Автомобили',
+    'NAV_DISCOUNT': 'Дисконтная карта',
     'NAV_SALES': 'Продажа',
     'NAV_QA': 'Вопросы',
     'NAV_SERVICES': 'Доп. услуги',
