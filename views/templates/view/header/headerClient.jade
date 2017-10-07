@@ -1,15 +1,18 @@
-nav(bs-affix,
-data-offset-top="0").navbar.navbar-inverse
+nav.navbar.navbar-inverse.navbar-fixed-top
 
     div(data-ng-controller='HeaderCtrl as hc').container
 
-      button(data-target=".navbar-responsive-collapse", data-toggle="collapse", type="button").navbar-toggle
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
+      .navbar-header
 
-      a(href="/").navbar-brand
-        img(src="../../images/logo-orange.png", alt="Camel Car Hire logo", height="50px")
+        button(data-target=".navbar-responsive-collapse", data-toggle="collapse", type="button").navbar-toggle
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+
+        a(href="/").navbar-brand
+          img(src="../../images/logo-orange.png", alt="Camel Car Hire logo", height="50px")
+
+        a(href="/").navbar-brand.wsp-nav-title Camel Car Hire
 
       .navbar-collapse.collapse.navbar-responsive-collapse.navbar-right
 
@@ -17,7 +20,7 @@ data-offset-top="0").navbar.navbar-inverse
           li(data-ng-repeat='elem in hc.navMeny')
             a(data-ui-sref="{{elem.href}}",
               data-ui-sref-active="menu-active",
-              translate='{{elem.text}}')
+              translate='{{elem.text}}').wsp-nav-item
 
           li(data-ng-controller='translateCtrl as t').dropdown
             div(data-toggle="dropdown").dropdown-toggle.flag-icon-toggle
@@ -25,11 +28,11 @@ data-offset-top="0").navbar.navbar-inverse
 
             ul.dropdown-menu
               li
-                button(data-ng-click='t.changeLanguage("en");').btn.btn-link.flag-icon
+                button(data-ng-click='t.changeLanguage("en");').btn.btn-link.flag-icon.wsp-btn-link
                   img(src='../../images/flag_icon_en.png')
                   | &nbsp;&nbsp;&nbsp;English
               li(data-ng-controller='translateCtrl as t')
-                button(data-ng-click='t.changeLanguage("ru");').btn.btn-link.flag-icon
+                button(data-ng-click='t.changeLanguage("ru");').btn.btn-link.flag-icon.wsp-btn-link
                   img(src='../../images/flag_icon_ru.png')
                   | &nbsp;&nbsp;&nbsp;Русский
 

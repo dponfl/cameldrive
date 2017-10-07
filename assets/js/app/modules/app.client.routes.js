@@ -24,6 +24,21 @@
           section001: {
             templateUrl: 'templates/view/home/section001.html'
           },
+          section002: {
+            templateUrl: 'templates/view/home/section002.html'
+          },
+          section003: {
+            templateUrl: 'templates/view/home/section003.html'
+          },
+          section004: {
+            templateUrl: 'templates/view/home/section004.html'
+          },
+          section005: {
+            templateUrl: 'templates/view/home/section005.html'
+          },
+          section006: {
+            templateUrl: 'templates/view/home/section006.html'
+          },
           footer: {
             templateUrl: 'templates/view/footer/footerClient.html'
           },

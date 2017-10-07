@@ -41,6 +41,9 @@ var jsFilesToInject = [
   // Load jQuery first
   'vendor/jquery/dist/jquery.js',
 
+  // Jarallax
+  'vendor/jarallax/dist/jarallax.js',
+
   // Load Bootstrap
   'vendor/bootstrap/dist/js/bootstrap.js',
 
