@@ -1,7 +1,27 @@
 .row
   .container-fluid
-    wsp-parallax(background-url="'../../images/home-img01.jpg'")
-      .on-jarallax.text-center
+    .parallax-section.section1
+      span(data-picture,
+      data-alt="Camel Car Hire - Section 01",
+      mr-px-parallax,
+      mr-px-max-px="0.2").mr-px-img
+        span(data-src="../../images/home-img01.jpg",
+        mr-px-size="500,768")
+        span(data-src="../../images/home-img01.jpg",
+        mr-px-size="1280,960",
+        data-media="(min-width: 500px)")
+        span(data-src="../../images/home-img01.jpg",
+        mr-px-size="1920,1200",
+        data-media="(min-width: 1400px)")
+
+        <!--[if (lt IE 9) & (!IEMobile)]>
+        <span data-src="../../images/home-img01.jpg" mr-px-size="1280,960"></span>
+        <![endif]-->
+
+        noscript
+          img(src="../../images/home-img01.jpg", alt="Camel Car Hire - Section 01")
+
+      .on-jarallax.section1.text-center
         h1.text-white Some header 1
         h2.text-yellow Some header 2
         h3.text-red Some header 3

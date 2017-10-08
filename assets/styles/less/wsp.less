@@ -19,6 +19,72 @@
   text-decoration: solid !important;
 }
 
+// Angular Responsive Parallax
+
+/*
+
+required css to make things work
+
+*/
+
+.parallax-section {
+
+  margin:0;
+  width:100%;
+
+  //background-size: cover;
+  //background-position: 50% 50%;
+  //background-repeat: no-repeat;
+
+  /* position relative is needed as a references for child element positions */
+
+  position: relative;
+
+  /* zindex needed to put content in front of the images */
+
+  z-index: 1;
+
+}
+
+.section1 {
+  height: @section1_heigh;
+}
+
+
+.mr-px-img {
+
+  /* This container is needed for cropping and image positioning if parallax fx is disabled */
+
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  display: block;
+  overflow: hidden;
+
+  z-index: -999;
+
+  padding: 0;
+  margin: 0;
+
+}
+
+.mr-px-img img {
+
+  /* basic scaling and positioning rules which will be overwriten by javascript */
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  width: 100%;
+  height: auto;
+
+}
+
 // Angular Parallax
 
 .wsp-parallax {
@@ -27,7 +93,7 @@
   background-image: url("../../images/home-img01.jpg");
   //background-size: 100%;
   background-size: cover;
-  //background-position: 50% 50%;
+  background-position: 50% 50%;
   height: 768px;
   background-repeat: no-repeat;
 }
@@ -66,8 +132,11 @@
 .on-jarallax {
   //width: 100%;
   background-size: cover;
-  height: 768px;
+  //height: 768px;
   background-color: rgba(39,35,51,0.8);
+  .section1 {
+    height: @section1_heigh;
+  }
 }
 
 .gap-jarallax {

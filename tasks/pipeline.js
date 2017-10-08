@@ -42,7 +42,7 @@ var jsFilesToInject = [
   'vendor/jquery/dist/jquery.js',
 
   // Jarallax
-  'vendor/jarallax/dist/jarallax.js',
+  // 'vendor/jarallax/dist/jarallax.js',
 
   // Load Bootstrap
   'vendor/bootstrap/dist/js/bootstrap.js',
@@ -93,6 +93,11 @@ var jsFilesToInject = [
 
   // Load angular-file-upload
   'vendor/angular-file-upload/dist/angular-file-upload.js',
+
+  // Angular Responsive Parallax
+  'vendor/picturefill/picturefill.js',
+  'vendor/requestAnimationFrame/rAF.js',
+  'vendor/webstudiopro-angular-responsive-parallax/src/angular-responsive-parallax.js',
 
   // Load async
   'vendor/async/dist/async.js',

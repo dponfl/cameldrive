@@ -17,6 +17,7 @@
       'tmh.dynamicLocale',
       'angularUtils.directives.dirPagination',
       'angularFileUpload',
+      'mrResponsiveParallax',
     ])
     .run(errorMsgResolver);
 

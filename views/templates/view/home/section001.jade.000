@@ -1,0 +1,7 @@
+.row
+  .container-fluid
+    wsp-parallax(background-url="'../../images/home-img01.jpg'")
+      .on-jarallax.text-center
+        h1.text-white Some header 1
+        h2.text-yellow Some header 2
+        h3.text-red Some header 3

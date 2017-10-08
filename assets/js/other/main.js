@@ -1,9 +1,5 @@
 "use strict";
 
-$('.jarallax').jarallax({
-  speed: 0.5
-});
-
 $(document).ready(function() {
 
   $( "body" ).on( 'click', '.link-and-scroll', function(event) {
