@@ -85,51 +85,7 @@ required css to make things work
 
 }
 
-// Angular Parallax
-
-.wsp-parallax {
-  margin:0;
-  width:100%;
-  background-image: url("../../images/home-img01.jpg");
-  //background-size: 100%;
-  background-size: cover;
-  background-position: 50% 50%;
-  height: 768px;
-  background-repeat: no-repeat;
-}
-
-.wsp-content {
-  /*
-  margin:0 auto;
-  padding:5%;
-  width:90%;
-  */
-  position:relative;
-}
-
-
-// Jarallax
-
-.jarallax {
-  position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  height: 768px;
-  z-index: 0;
-  .jarallax-img {
-     position: absolute;
-     object-fit: cover;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     z-index: -1;
-   }
-}
-
-
-.on-jarallax {
+.on-parallax {
   //width: 100%;
   background-size: cover;
   //height: 768px;
@@ -139,21 +95,35 @@ required css to make things work
   }
 }
 
-.gap-jarallax {
+.gap-parallax {
   padding: 50px;
   background-color: #272333;
   text-align: center;
 }
 
-.gap-big-jarallax {
+.gap-big-parallax {
   padding:100px;
   background-color: #272333;
   display: table;
 }
 
-.gap-big-jarallax-item {
+.gap-big-parallax-item {
   display: table-cell;
   vertical-align: middle;
+}
+
+.wsp-home-header {
+  color: @main_palette;
+  text-align: center;
+  font-weight: 700;
+  font-size: 8rem;
+}
+
+.wsp-home-subheader {
+  color: @sub_palette_light_01;
+  text-align: center;
+  font-weight: 500;
+  font-size: 5rem;
 }
 
 .text-red {
@@ -166,7 +136,7 @@ required css to make things work
   color: white;
 }
 
-.text-center {
+.text-vertical-center {
   padding-top: 10%;
 }
 
