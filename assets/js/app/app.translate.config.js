@@ -93,7 +93,9 @@ function translateConfig ($translateProvider) {
 
     // Home - Main
     'HOME_TITLE': 'Camel Car Hire',
-    'HOME_SUBTITLE': 'You\'ll not be upset',
+    'HOME_SUBTITLE': 'We will not disappoint you',
+    'BTN_KNOWMORE': 'More info',
+    'BTN_BOOK': 'Book a car',
 
     // General
     'GENERAL_ELEM_OBJ': 'Object #',
@@ -241,6 +243,8 @@ function translateConfig ($translateProvider) {
     // Home - Main
     'HOME_TITLE': 'Camel Car Hire',
     'HOME_SUBTITLE': 'Мы не разочаруем вас',
+    'BTN_KNOWMORE': 'Узнать больше',
+    'BTN_BOOK': 'Заказать авто',
 
     // General
     'GENERAL_ELEM_OBJ': 'Объект №',

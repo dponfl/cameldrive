@@ -10,7 +10,7 @@
 .wsp-nav-title {
   color: @main_palette !important;
   line-height: 50px !important;
-  margin-left: 10px !important;
+  margin-left: 5px !important;
 }
 
 .wsp-nav-item {
@@ -124,7 +124,18 @@ required css to make things work
   text-align: center;
   font-weight: 500;
   font-size: 5rem;
+  margin-bottom: 20px;
 }
+
+.wsp-home-center {
+  img {
+    display: block;
+    margin: 0 auto;
+    vertical-align: middle;
+    height: 270px;
+  }
+}
+
 
 .text-red {
   text-align: center;
@@ -137,7 +148,7 @@ required css to make things work
 }
 
 .text-vertical-center {
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 .text-yellow {
@@ -150,24 +161,74 @@ required css to make things work
   height: 768px;
 }
 
+/*
+   Bottons
+ */
+
+.wsp-section-btn {
+  text-align: justify;
+  .wsp-btn {
+    display: inline-block !important;
+    border-radius: 100px !important;
+    margin-top: 30px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+}
+
+.wsp-section-btn:after {
+  content: '' !important;
+  display: inline-block !important;
+  width: 100% !important;
+}
+
+.wsp-btn-lg {
+  font-size: 5rem;;
+}
+
+.wsp-btn-md {
+  font-size: 4rem;;
+}
+
+
+
+
 /* --------------------------------------
    Media Queries
    -------------------------------------- */
 
 /* Portrait & landscape phone */
 @media (max-width: 480px) {
+  .wsp-btn-lg {
+    font-size: 2rem;;
+  }
 
+  .wsp-btn-md {
+    font-size: 1rem;;
+  }
 
 }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
+  .wsp-btn-lg {
+    font-size: 3rem;;
+  }
 
+  .wsp-btn-md {
+    font-size: 2rem;;
+  }
 
 }
 
 /* Large desktop */
 @media (max-width: 1200px) {
+  .wsp-btn-lg {
+    font-size: 4rem;;
+  }
 
+  .wsp-btn-md {
+    font-size: 3rem;;
+  }
 
 }
