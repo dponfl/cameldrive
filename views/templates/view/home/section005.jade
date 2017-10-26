@@ -1,2 +1,24 @@
-#section001
-  h1 Section 005
+.row
+  .container-fluid
+    .parallax-section.section5
+      span(data-picture,
+      data-alt="Camel Car Hire - Section 05",
+      mr-px-parallax,
+      mr-px-max-px="0.3").mr-px-img
+        span(data-src="../../images/home-img03.jpg",
+        mr-px-size="1920,1200")
+
+      .on-parallax.section5
+        .col-md-offset-3.col-md-6.text-vertical-center-3
+          .wsp-home-header05 {{'HOME_TITLE_05' | translate}}
+        .container.text-vertical-center-7
+          div(data-ng-controller="CarCtrl as ctrl").row
+            div(data-ng-repeat='group in ctrl.panelGroups').row
+              .col-md-4(data-ng-repeat="car in group")
+                .thumbnail.wsp-thumbnail-border05
+                  blockquote.blockquote
+                    p.wsp-thumbnail-text05 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                    .blockquote-footer.wsp-thumbnail-name05 NameOfTheClient
+                      cite(title="Position").wsp-thumbnail-subname05 PositionOfTheClient
+
+

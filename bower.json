@@ -40,6 +40,8 @@
     "angular-responsive-parallax": "^1.0.5",
     "webstudiopro-angular-responsive-parallax": "https://github.com/dponfl/webstudiopro-angular-responsive-parallax.git#master",
     "picturefill": "1.2.1",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "animate.css": "^3.5.2",
+    "angular-animate-css": "^0.0.4"
   }
 }

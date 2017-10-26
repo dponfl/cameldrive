@@ -1,9 +1,31 @@
-#section003
-  .row
-    .container-fluid
-      .jarallax.img-container
-        img(src="images/home-img03.jpg", alt="Camel Car Hire - Cars Img").jarallax-img
-        div.on-jarallax.text-center
-          h1.text-white Some header 1
-          h2.text-yellow Some header 2
-          h3.text-white Some header 3
+.row
+  .container-fluid#know_more
+    .parallax-section.section3
+      span(data-picture,
+      data-alt="Camel Car Hire - Section 03",
+      mr-px-parallax,
+      mr-px-max-px="0.3").mr-px-img
+        span(data-src="../../images/home-img02.jpg",
+        mr-px-size="1920,1200")
+
+
+      .on-parallax.section3
+        .container.text-vertical-center-7
+          .col-md-4
+            .thumbnail.wsp-thumbnail-no-border
+              span(aria-hidden="true").glyphicon.glyphicon-usd.wsp-thumbnail-glyphicon
+              .wsp-thumbnail-title {{'HOME_THUMB_01_TITLE' | translate}}
+              .wsp-thumbnail-text {{'HOME_THUMB_01_TEXT' | translate}}
+
+          .col-md-4
+            .thumbnail.wsp-thumbnail-no-border
+              span(aria-hidden="true").glyphicon.glyphicon-thumbs-up.wsp-thumbnail-glyphicon
+              .wsp-thumbnail-title {{'HOME_THUMB_02_TITLE' | translate}}
+              .wsp-thumbnail-text {{'HOME_THUMB_02_TEXT' | translate}}
+
+          .col-md-4
+            .thumbnail.wsp-thumbnail-no-border
+              span(aria-hidden="true").glyphicon.glyphicon-globe.wsp-thumbnail-glyphicon
+              .wsp-thumbnail-title {{'HOME_THUMB_03_TITLE' | translate}}
+              .wsp-thumbnail-text {{'HOME_THUMB_03_TEXT' | translate}}
+

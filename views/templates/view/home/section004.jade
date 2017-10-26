@@ -1,2 +1,75 @@
-#section001
-  h1 Section 004
+.row
+  .container-fluid
+    .parallax-section.section4
+      .on-parallax.section4
+        .col-md-offset-3.col-md-6.text-vertical-center-3
+          .wsp-home-header04 {{'HOME_TITLE_04' | translate}}
+          .wsp-home-subheader04.text-vertical-center-5 {{'HOME_SUBTITLE_04' | translate}}
+        .container.text-vertical-center-7
+          div(data-ng-controller="CarCtrl as ctrl").row
+            div(data-ng-repeat='group in ctrl.panelGroups').row
+              .col-md-4(data-ng-repeat="car in group")
+                .thumbnail.wsp-thumbnail-border04
+                  img(src="{{car.img}}", alt="{{car.alt}}").wsp-thumb-img04
+                  .wsp-thumbnail-title04 Group {{car.group}}
+                  .wsp-thumbnail-text04 {{car.title}}
+
+                  form.form-horizontal.wsp-thumbnail-details04
+                    .form-group.wsp-form-group(data-ng-repeat="elem in car.content[0]")
+                      label.col-md-5.col-xs-5.control-label.wsp-text-right.wsp-label {{elem.label}}
+                      .col-md-7.col-xs-7
+                        p.form-control-static.wsp-text-left.wsp-text {{elem.text}}
+
+                  .wsp-thumbnail-details-highlight04 Price: from {{car.priceFrom}} &euro;
+                  div(data-ng-show="car.showDetails").nga-default.nga-stagger.nga-squash-left.wsp-thumbnail-details04
+                    .table-responsive
+                      table.table.wsp-tbl-top-head
+                        thead
+                          tr
+                            th High season 01/05-31/10
+                      table.table.wsp-tbl-body
+                        thead
+                          tr
+                            th 1 day
+                            th 2 days
+                            th 3-6 days
+                            th 7-14 days
+                            th 14+ days
+                        tbody
+                          tr
+                            td 70&nbsp;&euro;
+                            td 45&nbsp;&euro;
+                            td 35&nbsp;&euro;
+                            td 30&nbsp;&euro;
+                            td 25&nbsp;&euro;
+                      table.table.wsp-tbl-top-head
+                        thead
+                          tr
+                            th Low season 1/11-30/04
+                      table.table.wsp-tbl-body
+                        thead
+                          tr
+                            th 1 day
+                            th 2 days
+                            th 3-6 days
+                            th 7-14 days
+                            th 14+ days
+                        tbody
+                          tr
+                            td 50&nbsp;&euro;
+                            td 40&nbsp;&euro;
+                            td 25&nbsp;&euro;
+                            td 20&nbsp;&euro;
+                            td 15&nbsp;&euro;
+                  .wsp-section04-btn
+                    a(href="#car_booking")
+                      button.btn.wsp-btn.wsp-btn-book.wsp-btn-md.btn-danger
+                        | {{ 'BTN_BOOK_CAR' | translate }}
+                    div(data-ng-show="!car.showDetails")
+                      button(data-ng-click="ctrl.activateDetails(car.ind)").btn.wsp-btn.wsp-btn-sm.btn-default
+                        | {{ 'BTN_CAR_SHOW_DETAILS' | translate }}
+                    div(data-ng-show="car.showDetails")
+                      button(data-ng-click="ctrl.deactivateDetails(car.ind)").btn.wsp-btn.wsp-btn-sm.btn-default
+                        | {{ 'BTN_CAR_HIDE_DETAILS' | translate }}
+
+

@@ -39,6 +39,9 @@
           section006: {
             templateUrl: 'templates/view/home/section006.html'
           },
+          section007: {
+            templateUrl: 'templates/view/home/section007.html'
+          },
           footer: {
             templateUrl: 'templates/view/footer/footerClient.html'
           },
@@ -58,20 +61,6 @@
           },
         },
         url: '/conditions',
-      })
-      .state('cars', {
-        views: {
-          header: {
-            templateUrl: 'templates/view/header/headerClient.html'
-          },
-          section001: {
-            templateUrl: 'templates/view/cars/section001.html',
-          },
-          footer: {
-            templateUrl: 'templates/view/footer/footerClient.html'
-          },
-        },
-        url: '/cars',
       })
       .state('discount', {
         views: {

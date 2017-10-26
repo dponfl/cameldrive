@@ -51,10 +51,6 @@
           text: 'NAV_CONDITIONS',
         },
         {
-          href: 'cars',
-          text: 'NAV_CARS',
-        },
-        {
           href: 'discount',
           text: 'NAV_DISCOUNT',
         },

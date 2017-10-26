@@ -2,7 +2,7 @@
 
   console.log('Cameldrive bootstrap...');
 
-  $.get('/config', config);
+/*  $.get('/config', config);
 
   config.$inject = ['data'];
 
@@ -38,4 +38,6 @@
     } // CameldriveConfiguration
 
     angular.bootstrap(document, ['Cameldrive']);
-}
+}*/
+
+angular.bootstrap(document, ['Cameldrive']);

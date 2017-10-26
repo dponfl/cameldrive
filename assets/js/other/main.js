@@ -9,6 +9,20 @@ $(document).ready(function() {
     }, 900);
   });
 
+  $( "body" ).on( 'click', '.wsp-btn-details', function(event) {
+
+    $('html, body').animate({
+      scrollTop: $($(this).closest('a').attr('href')).offset().top - 50
+    }, 900);
+  });
+
+  $( "body" ).on( 'click', '.wsp-btn-book', function(event) {
+
+    $('html, body').animate({
+      scrollTop: $($(this).closest('a').attr('href')).offset().top - 50
+    }, 900);
+  });
+
 
   $(".navbar a, footer a").on('click', function(event) {
 

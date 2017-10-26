@@ -28,33 +28,14 @@
           text: 'NAV_HOME',
         },
         {
-          href: 'exclusive',
-          text: 'NAV_EXCLUSIVE',
+          href: 'conditions',
+          text: 'NAV_CONDITIONS',
         },
         {
-          href: 'shortterm',
-          text: 'NAV_DAILY',
+          href: 'discount',
+          text: 'NAV_DISCOUNT',
         },
-        {
-          href: 'longterm',
-          text: 'NAV_LONG_TERM',
-        },
-        {
-          href: 'sale',
-          text: 'NAV_SALES',
-        },
-        {
-          href: 'qa',
-          text: 'NAV_QA',
-        },
-        {
-          href: 'services',
-          text: 'NAV_SERVICES',
-        },
-        {
-          href: 'contacts',
-          text: 'NAV_CONTACTS',
-        },
+
       ];
 
       vm.subscription = [
@@ -77,8 +58,8 @@
       ];
 
       vm.developer = {
-          href: 'http://www.studiodtd.com',
-          text: 'iStudioDTD.com',
+          href: 'http://www.webstudiopro.info',
+          text: 'WebStudioPro',
         };
 
     } // activate

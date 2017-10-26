@@ -92,10 +92,43 @@ function translateConfig ($translateProvider) {
 
 
     // Home - Main
-    'HOME_TITLE': 'Camel Car Hire',
-    'HOME_SUBTITLE': 'We will not disappoint you',
+    'HOME_TITLE_01': 'Camel Car Hire',
+    'HOME_SUBTITLE_01': 'We will not disappoint you',
+    'HOME_TITLE_02': 'Camel Car Hire - we\'ll do our best for you',
+    'HOME_SUBTITLE_02': 'If you ask our clients they reply: the perfect cars for the reasonable price',
+    'HOME_THUMB_01_TITLE': '[En] Без предоплаты',
+    'HOME_THUMB_01_TEXT': '[En] Просто заполните онлайн-форму или позвоните. Оплата заказа после получения авто.',
+    'HOME_THUMB_02_TITLE': '[En] Новые автомобили',
+    'HOME_THUMB_02_TEXT': '[En] Наш парк атомобилей состоит из новых машин выпуска 2016 - 2017 годов',
+    'HOME_THUMB_03_TITLE': '[En] В аэропорт - бесплатно!',
+    'HOME_THUMB_03_TEXT': '[En] Оформите заказ от 14 дней и мы привезем вам машину в аэропорт бесплатно.',
+    'HOME_TITLE_04': 'Our cars',
+    'HOME_SUBTITLE_04': 'Please select the car you like and press "Book" button',
     'BTN_KNOWMORE': 'More info',
-    'BTN_BOOK': 'Book a car',
+    'BTN_BOOK': 'Car booking',
+    'BTN_BOOK_CAR': 'Book',
+    'BTN_CAR_SHOW_DETAILS': 'Show details',
+    'BTN_CAR_HIDE_DETAILS': 'Hide details',
+    'BTN_BOOK_PERFORM': 'Perform booking',
+    'HOME_TITLE_06': 'Car booking',
+    'HOME_SUBTITLE_06': 'Fill in the form providing the necessary information and we\'ll contact you to setup details',
+    'HOME_TITLE_05': 'Our Customers Say We Are Awesome :)',
+    'DATEPICKER_DATE': 'Enter date',
+    'DATEPICKER_TIME': 'Time',
+    'LBL_CAR': 'Car type',
+    'HOME_TITLE_07': 'Our offices',
+    'HOME_SUBTITLE_07_01': 'Camel Car Hire, Office 1',
+    'HOME_SUBTITLE_07_02': 'Camel Car Hire, Office 2',
+    'HOME_SUBTITLE_07_A': '(click the "bouncing" sign for additional information)',
+
+    // Booking terms
+    'BOOK_HEADER': 'VEHICLE LEASE TERMS',
+
+
+    // Discount card
+    'DISCOUNT_HEADER': 'DISCOUNT CARD',
+
+
 
     // General
     'GENERAL_ELEM_OBJ': 'Object #',
@@ -241,10 +274,43 @@ function translateConfig ($translateProvider) {
 
 
     // Home - Main
-    'HOME_TITLE': 'Camel Car Hire',
-    'HOME_SUBTITLE': 'Мы не разочаруем вас',
+    'HOME_TITLE_01': 'Camel Car Hire',
+    'HOME_SUBTITLE_01': 'Мы не разочаруем вас',
+    'HOME_TITLE_02': 'Camel Car Hire - лучшее для Вас!',
+    'HOME_SUBTITLE_02': 'Спросите наших клиентов о Camel Car Hire и они вам ответят: разумные цены при безупречном качестве',
+    'HOME_THUMB_01_TITLE': 'Без предоплаты',
+    'HOME_THUMB_01_TEXT': 'Просто заполните онлайн-форму или позвоните. Оплата заказа после получения авто.',
+    'HOME_THUMB_02_TITLE': 'Новые автомобили',
+    'HOME_THUMB_02_TEXT': 'Наш парк атомобилей состоит из новых машин выпуска 2016 - 2017 годов',
+    'HOME_THUMB_03_TITLE': 'В аэропорт - бесплатно!',
+    'HOME_THUMB_03_TEXT': 'Оформите заказ от 14 дней и мы привезем вам машину в аэропорт бесплатно.',
+    'HOME_TITLE_04': 'Наши автомобили',
+    'HOME_SUBTITLE_04': 'Выберите понравившейся вам автомобиль и нажмике кнопку "Забронировать"',
     'BTN_KNOWMORE': 'Узнать больше',
     'BTN_BOOK': 'Заказать авто',
+    'BTN_BOOK_CAR': 'Забронировать',
+    'BTN_CAR_SHOW_DETAILS': 'Показать подробности',
+    'BTN_CAR_HIDE_DETAILS': 'Скрыть подробности',
+    'BTN_BOOK_PERFORM': 'Отправить заказ',
+    'HOME_TITLE_06': 'Бронирование авто',
+    'HOME_SUBTITLE_06': 'Заполните форму, указав необходимую информацию и мы свяжемся с вами для уточнения деталей',
+    'HOME_TITLE_05': 'Наши заказчики говорят, что мы лучшие :)',
+    'DATEPICKER_DATE': 'Укажите дату',
+    'DATEPICKER_TIME': 'Время',
+    'LBL_CAR': 'Тип автомобиля',
+    'HOME_TITLE_07': 'Наши офисы',
+    'HOME_SUBTITLE_07_01': 'Camel Car Hire, офис 1',
+    'HOME_SUBTITLE_07_02': 'Camel Car Hire, офис 2',
+    'HOME_SUBTITLE_07_A': '(кликните на "прыгающий" указатель для дополнительной информации)',
+
+    // Booking terms
+    'BOOK_HEADER': 'УСЛОВИЯ АРЕНДЫ АВТОМОБИЛЯ',
+
+
+    // Discount card
+    'DISCOUNT_HEADER': 'ДИСКОНТНАЯ ПРОГРАММА',
+
+
 
     // General
     'GENERAL_ELEM_OBJ': 'Объект №',

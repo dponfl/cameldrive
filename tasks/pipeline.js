@@ -24,6 +24,7 @@ var cssFilesToInject = [
   'styles/**/*.css',
   'vendor/ladda/dist/ladda-themeless.min.css',
   'vendor/AngularJS-Toaster/toaster.css',
+  '/vendor/angular-animate-css/build/nga.css',
 ];
 
 // Modernizr files injection

@@ -1,9 +1,12 @@
-#section002
-  .row
-    .container-fluid
-      .jarallax.img-container
-        img(data-ng-src="images/home-img02.jpg", alt="Camel Car Hire - Key Features Img").jarallax-img
-        div.on-jarallax.text-center
-          h1.text-white Some header 1
-          h2.text-yellow Some header 2
-          h3.text-white Some header 3
+.row
+  .container-fluid
+    .parallax-section.section2
+      .container
+        .col-md-5
+          .wsp-section002-block-message01 {{'HOME_TITLE_02' | translate}}
+        .col-md-offset-1.col-md-6
+          .wsp-section002-block-message02 {{'HOME_SUBTITLE_02' | translate}}
+        .col-md-12
+          .wsp-section02-btn
+            a(href="#car_booking")
+              button(type="button").btn.wsp-btn.wsp-btn-book.wsp-btn-md.btn-danger {{'BTN_BOOK' | translate}}
