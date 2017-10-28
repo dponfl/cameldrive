@@ -15,6 +15,7 @@
     vm.panelGroups = [];
     vm.innerGroup = [];
     vm.panels = [];
+    vm.highlights = [];
 
     vm.activateDetails = _activateDetails;
     vm.deactivateDetails = _deactivateDetails;
@@ -28,6 +29,19 @@
     ////////////////
 
     function activate() {
+
+      vm.highlights = [
+/*
+        {
+          header: 'Some header 1',
+          content: 'Message 1'
+        },
+*/
+        {
+          header: 'Some header 2',
+          content: 'Message sfsfdkl ljsflsjdfl lkfjsldfjsdlf lsdlsdfjlsdf lkslfdflsdj jsdlfkjsdf'
+        },
+      ];
 
       vm.panels = [
         {
