@@ -8,27 +8,7 @@
 module.exports = {
   tableName: 's_req',
   attributes: {
-    objnumber: {
-      type: 'string',
-      size: 25
-    },
-    req_type: {
-      type: 'string',
-      size: 50
-    },
-    deal_type: {
-      type: 'string',
-      size: 50
-    },
-    obj: {
-      type: 'string',
-      size: 50
-    },
-    city: {
-      type: 'string',
-      size: 50
-    },
-    room: {
+    car_group: {
       type: 'string',
       size: 50
     },
@@ -44,22 +24,6 @@ module.exports = {
       type: 'string',
       size: 50
     },
-    skype: {
-      type: 'string',
-      size: 50
-    },
-    whatsapp: {
-      type: 'string',
-      size: 50
-    },
-    telegram: {
-      type: 'string',
-      size: 50
-    },
-    viber: {
-      type: 'string',
-      size: 50
-    },
     additionalInfo: {
       type: 'string',
       size: 255
@@ -69,6 +33,14 @@ module.exports = {
     },
     pariod_end: {
       type: 'datetime',
+    },
+    pLocation: {
+      type: 'string',
+      size: 255
+    },
+    dLocation: {
+      type: 'string',
+      size: 255
     },
     user_agent: {
       type: 'string',
