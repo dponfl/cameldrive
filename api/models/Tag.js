@@ -14,7 +14,7 @@ module.exports = {
     },
     key: {
       type: 'string',
-      size: 255
+      size: 50
     },
     tag: {
       type: 'string',
