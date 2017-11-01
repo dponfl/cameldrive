@@ -108,6 +108,9 @@ var jsFilesToInject = [
   // Load application modules
   'js/app/modules/**/*.js',
 
+  // Load major application service
+  'js/app/services/major.service.js',
+
   // Load other application files
   'js/app/**/*.js',
 

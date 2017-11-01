@@ -2,19 +2,19 @@
   "use strict";
 
   angular.module('Cameldrive')
-    .service('GeneralConfigService', GeneralConfigService);
+    .factory('GeneralConfigService', GeneralConfigService);
 
   /**
    * Service to manage home application params
    */
-  GeneralConfigService.$inject = ['$rootScope', 'lodash', '$q', '$log', 'tmhDynamicLocale'];
-  function GeneralConfigService($rootScope, lodash, $q, $log, tmhDynamicLocale) {
+  GeneralConfigService.$inject = ['MajorService', 'lodash', '$q', '$log', 'tmhDynamicLocale'];
+  function GeneralConfigService(MajorService, lodash, $q, $log, tmhDynamicLocale) {
 
 
     // todo: delete
     console.log('GeneralConfigService');
 
-
+    var _ms = MajorService;
     var _ = lodash;
     var self = {
       setLang: _setLang,
@@ -107,18 +107,19 @@
     }
 
     function _translate(key) {
-      return self.tokens[$rootScope.lang][key] || '';
+      return self.tokens[_ms.getLang()][key] || '';
     } // _translate
 
 
     function _setLang(lang) {
       // console.log('Setting lang=' + lang);
-      $rootScope.lang = lang || 'en';
-      tmhDynamicLocale.set($rootScope.lang);
+      var useLang = lang || 'en';
+      _ms.setLang(useLang);
+      tmhDynamicLocale.set(_ms.getLang());
     } // _setLang
 
     function _getLang() {
-      return $rootScope.lang || 'en';
+      return _ms.getLang() || 'en';
     }
 
   } // GeneralConfigService

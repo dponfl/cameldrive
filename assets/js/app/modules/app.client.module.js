@@ -10,25 +10,25 @@
     ])
     .run(setupGlobalScope);
 
-  setupGlobalScope.$inject = ['$rootScope', 'configCamel', '$log'];
-  function setupGlobalScope($rootScope, configCamel, $log) {
+  setupGlobalScope.$inject = ['$rootScope', '$log'];
+  function setupGlobalScope($rootScope, $log) {
 
 
     // todo: delete
-    $log.info('Cameldrive');
+    $log.info('Cameldrive, setupGlobalScope...');
 
 
     //Generale
-    $rootScope.numLang = 2;
-    $rootScope.lang = 'en';
-    $rootScope.langList = ['en', 'ru'];
-    $rootScope.langTitle = ['English', 'Русский'];
-    $rootScope.langActiveTab = ['lang_eng', 'lang_rus'];
-
-    $rootScope.pagerNumRecords = 2;
-    $rootScope.orangeConfig = configCamel;
-    $rootScope.scrollDisabled = false;
-    $rootScope.panelsAllLangs = {};
+    // $rootScope.numLang = 2;
+    // $rootScope.lang = 'en';
+    // $rootScope.langList = ['en', 'ru'];
+    // $rootScope.langTitle = ['English', 'Русский'];
+    // $rootScope.langActiveTab = ['lang_eng', 'lang_rus'];
+    //
+    // $rootScope.pagerNumRecords = 2;
+    // $rootScope.orangeConfig = configCamel;
+    // $rootScope.scrollDisabled = false;
+    // $rootScope.panelsAllLangs = {};
 
     // Images upload config
 
@@ -47,48 +47,7 @@
     $rootScope.short.panels = [];
     $rootScope.short.busy = false;
 
-    // Long term
-    $rootScope.long = {};
-    $rootScope.long.showNotFound = false;
-    $rootScope.long.page = 1;
-    $rootScope.long.FindActivated = false;
-    $rootScope.long.FilterData = {};
-    $rootScope.long.scrollDisabled = false;
-    $rootScope.long.showFoundNothing = false;
-    $rootScope.long.showServerError = false;
-    $rootScope.long.panelsAllLangs = {};
-    $rootScope.long.panelsAllLangsEdit = {};
-    $rootScope.long.panels = [];
-    $rootScope.long.panelsEdit = [];
-    $rootScope.long.busy = false;
 
-    // Sale
-    $rootScope.sale = {};
-    $rootScope.sale.showNotFound = false;
-    $rootScope.sale.page = 1;
-    $rootScope.sale.FindActivated = false;
-    $rootScope.sale.FilterData = {};
-    $rootScope.sale.scrollDisabled = false;
-    $rootScope.sale.showFoundNothing = false;
-    $rootScope.sale.showServerError = false;
-    $rootScope.sale.panelsAllLangs = {};
-    $rootScope.sale.panelsAllLangsEdit = {};
-    $rootScope.sale.panels = [];
-    $rootScope.sale.panelsEdit = [];
-    $rootScope.sale.busy = false;
-
-    // Exclusive
-    $rootScope.exclusive = {};
-    $rootScope.exclusive.showNotFound = false;
-    $rootScope.exclusive.page = 1;
-    $rootScope.exclusive.FindActivated = false;
-    $rootScope.exclusive.FilterData = {};
-    $rootScope.exclusive.scrollDisabled = false;
-    $rootScope.exclusive.showFoundNothing = false;
-    $rootScope.exclusive.showServerError = false;
-    $rootScope.exclusive.panelsAllLangs = {};
-    $rootScope.exclusive.panels = [];
-    $rootScope.exclusive.busy = false;
 
     // Admin
     $rootScope.admin = {};
@@ -101,27 +60,11 @@
     $rootScope.admin.long.updateEditRecords = false;
     $rootScope.admin.long.FindActivated = false;
 
-    $rootScope.admin.sale = {};
-    $rootScope.admin.sale.editObjSelected = false;
-    $rootScope.admin.sale.objNumber = '';
-    $rootScope.admin.sale.editPanelShow = false;
-    $rootScope.admin.sale.formData = {};
-    $rootScope.admin.sale.editObjEnableButton = true;
-    $rootScope.admin.sale.updateEditRecords = false;
-    $rootScope.admin.sale.FindActivated = false;
-
-    $rootScope.admin.short = {};
-    $rootScope.admin.short.editObjSelected = false;
-    $rootScope.admin.short.objNumber = '';
-    $rootScope.admin.short.editPanelShow = false;
-    $rootScope.admin.short.formData = {};
-    $rootScope.admin.short.editObjEnableButton = true;
-    $rootScope.admin.short.updateEditRecords = false;
-    $rootScope.admin.short.FindActivated = false;
 
 
-    $log.info('Cameldrive, $rootScope:');
-    $log.info($rootScope);
+
+    // $log.info('Cameldrive, $rootScope:');
+    // $log.info($rootScope);
   }
 
 })();
