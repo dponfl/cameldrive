@@ -18,6 +18,12 @@
     var pagerNumRecords = 2;
     var camelConfig = configCamel;
     var scrollDisabled = false;
+    var imgFileNameElement = '$$$_-_$$$';
+
+    var cars = {
+      panelsAllLangs: {},
+      panels: {},
+    };
 
     var service = {
       getNumLang: _getNumLang,
@@ -29,6 +35,11 @@
       getPagerNumRecords: _getPagerNumRecords,
       getConfig: _getConfig,
       getScrollDisabled: _getScrollDisabled,
+      getImgFileNameElement: _getImgFileNameElement,
+      getCarPanelsAllLangs: _getCarPanelsAllLangs,
+      setCarPanelsAllLangs: _setCarPanelsAllLangs,
+      getCarPanels: _getCarPanels,
+      setCarPanels: _setCarPanels,
     };
     return service;
 
@@ -69,6 +80,26 @@
     function _getScrollDisabled() {
       return scrollDisabled;
     } // _getScrollDisabled
+
+    function _getImgFileNameElement() {
+      return imgFileNameElement;
+    } // _getImgFileNameElement
+
+    function _getCarPanelsAllLangs() {
+      return cars.panelsAllLangs;
+    } // _getCarPanelsAllLangs
+
+    function _setCarPanelsAllLangs(p) {
+      cars.panelsAllLangs = p;
+    } // _setCarPanelsAllLangs
+
+    function _getCarPanels() {
+      return cars.panels;
+    } // _getCarPanels
+
+    function _setCarPanels(p) {
+      cars.panels = p;
+    } // _setCarPanels
 
   } // MajorService
 
