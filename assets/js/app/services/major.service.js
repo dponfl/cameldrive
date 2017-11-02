@@ -26,20 +26,20 @@
     };
 
     var service = {
-      getNumLang: _getNumLang,
-      getLang: _getLang,
-      setLang: _setLang,
-      getLangList: _getLangList,
-      getLangTitle: _getLangTitle,
-      getLangActiveTab: _getLangActiveTab,
-      getPagerNumRecords: _getPagerNumRecords,
-      getConfig: _getConfig,
-      getScrollDisabled: _getScrollDisabled,
-      getImgFileNameElement: _getImgFileNameElement,
-      getCarPanelsAllLangs: _getCarPanelsAllLangs,
-      setCarPanelsAllLangs: _setCarPanelsAllLangs,
-      getCarPanels: _getCarPanels,
-      setCarPanels: _setCarPanels,
+      getNumLang: _getNumLang, // setup number of languages in use
+      getLang: _getLang, // get current language
+      setLang: _setLang, // set current language
+      getLangList: _getLangList, // get list of languages in use
+      getLangTitle: _getLangTitle, // get languages names
+      getLangActiveTab: _getLangActiveTab, // get name of active language tab
+      getPagerNumRecords: _getPagerNumRecords, // get number of records to be displayed (for pager)
+      getConfig: _getConfig, // get general config data
+      getScrollDisabled: _getScrollDisabled, // get value of scrollDisabled variable
+      getImgFileNameElement: _getImgFileNameElement, // get delimiter of img file names
+      getCarPanelsAllLangs: _getCarPanelsAllLangs, // get all panels for all languages
+      setCarPanelsAllLangs: _setCarPanelsAllLangs, // set all panels for all languages
+      getCarPanels: _getCarPanels, // get panels
+      setCarPanels: _setCarPanels, // set panels
     };
     return service;
 
