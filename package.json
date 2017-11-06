@@ -30,7 +30,7 @@
     "debug": "node debug app.js",
     "start": "node app.js",
     "deploy": "./deploy.sh",
-    "postinstall": "npm run deploy"
+    "postinstall": "chmod +x ./deploy.sh && npm run deploy"
   },
   "main": "app.js",
   "repository": {
