@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "description": "Camel Drive Project",
   "keywords": [],
+  "engines": {
+    "node": "6.9.2"
+  },
   "dependencies": {
     "ejs": "2.3.4",
     "grunt": "1.0.1",
@@ -25,7 +28,8 @@
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "deploy": "./deploy.sh"
   },
   "main": "app.js",
   "repository": {

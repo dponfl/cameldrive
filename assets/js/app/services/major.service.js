@@ -33,7 +33,7 @@
       getLangTitle: _getLangTitle, // get languages names
       getLangActiveTab: _getLangActiveTab, // get name of active language tab
       getPagerNumRecords: _getPagerNumRecords, // get number of records to be displayed (for pager)
-      getConfig: _getConfig, // get general config data
+      getConfig: _getConfig, // get general app config data
       getScrollDisabled: _getScrollDisabled, // get value of scrollDisabled variable
       getImgFileNameElement: _getImgFileNameElement, // get delimiter of img file names
       getCarPanelsAllLangs: _getCarPanelsAllLangs, // get all panels for all languages
