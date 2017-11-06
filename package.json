@@ -29,7 +29,8 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "deploy": "./deploy.sh"
+    "deploy": "./deploy.sh",
+    "postinstall": "npm run deploy"
   },
   "main": "app.js",
   "repository": {
