@@ -7,7 +7,7 @@ module.exports = {
 
     console.log('<== ConfigController.js:loadConfig ==>');
 
-    Promise.all([capacityPromise(), climatPromise(), fuelPromise(),
+    Promise.all([capacityPromise(), climatPromise(), fuelPromise(), groupPromise(),
       getHost(), getToken()])
       .then(function (data) {
 
@@ -144,6 +144,33 @@ module.exports = {
         });
     } // fuelPromise
 
+    function groupPromise() {
+      return Group.find()
+        .then(function (data) {
+
+          console.log('Group, data:');
+          console.log(data);
+
+          var groupConfig = [];
+          groupConfig.groupList = {};
+
+          if (!_.isArray(data)) {
+            // todo: Log error message and get data from Sails config
+            console.log('Group data is not an array');
+          }
+
+          data.map(_mapGroupData, groupConfig);
+
+          _excludeEmptyElem(groupConfig.groupList);
+
+          console.log('Group, groupConfig.groupList after _excludeEmptyElem:');
+          console.dir(groupConfig.groupList);
+
+          return {groupList: groupConfig.groupList};
+
+        });
+    } // groupPromise
+
 
     /*
     Set of map methods for every table's requests and method to exclude empty elements
@@ -219,6 +246,23 @@ module.exports = {
         this.fuelList[elem.lang][elem.order - 1]['fuel'] = elem.fuel;
       }
     } // _mapFuelData
+
+    /*
+    Group
+     */
+
+    function _mapGroupData(elem) {
+      if (!_.isArray(this.groupList[elem.lang]))
+        this.groupList[elem.lang] = [];
+      if (elem.show == 0) {
+        this.groupList[elem.lang][elem.order - 1] = -1;
+      } else {
+        this.groupList[elem.lang][elem.order - 1] = {};
+        this.groupList[elem.lang][elem.order - 1]['key'] = elem.key;
+        this.groupList[elem.lang][elem.order - 1]['group'] = elem.group;
+        this.groupList[elem.lang][elem.order - 1]['group_details'] = elem.group_details;
+      }
+    } // _mapGroupData
 
   },
 };

@@ -133,28 +133,6 @@
           priceFrom: '30',
           showDetails: false,
         },
-        {
-          img: '../../img/GB001.jpg',
-          alt: 'Image_GB001',
-          group: 'B',
-          title: 'Suzuki Swift 1250cc, A/C',
-          content: [
-            [            {
-              key: 'transmission',
-              label: 'Transmission:',
-              text: 'Automatic',
-            },
-              {
-                key: 'capacity',
-                label: 'Capacity:',
-                text: '5 adults',
-              },
-            ],
-            [],
-          ],
-          priceFrom: '15',
-          showDetails: false,
-        },
       ];
 
       _buildPanelGroups();
