@@ -7,7 +7,7 @@ module.exports = {
 
     console.log('<== ConfigController.js:loadConfig ==>');
 
-    Promise.all([capacityPromise(),
+    Promise.all([capacityPromise(), climatPromise(),
       getHost(), getToken()])
       .then(function (data) {
 
@@ -90,6 +90,33 @@ module.exports = {
         });
     } // capacityPromise
 
+    function climatPromise() {
+      return Climat.find()
+        .then(function (data) {
+
+          console.log('Climat, data:');
+          console.log(data);
+
+          var climatConfig = [];
+          climatConfig.climatList = {};
+
+          if (!_.isArray(data)) {
+            // todo: Log error message and get data from Sails config
+            console.log('Climat data is not an array');
+          }
+
+          data.map(_mapClimatData, climatConfig);
+
+          _excludeEmptyElem(climatConfig.climatList);
+
+          console.log('Climat, climatConfig.climatList after _excludeEmptyElem:');
+          console.dir(climatConfig.climatList);
+
+          return {climatList: climatConfig.climatList};
+
+        });
+    } // climatPromise
+
 
     /*
     Set of map methods for every table's requests and method to exclude empty elements
@@ -121,13 +148,6 @@ module.exports = {
      */
 
     function _mapCapacityData(elem) {
-
-/*
-      console.log('_mapCapacityData');
-      console.log('this:');
-      console.dir(this);
-*/
-
       if (!_.isArray(this.capacityList[elem.lang]))
         this.capacityList[elem.lang] = [];
       if (elem.show == 0) {
@@ -139,8 +159,23 @@ module.exports = {
         this.capacityList[elem.lang][elem.order - 1]['capacity_b'] = elem.capacity_b;
         this.capacityList[elem.lang][elem.order - 1]['capacity_text'] = elem.capacity_text;
       }
-
     } // _mapCapacityData
+
+    /*
+    Climat
+     */
+
+    function _mapClimatData(elem) {
+      if (!_.isArray(this.climatList[elem.lang]))
+        this.climatList[elem.lang] = [];
+      if (elem.show == 0) {
+        this.climatList[elem.lang][elem.order - 1] = -1;
+      } else {
+        this.climatList[elem.lang][elem.order - 1] = {};
+        this.climatList[elem.lang][elem.order - 1]['key'] = elem.key;
+        this.climatList[elem.lang][elem.order - 1]['climat'] = elem.climat;
+      }
+    } // _mapClimatData
 
   },
 };
