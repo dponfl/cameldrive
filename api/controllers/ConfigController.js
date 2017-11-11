@@ -7,7 +7,7 @@ module.exports = {
 
     console.log('<== ConfigController.js:loadConfig ==>');
 
-    Promise.all([capacityPromise(), climatPromise(),
+    Promise.all([capacityPromise(), climatPromise(), fuelPromise(),
       getHost(), getToken()])
       .then(function (data) {
 
@@ -117,6 +117,33 @@ module.exports = {
         });
     } // climatPromise
 
+    function fuelPromise() {
+      return Fuel.find()
+        .then(function (data) {
+
+          console.log('Fuel, data:');
+          console.log(data);
+
+          var fuelConfig = [];
+          fuelConfig.fuelList = {};
+
+          if (!_.isArray(data)) {
+            // todo: Log error message and get data from Sails config
+            console.log('Fuel data is not an array');
+          }
+
+          data.map(_mapFuelData, fuelConfig);
+
+          _excludeEmptyElem(fuelConfig.fuelList);
+
+          console.log('Fuel, fuelConfig.fuelList after _excludeEmptyElem:');
+          console.dir(fuelConfig.fuelList);
+
+          return {fuelList: fuelConfig.fuelList};
+
+        });
+    } // fuelPromise
+
 
     /*
     Set of map methods for every table's requests and method to exclude empty elements
@@ -176,6 +203,22 @@ module.exports = {
         this.climatList[elem.lang][elem.order - 1]['climat'] = elem.climat;
       }
     } // _mapClimatData
+
+    /*
+    Fuel
+     */
+
+    function _mapFuelData(elem) {
+      if (!_.isArray(this.fuelList[elem.lang]))
+        this.fuelList[elem.lang] = [];
+      if (elem.show == 0) {
+        this.fuelList[elem.lang][elem.order - 1] = -1;
+      } else {
+        this.fuelList[elem.lang][elem.order - 1] = {};
+        this.fuelList[elem.lang][elem.order - 1]['key'] = elem.key;
+        this.fuelList[elem.lang][elem.order - 1]['fuel'] = elem.fuel;
+      }
+    } // _mapFuelData
 
   },
 };
