@@ -5,11 +5,12 @@
     .module('Cameldrive')
     .controller('CarCtrl', CarCtrl);
 
-  CarCtrl.$inject = ['GeneralConfigService', 'lodash', '$log'];
+  CarCtrl.$inject = ['GeneralConfigService', 'MajorService', 'lodash', '$log'];
 
   /* @ngInject */
-  function CarCtrl(GeneralConfigService, lodash, $log) {
+  function CarCtrl(GeneralConfigService, MajorService, lodash, $log) {
     var vm = this;
+    var _ms = MajorService;
     vm.title = 'CarCtrl';
 
     vm.panelGroups = [];

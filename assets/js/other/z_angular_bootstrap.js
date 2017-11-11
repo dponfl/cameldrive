@@ -2,7 +2,7 @@
 
   console.log('Cameldrive bootstrap...');
 
-/*  $.get('/config', config);
+  $.get('/config', config);
 
   config.$inject = ['data'];
 
@@ -24,9 +24,7 @@
       console.log(data);
 
       if (_.has(data, 'result') && _.has(data, 'data')) {
-        // console.log('11111111');
         if (data.result == 'ok') {
-          // console.log('2222222222');
           configCamelProvider.initialize(data.data);
         }
 
@@ -38,6 +36,5 @@
     } // CameldriveConfiguration
 
     angular.bootstrap(document, ['Cameldrive']);
-}*/
+}
 
-angular.bootstrap(document, ['Cameldrive']);

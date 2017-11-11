@@ -112,7 +112,6 @@
 
 
     function _setLang(lang) {
-      // console.log('Setting lang=' + lang);
       var useLang = lang || 'en';
       _ms.setLang(useLang);
       tmhDynamicLocale.set(_ms.getLang());
