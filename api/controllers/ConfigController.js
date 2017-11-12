@@ -8,7 +8,7 @@ module.exports = {
     console.log('<== ConfigController.js:loadConfig ==>');
 
     Promise.all([capacityPromise(), climatPromise(), fuelPromise(), groupPromise(),
-      getHost(), getToken()])
+      luggagePromise(), getHost(), getToken()])
       .then(function (data) {
 
         var result = {};
@@ -171,6 +171,34 @@ module.exports = {
         });
     } // groupPromise
 
+    function luggagePromise() {
+      return Luggage.find()
+        .then(function (data) {
+
+          console.log('Luggage, data:');
+          console.log(data);
+
+          var luggageConfig = [];
+          luggageConfig.luggageList = {};
+
+          if (!_.isArray(data)) {
+            // todo: Log error message and get data from Sails config
+            console.log('Luggage data is not an array');
+          }
+
+          data.map(_mapLuggageData, luggageConfig);
+
+          _excludeEmptyElem(luggageConfig.luggageList);
+
+          console.log('Luggage, luggageConfig.luggageList after _excludeEmptyElem:');
+          console.dir(luggageConfig.luggageList);
+
+          return {luggageList: luggageConfig.luggageList};
+
+        });
+    } // luggagePromise
+
+
 
     /*
     Set of map methods for every table's requests and method to exclude empty elements
@@ -263,6 +291,25 @@ module.exports = {
         this.groupList[elem.lang][elem.order - 1]['group_details'] = elem.group_details;
       }
     } // _mapGroupData
+
+    /*
+     Luggage
+     */
+
+    function _mapLuggageData(elem) {
+      if (!_.isArray(this.luggageList[elem.lang]))
+        this.luggageList[elem.lang] = [];
+      if (elem.show == 0) {
+        this.luggageList[elem.lang][elem.order - 1] = -1;
+      } else {
+        this.luggageList[elem.lang][elem.order - 1] = {};
+        this.luggageList[elem.lang][elem.order - 1]['key'] = elem.key;
+        this.luggageList[elem.lang][elem.order - 1]['luggage_a'] = elem.luggage_a;
+        this.luggageList[elem.lang][elem.order - 1]['luggage_b'] = elem.luggage_b;
+        this.luggageList[elem.lang][elem.order - 1]['luggage_text'] = elem.luggage_text;
+      }
+    } // _mapLuggageData
+
 
   },
 };
