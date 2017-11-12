@@ -8,7 +8,7 @@ module.exports = {
     console.log('<== ConfigController.js:loadConfig ==>');
 
     Promise.all([capacityPromise(), climatPromise(), fuelPromise(), groupPromise(),
-      luggagePromise(), getHost(), getToken()])
+      luggagePromise(), periodsPromise(), getHost(), getToken()])
       .then(function (data) {
 
         var result = {};
@@ -198,6 +198,33 @@ module.exports = {
         });
     } // luggagePromise
 
+    function periodsPromise() {
+      return Periods.find()
+        .then(function (data) {
+
+          console.log('Periods, data:');
+          console.log(data);
+
+          var periodsConfig = [];
+          periodsConfig.periodsList = {};
+
+          if (!_.isArray(data)) {
+            // todo: Log error message and get data from Sails config
+            console.log('Periods data is not an array');
+          }
+
+          data.map(_mapPeriodsData, periodsConfig);
+
+          _excludeEmptyElem(periodsConfig.periodsList);
+
+          console.log('Periods, periodsConfig.periodsList after _excludeEmptyElem:');
+          console.dir(periodsConfig.periodsList);
+
+          return {periodsList: periodsConfig.periodsList};
+
+        });
+    } // periodsPromise
+
 
 
     /*
@@ -309,6 +336,23 @@ module.exports = {
         this.luggageList[elem.lang][elem.order - 1]['luggage_text'] = elem.luggage_text;
       }
     } // _mapLuggageData
+
+    /*
+     Periods
+     */
+
+    function _mapPeriodsData(elem) {
+      if (!_.isArray(this.periodsList[elem.lang]))
+        this.periodsList[elem.lang] = [];
+      if (elem.show == 0) {
+        this.periodsList[elem.lang][elem.order - 1] = -1;
+      } else {
+        this.periodsList[elem.lang][elem.order - 1] = {};
+        this.periodsList[elem.lang][elem.order - 1]['key'] = elem.key;
+        this.periodsList[elem.lang][elem.order - 1]['period'] = elem.period;
+      }
+    } // _mapPeriodsData
+
 
 
   },
