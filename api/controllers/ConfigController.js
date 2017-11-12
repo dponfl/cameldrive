@@ -9,6 +9,7 @@ module.exports = {
 
     Promise.all([capacityPromise(), climatPromise(), fuelPromise(), groupPromise(),
       luggagePromise(), periodsPromise(), transmissionPromise(), tagPromise(),
+      promoPromise(),
       getHost(), getToken()])
       .then(function (data) {
 
@@ -280,6 +281,34 @@ module.exports = {
         });
     } // tagPromise
 
+    function promoPromise() {
+      return Promo.find()
+        .then(function (data) {
+
+          console.log('Promo, data:');
+          console.log(data);
+
+          var promoConfig = [];
+          promoConfig.promoList = {};
+
+          if (!_.isArray(data)) {
+            // todo: Log error message and get data from Sails config
+            console.log('Promo data is not an array');
+          }
+
+          data.map(_mapPromoData, promoConfig);
+
+          _excludeEmptyElem(promoConfig.promoList);
+
+          console.log('Promo, promoConfig.promoList after _excludeEmptyElem:');
+          console.dir(promoConfig.promoList);
+
+          return {promoList: promoConfig.promoList};
+
+        });
+    } // promoPromise
+
+
 
 
 
@@ -436,6 +465,25 @@ module.exports = {
 
       this.tagList[elem.lang].push({key: elem.key, val: elem.tag})
     } // _mapTagData
+
+    /*
+     Promo
+     */
+
+    function _mapPromoData(elem) {
+      if (!_.isArray(this.promoList[elem.lang]))
+        this.promoList[elem.lang] = [];
+      if (elem.show == 0) {
+        this.promoList[elem.lang][elem.order - 1] = -1;
+      } else {
+        this.promoList[elem.lang][elem.order - 1] = {};
+        this.promoList[elem.lang][elem.order - 1]['key'] = elem.key;
+        this.promoList[elem.lang][elem.order - 1]['header'] = elem.header;
+        this.promoList[elem.lang][elem.order - 1]['subheader'] = elem.subheader;
+        this.promoList[elem.lang][elem.order - 1]['content'] = elem.content;
+      }
+    } // _mapPromoData
+
 
 
   },

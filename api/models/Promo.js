@@ -12,6 +12,12 @@ module.exports = {
       type: 'string',
       size: 2
     },
+    show: {
+      type: 'integer',
+    },
+    order: {
+      type: 'integer',
+    },
     key: {
       type: 'string',
       size: 50
