@@ -8,7 +8,7 @@ module.exports = {
     console.log('<== ConfigController.js:loadConfig ==>');
 
     Promise.all([capacityPromise(), climatPromise(), fuelPromise(), groupPromise(),
-      luggagePromise(), periodsPromise(), transmissionPromise(),
+      luggagePromise(), periodsPromise(), transmissionPromise(), tagPromise(),
       getHost(), getToken()])
       .then(function (data) {
 
@@ -253,6 +253,33 @@ module.exports = {
         });
     } // transmissionPromise
 
+    function tagPromise() {
+      return Tag.find()
+        .then(function (data) {
+
+          console.log('Tag, data:');
+          console.log(data);
+
+          var tagConfig = [];
+          tagConfig.tagList = {};
+
+          if (!_.isArray(data)) {
+            // todo: Log error message and get data from Sails config
+            console.log('Tag data is not an array');
+          }
+
+          data.map(_mapTagData, tagConfig);
+
+          _excludeEmptyElem(tagConfig.tagList);
+
+          console.log('Tag, tagConfig.tagList after _excludeEmptyElem:');
+          console.dir(tagConfig.tagList);
+
+          return {tagList: tagConfig.tagList};
+
+        });
+    } // tagPromise
+
 
 
 
@@ -398,6 +425,17 @@ module.exports = {
       }
     } // _mapTransmissionData
 
+    /**
+     * Tag
+     */
+
+    function _mapTagData(elem) {
+      if (!_.isArray(this.tagList[elem.lang])) {
+        this.tagList[elem.lang] = [];
+      }
+
+      this.tagList[elem.lang].push({key: elem.key, val: elem.tag})
+    } // _mapTagData
 
 
   },
