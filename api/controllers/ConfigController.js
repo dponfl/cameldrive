@@ -8,7 +8,8 @@ module.exports = {
     console.log('<== ConfigController.js:loadConfig ==>');
 
     Promise.all([capacityPromise(), climatPromise(), fuelPromise(), groupPromise(),
-      luggagePromise(), periodsPromise(), getHost(), getToken()])
+      luggagePromise(), periodsPromise(), transmissionPromise(),
+      getHost(), getToken()])
       .then(function (data) {
 
         var result = {};
@@ -225,6 +226,34 @@ module.exports = {
         });
     } // periodsPromise
 
+    function transmissionPromise() {
+      return Transmission.find()
+        .then(function (data) {
+
+          console.log('Transmission, data:');
+          console.log(data);
+
+          var transmissionConfig = [];
+          transmissionConfig.transmissionList = {};
+
+          if (!_.isArray(data)) {
+            // todo: Log error message and get data from Sails config
+            console.log('Transmission data is not an array');
+          }
+
+          data.map(_mapTransmissionData, transmissionConfig);
+
+          _excludeEmptyElem(transmissionConfig.transmissionList);
+
+          console.log('Transmission, transmissionConfig.transmissionList after _excludeEmptyElem:');
+          console.dir(transmissionConfig.transmissionList);
+
+          return {transmissionList: transmissionConfig.transmissionList};
+
+        });
+    } // transmissionPromise
+
+
 
 
     /*
@@ -352,6 +381,22 @@ module.exports = {
         this.periodsList[elem.lang][elem.order - 1]['period'] = elem.period;
       }
     } // _mapPeriodsData
+
+    /*
+     Transmission
+     */
+
+    function _mapTransmissionData(elem) {
+      if (!_.isArray(this.transmissionList[elem.lang]))
+        this.transmissionList[elem.lang] = [];
+      if (elem.show == 0) {
+        this.transmissionList[elem.lang][elem.order - 1] = -1;
+      } else {
+        this.transmissionList[elem.lang][elem.order - 1] = {};
+        this.transmissionList[elem.lang][elem.order - 1]['key'] = elem.key;
+        this.transmissionList[elem.lang][elem.order - 1]['transmission'] = elem.transmission;
+      }
+    } // _mapTransmissionData
 
 
 
