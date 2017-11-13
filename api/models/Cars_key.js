@@ -29,9 +29,6 @@ module.exports = {
     show: {
       type: 'integer',
     },
-    home: {
-      type: 'integer',
-    },
   },
 };
 
