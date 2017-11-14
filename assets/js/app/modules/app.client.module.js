@@ -35,6 +35,7 @@
     // $rootScope.imgFileNameElement = '$$$_-_$$$';
 
     // Short term
+/*
     $rootScope.short = {};
     $rootScope.short.showNotFound = false;
     $rootScope.short.page = 1;
@@ -46,6 +47,7 @@
     $rootScope.short.panelsAllLangs = {};
     $rootScope.short.panels = [];
     $rootScope.short.busy = false;
+*/
 
 
 

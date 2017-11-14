@@ -36,31 +36,11 @@ module.exports.routes = {
     view: 'index'
   },
 
-  '/exclusive': {
+  '/conditions': {
     view: 'index'
   },
 
-  '/shortterm': {
-    view: 'index'
-  },
-
-  '/longterm': {
-    view: 'index'
-  },
-
-  '/sale': {
-    view: 'index'
-  },
-
-  '/qa': {
-    view: 'index'
-  },
-
-  '/services': {
-    view: 'index'
-  },
-
-  '/contacts': {
+  '/discount': {
     view: 'index'
   },
 
@@ -82,6 +62,12 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+
+  'POST /cars/find': 'CarsController.find',
+  'POST /cars/findp': 'CarsController.findPager',
+  'POST /cars/put': 'CarsController.put',
+  'POST /cars/update': 'CarsController.update',
+
 
   'POST /sreq/create': 'S_reqController.create',
   'POST /sreq/createInfo': 'S_reqController.createInfo',

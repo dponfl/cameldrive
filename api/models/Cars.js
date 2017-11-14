@@ -86,6 +86,10 @@ module.exports = {
     time_group_5_l: {
       type: 'integer',
     },
+    img: {
+      type: 'string',
+      size: 255
+    },
   },
 };
 

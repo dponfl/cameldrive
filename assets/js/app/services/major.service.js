@@ -40,6 +40,7 @@
       setCarPanelsAllLangs: _setCarPanelsAllLangs, // set all panels for all languages
       getCarPanels: _getCarPanels, // get panels
       setCarPanels: _setCarPanels, // set panels
+      getHost: _getHost, // get host
     };
     return service;
 
@@ -100,6 +101,10 @@
     function _setCarPanels(p) {
       cars.panels = p;
     } // _setCarPanels
+
+    function _getHost() {
+      return camelConfig.host;
+    } // _getHost
 
   } // MajorService
 
