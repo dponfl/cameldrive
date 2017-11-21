@@ -18,14 +18,20 @@ div(data-ng-controller="CarCtrl as ctrl").row
                   .wsp-thumbnail-title04 Group {{car.group}}
                   .wsp-thumbnail-text04 {{car.title}}
 
+                  .wsp-thumbnail-details-highlight04 {{'LBL_PRICE_FROM' | translate}} {{car.priceFrom}} &euro;
+
                   form.form-horizontal.wsp-thumbnail-details04
                     .form-group.wsp-form-group(data-ng-repeat="elem in car.content[0]")
                       label.col-md-5.col-xs-5.control-label.wsp-text-right.wsp-label {{elem.label}}
                       .col-md-7.col-xs-7
                         p.form-control-static.wsp-text-left.wsp-text {{elem.text}}
 
-                  .wsp-thumbnail-details-highlight04 Price: from {{car.priceFrom}} &euro;
                   div(data-ng-show="car.showDetails").nga-default.nga-stagger.nga-squash-left.wsp-thumbnail-details04
+                    form.form-horizontal.wsp-thumbnail-details04
+                      .form-group.wsp-form-group(data-ng-repeat="elem in car.content[0]")
+                        label.col-md-5.col-xs-5.control-label.wsp-text-right.wsp-label {{elem.label}}
+                        .col-md-7.col-xs-7
+                          p.form-control-static.wsp-text-left.wsp-text {{elem.text}}
                     .table-responsive
                       table.table.wsp-tbl-top-head
                         thead

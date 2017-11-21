@@ -5,10 +5,10 @@
     .module('Cameldrive')
     .factory('MajorService', MajorService);
 
-  MajorService.$inject = ['$log', 'configCamel'];
+  MajorService.$inject = ['$log', 'configCamel', '$rootScope'];
 
   /* @ngInject */
-  function MajorService($log, configCamel) {
+  function MajorService($log, configCamel, $rootScope) {
 
     var numLang = 2;
     var lang = 'en';
@@ -56,6 +56,7 @@
 
     function _setLang(l) {
       lang = l;
+      $rootScope.$broadcast('lang_change', lang);
     } // _setLang
 
     function _getLangList() {

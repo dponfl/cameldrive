@@ -35,7 +35,7 @@ module.exports = {
     console.log('whereObj:');
     console.dir(whereObj);
 
-    Car.find({
+    Cars.find({
       where: whereObj,
     })
       .exec(function (err, data) {
@@ -96,7 +96,7 @@ module.exports = {
     console.log('pager:');
     console.dir(pager);
 
-    Car.find({
+    Cars.find({
       where: whereObj,
       sort: 'car_id ASC',
     }).paginate({page: pager.page, limit: pager.limit})
@@ -153,7 +153,7 @@ module.exports = {
     console.log('Ready to create new record:');
     console.dir(newObj);
 
-    Car.create(newObj)
+    Cars.create(newObj)
       .exec(function (err, data) {
         if (err) {
           return res.serverError(err);
@@ -202,7 +202,7 @@ module.exports = {
       lang: newObj.lang
     };
 
-    Car.update(findCriteria, newObj)
+    Cars.update(findCriteria, newObj)
       .exec(function (err, data) {
         if (err) {
           return res.serverError(err);
