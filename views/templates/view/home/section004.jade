@@ -14,7 +14,12 @@ div(data-ng-controller="CarCtrl as ctrl").row
             div(data-ng-repeat='group in ctrl.panelGroups').row
               .col-md-4(data-ng-repeat="car in group")
                 .thumbnail.wsp-thumbnail-border04
-                  img(src="{{car.img}}", alt="{{car.alt}}").wsp-thumb-img04
+
+                  a(href='{{car.img.href}}',
+                  data-lightbox='{{car.img.dataLightbox}}',
+                  data-title='{{car.img.dataTitle}}')
+                    img(data-ng-src='{{car.img.src}}').wsp-thumb-img04
+
                   .wsp-thumbnail-title04 Group {{car.group}}
                   .wsp-thumbnail-text04 {{car.title}}
 
@@ -28,7 +33,7 @@ div(data-ng-controller="CarCtrl as ctrl").row
 
                   div(data-ng-show="car.showDetails").nga-default.nga-stagger.nga-squash-left.wsp-thumbnail-details04
                     form.form-horizontal.wsp-thumbnail-details04
-                      .form-group.wsp-form-group(data-ng-repeat="elem in car.content[0]")
+                      .form-group.wsp-form-group(data-ng-repeat="elem in car.content[1]")
                         label.col-md-5.col-xs-5.control-label.wsp-text-right.wsp-label {{elem.label}}
                         .col-md-7.col-xs-7
                           p.form-control-static.wsp-text-left.wsp-text {{elem.text}}

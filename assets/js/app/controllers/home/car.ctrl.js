@@ -14,6 +14,8 @@
     var _ms = MajorService;
     vm.title = 'CarCtrl';
 
+    vm.config = _ms.getConfig();
+
     vm.panelGroups = [];
     vm.innerGroup = [];
     vm.panels = [];
@@ -236,7 +238,7 @@
       $q.when(_performRequest())
         .then(function (res) {
 
-          $log.info('_performRequest, res:');
+          $log.info('activate, res:');
           $log.info(res);
 
           if (!res.performed &&
@@ -245,6 +247,9 @@
           }
 
           var buildResult = _buildPanel(res);
+
+          $log.info('activate, buildResult:');
+          $log.info(buildResult);
 
           if (!buildResult.performed) return;
 
@@ -376,7 +381,149 @@
         })
     } // _performRequest
 
-    function _buildPanel() {
+    function _buildPanel(requestResult) {
+
+      if (!requestResult.performed) {
+
+        return {
+          performed: requestResult.performed,
+          reason: requestResult.reason,
+          data: [],
+        };
+      }
+
+      var result = {};
+
+      var langList = _ms.getLangList();
+      langList.map(function (elem) {
+        result[elem] = __buildPanelOneLang(requestResult.data.keys[elem],
+          requestResult.data.objs[elem], elem);
+      });
+
+      return {
+        performed: true,
+        reason: 'ok',
+        data: result,
+      };
+
+      function __buildPanelOneLang(panelKeys, panelObjs, lang) {
+
+        var panels = [];
+        var record = {};
+
+        panelObjs.map(function (oElem) {
+          var tagText = '';
+          var keyVal = '';
+
+          vm.config.tagList[lang].map(function (listElem) {
+            if (listElem.key == oElem.tag) {
+              tagText = listElem.val;
+              keyVal = listElem.key;
+            }
+          });
+
+          record = {
+            showTag: oElem.tag ? true : false,
+            tag: oElem.tag,
+            tagText: tagText,
+            show: oElem.show,
+            img: {
+              href: '../../img/' + oElem.img,
+              dataLightbox: oElem.car_id,
+              dataTitle: '',
+              src: '../../img/' + oElem.img,
+              alt: 'Image_Car_' + oElem.car_id,
+            },
+            content: [],
+            contentObj: {},
+          };
+
+          panelKeys.map(function (kElem) {
+            var tokenVal = '';
+            var tokenSubval = '';
+            var keyVal = '';
+
+            switch (kElem.key) {
+              case 'transmission':
+                vm.config.transmissionList[lang].map(function (listElem) {
+                  if (listElem.key == oElem.transmission) {
+                    tokenVal = listElem.transmission;
+                    keyVal = listElem.key;
+                  }
+                });
+                break;
+              case 'capacity':
+                vm.config.capacityList[lang].map(function (listElem) {
+                  if (listElem.key == oElem.capacity) {
+                    tokenVal = listElem.capacity_text;
+                    keyVal = listElem.key;
+                  }
+                });
+                break;
+              case 'climat':
+                vm.config.climatList[lang].map(function (listElem) {
+                  if (listElem.key == oElem.climat) {
+                    tokenVal = listElem.climat;
+                    keyVal = listElem.key;
+                  }
+                });
+                break;
+              case 'fuel':
+                vm.config.fuelList[lang].map(function (listElem) {
+                  if (listElem.key == oElem.fuel) {
+                    tokenVal = listElem.fuel;
+                    keyVal = listElem.key;
+                  }
+                });
+                break;
+              case 'group':
+                vm.config.groupList[lang].map(function (listElem) {
+                  if (listElem.key == oElem.group) {
+                    tokenVal = listElem.group;
+                    tokenSubval = listElem.group_details;
+                    keyVal = listElem.key;
+                  }
+                });
+                break;
+              case 'luggage':
+                vm.config.luggageList[lang].map(function (listElem) {
+                  if (listElem.key == oElem.luggage) {
+                    tokenVal = listElem.luggage_text;
+                    keyVal = listElem.key;
+                  }
+                });
+                break;
+              default:
+                tokenVal = oElem[kElem.key] || '';
+                keyVal = kElem.key;
+                break;
+            }
+
+            if (!_.isArray(record.content[kElem.group - 1])) {
+              record.content[kElem.group - 1] = [];
+            }
+
+            record.content[kElem.group - 1].push({
+              key: keyVal,
+              label: kElem.label,
+              text:tokenVal,
+            });
+
+            record.contentObj[kElem.key] = {
+              key: keyVal,
+              label: kElem.label,
+              text:tokenVal,
+            };
+
+          });
+
+          panels.push(record);
+          
+        });
+
+        return panels;
+        
+      } // __buildPanelOneLang
 
     } // _buildPanel
 
