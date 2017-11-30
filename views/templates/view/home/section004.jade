@@ -20,10 +20,10 @@ div(data-ng-controller="CarCtrl as ctrl").row
                   data-title='{{car.img.dataTitle}}')
                     img(data-ng-src='{{car.img.src}}').wsp-thumb-img04
 
-                  .wsp-thumbnail-title04 Group {{car.group}}
+                  .wsp-thumbnail-title04 {{car.group}}
                   .wsp-thumbnail-text04 {{car.title}}
 
-                  .wsp-thumbnail-details-highlight04 {{'LBL_PRICE_FROM' | translate}} {{car.priceFrom}} &euro;
+                  .wsp-thumbnail-details-highlight04 {{'LBL_PRICE_FROM' | translate}} {{car.time_group_5_l}} &euro;
 
                   form.form-horizontal.wsp-thumbnail-details04
                     .form-group.wsp-form-group(data-ng-repeat="elem in car.content[0]")
@@ -41,41 +41,41 @@ div(data-ng-controller="CarCtrl as ctrl").row
                       table.table.wsp-tbl-top-head
                         thead
                           tr
-                            th High season 01/05-31/10
+                            th {{ 'HOME_HIGH_SEASON' | translate }}  01/05-31/10
                       table.table.wsp-tbl-body
                         thead
                           tr
-                            th 1 day
-                            th 2 days
-                            th 3-6 days
-                            th 7-14 days
-                            th 14+ days
+                            th 14+ {{ 'HOME_5D' | translate }}
+                            th 7-14 {{ 'HOME_5D' | translate }}
+                            th 3-6 {{ 'HOME_5D' | translate }}
+                            th 2 {{ 'HOME_2D' | translate }}
+                            th 1 {{ 'HOME_1D' | translate }}
                         tbody
                           tr
-                            td 70&nbsp;&euro;
-                            td 45&nbsp;&euro;
-                            td 35&nbsp;&euro;
-                            td 30&nbsp;&euro;
-                            td 25&nbsp;&euro;
+                            td {{ car.time_group_5_h }}&nbsp;&euro;
+                            td {{ car.time_group_4_h }}&nbsp;&euro;
+                            td {{ car.time_group_3_h }}&nbsp;&euro;
+                            td {{ car.time_group_2_h }}&nbsp;&euro;
+                            td {{ car.time_group_1_h }}&nbsp;&euro;
                       table.table.wsp-tbl-top-head
                         thead
                           tr
-                            th Low season 1/11-30/04
+                            th {{ 'HOME_LOW_SEASON' | translate }}  01/11-30/04
                       table.table.wsp-tbl-body
                         thead
                           tr
-                            th 1 day
-                            th 2 days
-                            th 3-6 days
-                            th 7-14 days
-                            th 14+ days
+                            th 14+ {{ 'HOME_5D' | translate }}
+                            th 7-14 {{ 'HOME_5D' | translate }}
+                            th 3-6 {{ 'HOME_5D' | translate }}
+                            th 2 {{ 'HOME_2D' | translate }}
+                            th 1 {{ 'HOME_1D' | translate }}
                         tbody
                           tr
-                            td 50&nbsp;&euro;
-                            td 40&nbsp;&euro;
-                            td 25&nbsp;&euro;
-                            td 20&nbsp;&euro;
-                            td 15&nbsp;&euro;
+                            td {{ car.time_group_5_l }}&nbsp;&euro;
+                            td {{ car.time_group_4_l }}&nbsp;&euro;
+                            td {{ car.time_group_3_l }}&nbsp;&euro;
+                            td {{ car.time_group_2_l }}&nbsp;&euro;
+                            td {{ car.time_group_1_l }}&nbsp;&euro;
                   .wsp-section04-btn
                     a(href="#car_booking")
                       button.btn.wsp-btn.wsp-btn-book.wsp-btn-md.btn-danger

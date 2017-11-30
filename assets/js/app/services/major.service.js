@@ -21,8 +21,8 @@
     var imgFileNameElement = '$$$_-_$$$';
 
     var cars = {
-      panelsAllLangs: {},
-      panels: {},
+      panelsAllLangs: [],
+      panels: [],
     };
 
     var service = {
