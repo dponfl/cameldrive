@@ -16,6 +16,9 @@ module.exports = {
       type: 'string',
       size: 2
     },
+    show: {
+      type: 'integer',
+    },
     name: {
       type: 'string',
       size: 50

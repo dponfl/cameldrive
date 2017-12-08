@@ -70,6 +70,7 @@ module.exports.routes = {
 
   'POST /testimonials/find': 'TestimonialsController.find',
   'POST /testimonials/put': 'TestimonialsController.put',
+  'POST /testimonials/update': 'TestimonialsController.update',
 
 
   'POST /sreq/create': 'S_reqController.create',
