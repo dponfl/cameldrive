@@ -11,7 +11,7 @@ module.exports = {
 	find: function (req, res) {
 
 	  var rec = [];
-	  var numRecToShow = 3;
+	  var numRecToShow = 1;
 
     console.log('<== TestimonialsController.js:find ==>');
 
@@ -22,7 +22,24 @@ module.exports = {
     console.log('whereObj:');
     console.dir(whereObj);
 
-    Testimonials.count({
+    Testimonials.find({
+      where: whereObj
+    })
+      .exec(function (err, data) {
+
+        if (err) {
+          return res.serverError(err);
+        }
+
+        return res.ok({
+          code: 200,
+          message: 'OK',
+          result: data
+        });
+
+      });
+
+/*    Testimonials.count({
       where: whereObj
     })
       .exec(function (err, numRecs) {
@@ -47,6 +64,9 @@ module.exports = {
           } while (!_.some(rec, randRec) || j >=1000);
 
           rec.push(randRec);
+          console.log('randRec: ' + randRec);
+          console.log('rec:');
+          console.dir(rec);
         }
 
         console.log('Generated rec:');
@@ -70,7 +90,7 @@ module.exports = {
             });
 
           })
-      });
+      });*/
 
   }, // find
 

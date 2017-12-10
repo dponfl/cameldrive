@@ -19,8 +19,14 @@
     var camelConfig = configCamel;
     var scrollDisabled = false;
     var imgFileNameElement = '$$$_-_$$$';
+    var testimonialsNumber = 3; // number of testimonials to be shown
 
     var cars = {
+      panelsAllLangs: [],
+      panels: [],
+    };
+
+    var testimonials = {
       panelsAllLangs: [],
       panels: [],
     };
@@ -40,6 +46,11 @@
       setCarPanelsAllLangs: _setCarPanelsAllLangs, // set all panels for all languages
       getCarPanels: _getCarPanels, // get panels
       setCarPanels: _setCarPanels, // set panels
+      getTestimonialsPanelsAllLangs: _getTestimonialsPanelsAllLangs, // get all panels for all languages
+      setTestimonialsPanelsAllLangs: _setTestimonialsPanelsAllLangs, // set all panels for all languages
+      getTestimonialsPanels: _getTestimonialsPanels, // get panels
+      setTestimonialsPanels: _setTestimonialsPanels, // set panels
+      getTestimonialsNumber: _getTestimonialsNumber, // get number of testimonials to be shown
       getHost: _getHost, // get host
     };
     return service;
@@ -102,6 +113,26 @@
     function _setCarPanels(p) {
       cars.panels = p;
     } // _setCarPanels
+
+    function _getTestimonialsPanelsAllLangs() {
+      return testimonials.panelsAllLangs;
+    } // _getTestimonialsPanelsAllLangs
+
+    function _setTestimonialsPanelsAllLangs(p) {
+      testimonials.panelsAllLangs = p;
+    } // _setTestimonialsPanelsAllLangs
+
+    function _getTestimonialsPanels() {
+      return testimonials.panels;
+    } // _getTestimonialsPanels
+
+    function _setTestimonialsPanels(p) {
+      testimonials.panels = p;
+    } // _setTestimonialsPanels
+
+    function _getTestimonialsNumber() {
+      return testimonialsNumber;
+    } // _setTestimonialsPanels
 
     function _getHost() {
       return camelConfig.host;

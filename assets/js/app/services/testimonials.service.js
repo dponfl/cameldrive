@@ -28,6 +28,8 @@
 
       function successCb(data) {
 
+        $log.info('_getTestimonials, successCb');
+
         if (!_.isArray(data.data.result)) {
           return new Error('_getTestimonials, Testimonials data is not an array');
         }
@@ -44,11 +46,11 @@
           __objs['en'].push({
             show: response[i].show,
             original: response[i].original,
-            name_en: response[i].name_en,
+            name: response[i].name_en,
             email: response[i].email,
             phone: response[i].phone,
-            info_en: response[i].info_en,
-            position_en: response[i].position_en,
+            info: response[i].info_en,
+            position: response[i].position_en,
             rate: response[i].rate,
             user_agent: response[i].user_agent,
             ip: response[i].ip,
@@ -61,11 +63,11 @@
           __objs['ru'].push({
             show: response[i].show,
             original: response[i].original,
-            name_ru: response[i].name_ru,
+            name: response[i].name_ru,
             email: response[i].email,
             phone: response[i].phone,
-            info_ru: response[i].info_ru,
-            position_ru: response[i].position_ru,
+            info: response[i].info_ru,
+            position: response[i].position_ru,
             rate: response[i].rate,
             user_agent: response[i].user_agent,
             ip: response[i].ip,
@@ -84,6 +86,8 @@
       } // successCb
 
       function errorCb(err) {
+
+        $log.info('_getTestimonials, errorCb');
 
         return {
           status: err.status,
@@ -117,11 +121,11 @@
         __objs['en'].push({
           show: response.show,
           original: response.original,
-          name_en: response.name_en,
+          name: response.name_en,
           email: response.email,
           phone: response.phone,
-          info_en: response.info_en,
-          position_en: response.position_en,
+          info: response.info_en,
+          position: response.position_en,
           rate: response.rate,
           user_agent: response.user_agent,
           ip: response.ip,
@@ -134,11 +138,11 @@
         __objs['ru'].push({
           show: response.show,
           original: response.original,
-          name_ru: response.name_ru,
+          name: response.name_ru,
           email: response.email,
           phone: response.phone,
-          info_ru: response.info_ru,
-          position_ru: response.position_ru,
+          info: response.info_ru,
+          position: response.position_ru,
           rate: response.rate,
           user_agent: response.user_agent,
           ip: response.ip,
@@ -198,11 +202,11 @@
         __objs['en'].push({
           show: response.show,
           original: response.original,
-          name_en: response.name_en,
+          name: response.name_en,
           email: response.email,
           phone: response.phone,
-          info_en: response.info_en,
-          position_en: response.position_en,
+          info: response.info_en,
+          position: response.position_en,
           rate: response.rate,
           user_agent: response.user_agent,
           ip: response.ip,
@@ -215,11 +219,11 @@
         __objs['ru'].push({
           show: response.show,
           original: response.original,
-          name_ru: response.name_ru,
+          name: response.name_ru,
           email: response.email,
           phone: response.phone,
-          info_ru: response.info_ru,
-          position_ru: response.position_ru,
+          info: response.info_ru,
+          position: response.position_ru,
           rate: response.rate,
           user_agent: response.user_agent,
           ip: response.ip,

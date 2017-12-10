@@ -8,18 +8,18 @@
 module.exports = {
   tableName: 'testimonials',
   attributes: {
-    lang: {
-      type: 'string',
-      size: 2
-    },
-    original_lang: {
-      type: 'string',
-      size: 2
-    },
     show: {
       type: 'integer',
     },
-    name: {
+    original: {
+      type: 'string',
+      size: 2
+    },
+    name_en: {
+      type: 'string',
+      size: 50
+    },
+    name_ru: {
       type: 'string',
       size: 50
     },
@@ -31,10 +31,17 @@ module.exports = {
       type: 'string',
       size: 50
     },
-    info: {
+    info_en: {
       type: 'text',
     },
-    position: {
+    info_ru: {
+      type: 'text',
+    },
+    position_en: {
+      type: 'string',
+      size: 50
+    },
+    position_ru: {
       type: 'string',
       size: 50
     },
