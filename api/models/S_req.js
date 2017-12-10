@@ -8,6 +8,10 @@
 module.exports = {
   tableName: 's_req',
   attributes: {
+    req_type: {
+      type: 'string',
+      size: 50
+    },
     car_group: {
       type: 'string',
       size: 50
