@@ -5,11 +5,12 @@
     .module('Cameldrive')
     .service('S_ReqService', S_ReqService);
 
-  S_ReqService.$inject = ['GeneralConfigService', '$rootScope', '$http', '$log', 'lodash', '$q'];
+  S_ReqService.$inject = ['MajorService', '$http', '$log', 'lodash', '$q'];
 
   /* @ngInject */
-  function S_ReqService(GeneralConfigService, $rootScope, $http, $log, lodash, $q) {
+  function S_ReqService(MajorService, $http, $log, lodash, $q) {
     var _ = lodash;
+    var _ms = MajorService;
     var self = {
       createSReq: _createSReq,
     };
@@ -20,7 +21,7 @@
 
     function _createSReq(reqObj, type) {
 
-      // todo: return object having result code (200, 404, etc.) and data
+      // todo: try to use createInfo for all cases
 
       switch (type) {
         case 'booking':
@@ -31,7 +32,7 @@
           break;
       }
 
-      return $http.post($rootScope.orangeConfig.host + '/sreq/' + action, reqObj)
+      return $http.post(_ms.getHost() + '/sreq/' + action, reqObj)
        .then(successCb, errorCb);
 
       function successCb(data) {
