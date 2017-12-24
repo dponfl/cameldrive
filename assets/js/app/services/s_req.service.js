@@ -28,6 +28,7 @@
           var action = 'create';
           break;
         case 'info':
+        case 'review':
           var action = 'createInfo';
           break;
       }

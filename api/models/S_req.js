@@ -46,6 +46,9 @@ module.exports = {
       type: 'string',
       size: 255
     },
+    rate: {
+      type: 'integer',
+    },
     user_agent: {
       type: 'string',
       size: 255
