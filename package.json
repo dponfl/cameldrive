@@ -47,7 +47,7 @@
     "q": "^1.5.0",
     "sails-mysql": "^0.11.5",
     "streamqueue": "^1.1.1",
-    "webstudiopro-sails-auth": "https://github.com/dponfl/webstudiopro-sails-auth.git#master",
+    "webstudiopro-sails-auth": "dponfl/webstudiopro-sails-auth",
     "wiredep": "^4.0.0"
   },
   "scripts": {
@@ -85,7 +85,7 @@
     "q": "^1.5.0",
     "sails-mysql": "^0.11.5",
     "streamqueue": "^1.1.1",
-    "webstudiopro-sails-auth": "github:dponfl/webstudiopro-sails-auth#master",
+    "webstudiopro-sails-auth": "dponfl/webstudiopro-sails-auth#master",
     "wiredep": "^4.0.0"
   }
 }
