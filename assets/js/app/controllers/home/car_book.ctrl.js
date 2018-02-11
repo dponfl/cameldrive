@@ -28,6 +28,9 @@
 
     function activate() {
       vm.formData = {};
+
+      // todo: get car groups from database
+
       vm.carGroupList = [
         {
           key: 'G001',
