@@ -2,9 +2,12 @@
 
 echo "Deploy bash script..."
 pwd
+echo "Going to install webstudiopro-sails-auth..."
+npm i github:dponfl/webstudiopro-sails-auth#master
+echo "Module webstudiopro-sails-auth installed"
 cd node_modules/webstudiopro-sails-auth/
 pwd
-echo "Going to install webstudiopro-sails-auth"
+echo "Going to activate webstudiopro-sails-auth..."
 npm i
 cd ../..
 pwd
