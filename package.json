@@ -52,7 +52,7 @@
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js",
+    "start": "sails lift --verbose --prod",
     "deploy": "./deploy.sh",
     "postinstall": "chmod +x ./deploy.sh && npm run deploy"
   },
