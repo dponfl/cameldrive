@@ -52,10 +52,10 @@
   },
   "scripts": {
     "debug": "node debug app.js",
-    "start": "node app.js",
+    "start": "node app.js --no-grunt",
     "deploy": "./deploy.sh",
     "build": "./build.sh",
-    "postinstall": "chmod +x ./deploy.sh ./build.sh && npm run deploy && npm run build"
+    "postinstall": "chmod +x ./deploy.sh ./build.sh && npm run deploy"
   },
   "main": "app.js",
   "repository": {

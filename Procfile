@@ -1,1 +1,1 @@
-web: sails lift --verbose --prod
+web: node app.js --no-grunt
