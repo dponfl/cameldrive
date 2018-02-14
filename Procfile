@@ -1,1 +1,1 @@
-web: node app.js --no-grunt
+web: node app.js --verbose --no-grunt

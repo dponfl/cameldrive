@@ -3,4 +3,4 @@
 echo "Build bash script..."
 pwd
 echo "Going to build SailsJS application..."
-sails lift --verbose --prod
+sails www --verbose
