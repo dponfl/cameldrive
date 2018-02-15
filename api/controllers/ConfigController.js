@@ -318,7 +318,7 @@ module.exports = {
 
     function getHost() {
       // todo: change by setting using Sails config
-      return {host: process.env.HOST || 'http://localhost'};
+      return {host: process.env.HOST || 'http://localhost:1337'};
     };
 
     function getToken() {
