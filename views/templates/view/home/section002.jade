@@ -1,12 +1,14 @@
 .row
   .container-fluid
-    .parallax-section.section2
+    .section2
       .container
         .col-md-5
-          .wsp-section002-block-message01 {{'HOME_TITLE_02' | translate}}
-        .col-md-offset-1.col-md-6
-          .wsp-section002-block-message02 {{'HOME_SUBTITLE_02' | translate}}
+          .wsp-section002-block-message01
+            img(src="/images/block02-1.png", alt="Camel Car Hire - Section 02-1")
+        .col-md-offset-1.col-md-5
+          .wsp-section002-block-message02
+            img(data-ng-src="{{'BLOCK_02_PIC_02' | translate}}", alt="Camel Car Hire - Section 02-2")
         .col-md-12
           .wsp-section02-btn
             a(href="#car_booking")
-              button(type="button").btn.wsp-btn.wsp-btn-book.wsp-btn-md.btn-danger {{'BTN_BOOK' | translate}}
+              button(type="button").btn.wsp-btn.wsp-btn-book.wsp-btn-md {{'BTN_BOOK' | translate}}

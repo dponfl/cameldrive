@@ -1,7 +1,7 @@
 div(data-ng-controller='CarBookCtrl as ctrl').row
-  .container-fluid
+  .container-fluid#car_booking
     .section6
-      .col-md-offset-3.col-md-6.text-vertical-center-3
+      .col-md-offset-3.col-md-6.text-vertical-center-3.wsp-block-padding-30
         .wsp-home-header06 {{'HOME_TITLE_06' | translate}}
         .wsp-home-subheader06.text-vertical-center-5 {{'HOME_SUBTITLE_06' | translate}}
 
@@ -97,13 +97,14 @@ div(data-ng-controller='CarBookCtrl as ctrl').row
             label(for='clientInfo', translate='LBL_FIELD_ADDINFO').col-sm-4.control-label.text-right.wsp-label
             .col-sm-6
               textarea(type="text",
+              rows="7",
               data-ng-model='ctrl.formData.additionalInfo').form-control#clientInfo
 
           .form-group.clearfix
             .wsp-section06-btn
               button(type='submit',
-              translate='BTN_BOOK_PERFORM').btn.wsp-btn.wsp-btn-md.btn-danger
+              translate='BTN_BOOK_PERFORM').btn.wsp-btn.wsp-btn-md.wsp-btn-book
               button(data-ng-click='ctrl.clear()',
-              translate='BTN_CLR').btn.wsp-btn.wsp-btn-md.btn-default
+              translate='BTN_CLR').btn.wsp-btn.wsp-btn-md.wsp-btn-details
 
 

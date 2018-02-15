@@ -42,18 +42,17 @@
         {
           href: 'http://www.youtube.com',
           text: 'FOOTER_SUBSCRIBE_YOUTUBE',
+          img: '/images/youtube.png',
         },
         {
           href: 'http://www.facebook.com',
           text: 'FOOTER_SUBSCRIBE_FACEBOOK',
+          img: '/images/facebook.png',
         },
         {
-          href: 'http://www.twitter.com',
-          text: 'FOOTER_SUBSCRIBE_TWEETER',
-        },
-        {
-          href: 'http://plus.google.com',
-          text: 'FOOTER_SUBSCRIBE_GOOGLEPLUS',
+          href: 'http://www.instagram.com',
+          text: 'FOOTER_SUBSCRIBE_INST',
+          img: '/images/instagram.png',
         },
       ];
 

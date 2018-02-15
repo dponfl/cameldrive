@@ -1,5 +1,5 @@
 .row
-  .container-fluid
+  .container-fluid#home
     .parallax-section.section1
       span(data-picture,
       data-alt="Camel Car Hire - Section 01",
@@ -17,25 +17,21 @@
         //mr-px-size="1920,1200",
         //data-media="(min-width: 1400px)")
 
-        span(data-src="../../images/home-img01.jpg",
-        mr-px-size="1920,1200")
+        span(data-src="../../images/block01-en-ru.jpg",
+        mr-px-size="1920,1308")
 
         <!--[if (lt IE 9) & (!IEMobile)]>
-        <span data-src="../../images/home-img01.jpg" mr-px-size="1280,960"></span>
+        <span data-src="../../images/block01-en-ru.jpg" mr-px-size="1920,1308"></span>
         <![endif]-->
 
         noscript
-          img(src="../../images/home-img01.jpg", alt="Camel Car Hire - Section 01")
+          img(src="../../images/block01-en-ru.jpg", alt="Camel Car Hire - Section 01")
 
       .on-parallax.section1
-        .col-md-offset-3.col-md-6.text-vertical-center-5
-          .wsp-home-center
-            img(src="../../images/camel-logo-355x355.png", alt="Camel Car Hire logo")
-          .wsp-home-header {{'HOME_TITLE_01' | translate}}
-          .wsp-home-subheader {{'HOME_SUBTITLE_01' | translate}}
-          .wsp-section01-btn.col-md-offset-1.col-md-10
+        .col-lg-offset-2.col-lg-8.col-md-offset-2.col-md-8.text-vertical-center-3
+          .wsp-section01-btn.col-md-12
             a(href="#car_booking")
-              button(type="button").btn.wsp-btn.wsp-btn-book.wsp-btn-md.btn-danger {{'BTN_BOOK' | translate}}
+              button(type="button").btn.wsp-btn.wsp-btn-book.wsp-btn-md {{'BTN_BOOK' | translate}}
             a(href="#know_more")
-              button(type="button").btn.wsp-btn.wsp-btn-details.wsp-btn-md.btn-warning {{'BTN_KNOWMORE' | translate}}
+              button(type="button").btn.wsp-btn.wsp-btn-details.wsp-btn-md {{'BTN_KNOWMORE' | translate}}
 

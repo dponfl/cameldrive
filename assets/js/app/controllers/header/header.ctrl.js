@@ -50,35 +50,15 @@
           href: 'conditions',
           text: 'NAV_CONDITIONS',
         },
+/*
         {
           href: 'discount',
           text: 'NAV_DISCOUNT',
         },
+*/
       ];
 
       vm.dropdownMenu = [
-/*
-        {
-          action: 'short',
-          text: 'NAV_REQ_DAILY',
-        },
-        {
-          action: 'long',
-          text: 'NAV_REQ_LONG_TERM',
-        },
-        {
-          action: 'let',
-          text: 'NAV_REQ_LET_PROP',
-        },
-        {
-          action: 'buy',
-          text: 'NAV_REQ_BUY_PROP',
-        },
-        {
-          action: 'sell',
-          text: 'NAV_REQ_SELL_PROP',
-        },
-*/
       ];
 
     } // activate

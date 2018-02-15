@@ -2,9 +2,6 @@
   Footer
   =============
 
-  Author:  iStudioDTD.com
-  Updated: January 2017
-  Notes:	 Hand coded for Orange Holiday Villas
 
 div(data-ng-controller='FooterCtrl as fc').container
   .row
@@ -22,10 +19,13 @@ div(data-ng-controller='FooterCtrl as fc').container
       h6 {{'FOOTER_SUBSCRIBE_TITLE' | translate}}
       ul.list-unstyled
         li(data-ng-repeat='elem in fc.subscription')
+
           a(href="{{elem.href}}",
-          translate='{{elem.text}}',
           target="_blank")
+            span(translate="{{elem.text}}")
+            img(data-ng-src="{{elem.img}}").wsp-footer-socials-img
     .col-sm-3.developer
-      h6 Copyright &copy; 2017
+      h6 Copyright &copy; 2018
       span {{'FOOTER_DEVELOPER' | translate}}
-      a(href="{{fc.developer.href}}", target="_blank")#developer {{fc.developer.text}}
+      a(href="{{fc.developer.href}}", target="_blank")#developer
+        img(data-ng-src="/images/wsp.png").wsp-footer-developer-img
