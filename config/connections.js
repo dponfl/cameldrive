@@ -40,21 +40,21 @@ module.exports.connections = {
   * Run: npm install sails-mysql                                             *
   *                                                                          *
   ***************************************************************************/
-  orangeMysqlServer: {
-    adapter: 'sails-mysql',
-    host: 'localhost',
-    user: 'root', //optional
-    password: '', //optional
-    database: 'cameldrive' //optional
-  },
-
   // orangeMysqlServer: {
   //   adapter: 'sails-mysql',
-  //   host: 'us-cdbr-iron-east-05.cleardb.net',
-  //   user: 'bd88807f3cffc3',
-  //   password: '3f265249',
-  //   database: 'heroku_500669765fdf4e4'
+  //   host: 'localhost',
+  //   user: 'root', //optional
+  //   password: '', //optional
+  //   database: 'cameldrive' //optional
   // },
+
+  orangeMysqlServer: {
+    adapter: 'sails-mysql',
+    host: 'us-cdbr-iron-east-05.cleardb.net',
+    user: 'bd88807f3cffc3',
+    password: '3f265249',
+    database: 'heroku_500669765fdf4e4'
+  },
 
   /***************************************************************************
   *                                                                          *
