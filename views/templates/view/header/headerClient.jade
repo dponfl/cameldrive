@@ -9,7 +9,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top
           span.icon-bar
           span.icon-bar
 
-        .navbar-brand.wsp-navbar-brand
+        .navbar-brand.wsp-navbar-brand.link-and-scroll
           a(href="/")
             img(src="../../images/camel-logo-355x355.png", alt="Camel Car Hire logo", height="50px")
 
@@ -21,7 +21,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top
           li(data-ng-repeat='elem in hc.navMeny')
             a(data-ui-sref="{{elem.href}}",
               data-ui-sref-active="menu-active",
-              translate='{{elem.text}}').wsp-nav-item
+              translate='{{elem.text}}').wsp-nav-item.link-and-scroll
 
           li(data-ng-controller='translateCtrl as t').dropdown
             div(data-toggle="dropdown").dropdown-toggle.flag-icon-toggle

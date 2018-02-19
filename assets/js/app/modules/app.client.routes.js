@@ -60,21 +60,21 @@
             templateUrl: 'templates/view/footer/footerClient.html'
           },
         },
-        url: '/conditions',
+        url: '/',
       })
-      .state('discount', {
+      .state('insurance', {
         views: {
           header: {
             templateUrl: 'templates/view/header/headerClient.html'
           },
           section001: {
-            templateUrl: 'templates/view/discount/section001.html',
+            templateUrl: 'templates/view/insurance/section001.html',
           },
           footer: {
             templateUrl: 'templates/view/footer/footerClient.html'
           },
         },
-        url: '/discount',
+        url: '/',
       });
 
 

@@ -50,6 +50,10 @@
           href: 'conditions',
           text: 'NAV_CONDITIONS',
         },
+        {
+          href: 'insurance',
+          text: 'NAV_INSURANCE',
+        },
 /*
         {
           href: 'discount',

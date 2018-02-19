@@ -32,8 +32,8 @@
           text: 'NAV_CONDITIONS',
         },
         {
-          href: 'discount',
-          text: 'NAV_DISCOUNT',
+          href: 'insurance',
+          text: 'NAV_INSURANCE',
         },
 
       ];

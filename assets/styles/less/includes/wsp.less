@@ -53,7 +53,7 @@ html, body {
 
 .on-parallax {
   background-size: cover;
-  background-color: rgba(39,35,51,0.5);
+  background-color: rgba(39,35,51,0.2);
 }
 
 .section1 {
@@ -720,6 +720,8 @@ html, body {
 .wsp-home-header07 {
   color: @block07_title;
   margin-bottom: 5%;
+  padding-left: 5px;
+  padding-right: 5px;
   text-align: center;
   font-weight: 700;
   font-size: 6rem;
@@ -779,6 +781,9 @@ html, body {
   text-align: center;
   font-weight: 900;
   font-size: 3rem;
+  img {
+    width: 50px;
+  }
 }
 
 .wsp-contact-form-header {
@@ -802,21 +807,20 @@ html, body {
   padding: 5px 10px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
-  border-radius: 50%;
+  border-radius: 70px;
+  background-color: @block_footer_img_background;
   &:hover {
     background-color: lightgray;
-    width: 110px;
   }
 }
 
 .wsp-footer-socials-img {
   width: 50px;
-  padding: 5px 5px;
+  padding: 5px 10px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
   &:hover {
-    width: 55px;
   }
 }
 
@@ -825,73 +829,168 @@ html, body {
 ***   Booing terms   ***
  */
 
-.section_cond {
-  min-height: @section7_height;
-  background-color: @dark-pastel-primary-1;
+.cond_section-1 {
+  min-height: @cond_height;
+  background-image: url("/images/block07.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center top;
 }
 
 .wsp-cond-header {
-  color: @full-colors-primary-0;
-  margin-top: 7%;
+  color: @cond_header;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  padding-left: 5px;
+  padding-right: 5px;
   text-align: center;
   font-weight: 700;
   font-size: 6rem;
-  text-shadow: 4px 4px 5px #000000;
 }
 
 .wsp-cond-subheader {
-  color: @full-colors-primary-1;
+  color: @cond_subheader;
   text-align: center;
   font-weight: 500;
   font-size: 3rem;
   margin-bottom: 10%;
-  text-shadow: 4px 4px 5px #000000;
 }
 
-.wsp-cond-subheader_A {
-  color: @full-colors-primary-2;
-  text-align: center;
-  font-weight: 500;
-  font-size: 1.5rem;
-  margin-bottom: 10%;
-  text-shadow: 4px 4px 5px #000000;
+.wsp-cond-text {
+  font-weight: 300;
+  font-size: 2.5rem;
+  padding-top: 7px;
+  text-align: left;
+  &.text-highlight {
+    color: red;
+  }
+  span {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    font-weight: 300 !important;
+    font-size: 2.5rem !important;
+    &.text-highlight {
+      color: red;
+    }
+  }
 }
+
+/*
+***   Insurance   ***
+ */
+
+.ins_section-1 {
+  min-height: @ins_height;
+  background-image: url("/images/block07.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center top;
+}
+
+.wsp-ins-header {
+  color: @ins_header;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 6rem;
+}
+
+.wsp-ins-subheader {
+  color: @ins_subheader;
+  text-align: left;
+  padding-top: 35px;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.wsp-ins-text {
+  font-weight: 300;
+  font-size: 2.5rem;
+  padding-top: 5px;
+  text-align: left;
+  &.text-highlight {
+    color: red;
+  }
+  span {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    font-weight: 300 !important;
+    font-size: 2.5rem !important;
+    &.text-highlight {
+      color: red;
+    }
+  }
+}
+
+.wsp-ins {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.wsp-ins-tbl01-body {
+  margin-top: 20px;
+  tr {
+    font-weight: 300;
+    font-size: 2.5rem;
+    th {
+      margin: 5px;
+      border: solid @block04_tbl_brd 5px;
+      padding: 2px 50px;
+      text-align: center;
+      background-color: @block04_tbl_th;
+      color: @block04_tbl_th_text;
+    }
+    td {
+      margin: 5px;
+      border: solid @block04_tbl_brd 5px;
+      padding: 2px 20px;
+      text-align: center;
+      background-color: @block04_tbl_td;
+      color: @block04_tbl_td_text;
+    }
+  }
+}
+
+.wsp-ins-tbl02-body {
+  margin-top: 20px;
+  tr {
+    font-weight: 300;
+    font-size: 2.5rem;
+    th {
+      margin: 5px;
+      border: solid @block04_tbl_brd 5px;
+      padding: 2px 50px;
+      text-align: center;
+      background-color: @block04_tbl_th;
+      color: @block04_tbl_th_text;
+    }
+    td {
+      margin: 5px;
+      border: solid @block04_tbl_brd 5px;
+      padding: 2px 20px;
+      text-align: center;
+      background-color: @block04_tbl_td;
+      color: @block04_tbl_td_text;
+    }
+  }
+}
+
+.wsp-ins-tbl-column-one {
+  width: 40%;
+}
+
+
 
 /*
 ***   Discount card   ***
  */
 
-.section_disc {
-  min-height: @section7_height;
-  background-color: @dark-pastel-primary-1;
-}
 
-.wsp-disc-header {
-  color: @full-colors-primary-0;
-  margin-top: 7%;
-  text-align: center;
-  font-weight: 700;
-  font-size: 6rem;
-  text-shadow: 4px 4px 5px #000000;
-}
-
-.wsp-disc-subheader {
-  color: @full-colors-primary-1;
-  text-align: center;
-  font-weight: 500;
-  font-size: 3rem;
-  margin-bottom: 10%;
-  text-shadow: 4px 4px 5px #000000;
-}
-
-.wsp-disc-subheader_A {
-  color: @full-colors-primary-2;
-  text-align: center;
-  font-weight: 500;
-  font-size: 1.5rem;
-  margin-bottom: 10%;
-  text-shadow: 4px 4px 5px #000000;
-}
 
 
 
@@ -980,11 +1079,97 @@ html, body {
     font-size: 4rem;
   }
 
+  .wsp-contact-form-header {
+    font-weight: 700;
+    font-size: 3rem;
+  }
 
   .wsp-contacts-text {
     font-weight: 900;
     font-size: 1.7rem;
+    img {
+      width: 30px;
+    }
   }
+
+  /*
+  *** Conditioins
+   */
+
+  .wsp-cond-header {
+    font-weight: 700;
+    font-size: 3rem;
+  }
+
+  .wsp-cond-subheader {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  .wsp-cond-text {
+    font-weight: 300;
+    font-size: 1.5rem;
+    span {
+      font-weight: 300 !important;
+      font-size: 1.5rem !important;
+    }
+  }
+
+  /*
+  *** Insurance
+   */
+
+  .wsp-ins-header {
+    font-weight: 700;
+    font-size: 3rem;
+  }
+
+  .wsp-ins-subheader {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  .wsp-ins-text {
+    font-weight: 300;
+    font-size: 1.5rem;
+    span {
+      font-weight: 300 !important;
+      font-size: 1rem !important;
+    }
+  }
+
+  .wsp-ins-tbl01-body {
+    margin-top: 10px;
+    tr {
+      font-weight: 300;
+      font-size: 1.2rem;
+      th {
+        margin: 5px;
+        padding: 2px 5px;
+      }
+      td {
+        margin: 5px;
+        padding: 2px 5px;
+      }
+    }
+  }
+
+  .wsp-ins-tbl02-body {
+    margin-top: 10px;
+    tr {
+      font-weight: 300;
+      font-size: 1.2rem;
+      th {
+        margin: 5px;
+        padding: 2px 5px;
+      }
+      td {
+        margin: 5px;
+        padding: 2px 5px;
+      }
+    }
+  }
+
 
 }
 
