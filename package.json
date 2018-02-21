@@ -2,7 +2,7 @@
   "name": "cameldrive",
   "private": true,
   "version": "0.0.1",
-  "description": "Camel Drive Project",
+  "description": "Camel Car Hire Project",
   "keywords": [],
   "engines": {
     "node": "6.9.2"
