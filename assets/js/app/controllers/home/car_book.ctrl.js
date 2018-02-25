@@ -41,6 +41,10 @@
         _update();
       });
 
+      $rootScope.$on('group_selected', function (e) {
+        _update();
+      });
+
       function _update() {
         vm.carGroupList = [];
         vm.langToUse = _ms.getLang(); // current language
@@ -50,8 +54,17 @@
           vm.carGroupList.push({
             key: elem.key,
             val: groupNameVal + ' ' + elem.group + ': ' + elem.group_details,
-          })
+          });
         });
+
+        if (_ms.getCarGroup()) {
+          vm.carGroupList.map(function (el) {
+            if (el.key == _ms.getCarGroup()) {
+              vm.formData.carGroup = el;
+            }
+          });
+        }
+
       }; // _update
 
       vm.startDate = new Date();
@@ -121,6 +134,7 @@
     function _clear() {
       $log.info(vm.title + ', _clear activated...');
       vm.formData = {};
+      _ms.setCarGroup('');
       vm.formData.req_type = 'booking';
       vm.busyBook = false;
     } // _clear

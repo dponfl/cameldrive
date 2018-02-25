@@ -29,8 +29,6 @@
     function activate() {
       vm.formData = {};
 
-      // todo: get car groups from database
-
       vm.commentsGroupList = [
         {
           key: 'info',

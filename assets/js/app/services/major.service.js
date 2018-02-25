@@ -31,6 +31,8 @@
       panels: [],
     };
 
+    var selectedCarGroup = '';
+
     var service = {
       getNumLang: _getNumLang, // setup number of languages in use
       getLang: _getLang, // get current language
@@ -52,6 +54,8 @@
       setTestimonialsPanels: _setTestimonialsPanels, // set panels
       getTestimonialsNumber: _getTestimonialsNumber, // get number of testimonials to be shown
       getHost: _getHost, // get host
+      getCarGroup: _getCarGroup, // get selected car group
+      setCarGroup: _setCarGroup, // set selected car group
     };
     return service;
 
@@ -137,6 +141,14 @@
     function _getHost() {
       return camelConfig.host;
     } // _getHost
+
+    function _getCarGroup() {
+      return selectedCarGroup;
+    } // _getCarGroup
+
+    function _setCarGroup(group) {
+      selectedCarGroup = group;
+    } // _setCarGroup
 
   } // MajorService
 

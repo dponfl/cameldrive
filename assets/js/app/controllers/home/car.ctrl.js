@@ -24,6 +24,7 @@
 
     vm.activateDetails = _activateDetails;
     vm.deactivateDetails = _deactivateDetails;
+    vm.selectCarGroup = _selectCarGroup;
 
     this.$onInit = function () {
        $log.info('$onInit...');
@@ -91,6 +92,11 @@
     function _deactivateDetails(elemInd) {
       vm.panels[elemInd].showDetails = false;
     } // deactivateDetails
+
+    function _selectCarGroup(elemInd) {
+      _ms.setCarGroup(vm.panels[elemInd].group_key);
+      $rootScope.$broadcast('group_selected');
+    } // _selectCarGroup
 
     function _buildPanelGroups () {
       vm.panelGroups = [];
@@ -266,6 +272,7 @@
           vm.config.groupList[lang].map(function (listElem) {
             if (listElem.key == oElem.group) {
               record.group = listElem.group;
+              record.group_key = listElem.key;
               record.title = listElem.group_details;
             }
           });

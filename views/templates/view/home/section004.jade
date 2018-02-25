@@ -73,7 +73,7 @@ div(data-ng-controller="CarCtrl as ctrl").row
                     .col-md-12
                       .wsp-section04-btn
                         a(href="#car_booking")
-                          button.btn.wsp-btn.wsp-btn-book.wsp-btn-sm
+                          button(data-ng-click="ctrl.selectCarGroup(car.ind)").btn.wsp-btn.wsp-btn-book.wsp-btn-sm
                             | {{ 'BTN_BOOK_CAR' | translate }}
                         div(data-ng-show="!car.showDetails")
                           button(data-ng-click="ctrl.activateDetails(car.ind)").btn.wsp-btn.wsp-btn-sm.wsp-btn-details
