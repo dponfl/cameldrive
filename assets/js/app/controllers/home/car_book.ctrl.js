@@ -5,10 +5,10 @@
     .module('Cameldrive')
     .controller('CarBookCtrl', CarBookCtrl);
 
-  CarBookCtrl.$inject = ['MajorService', 'GeneralConfigService', 'S_ReqService', '$log', 'lodash', 'toaster'];
+  CarBookCtrl.$inject = ['MajorService', 'GeneralConfigService', 'S_ReqService', '$log', 'lodash', 'toaster', '$rootScope'];
 
   /* @ngInject */
-  function CarBookCtrl(MajorService, GeneralConfigService, S_ReqService, $log, lodash, toaster) {
+  function CarBookCtrl(MajorService, GeneralConfigService, S_ReqService, $log, lodash, toaster, $rootScope) {
     var vm = this;
     var _ = lodash;
     var _ms = MajorService;
@@ -29,22 +29,31 @@
     function activate() {
       vm.formData = {};
 
-      // todo: get car groups from database
+      vm.groupName = {
+        en: 'Group',
+        ru: 'Категория',
+      };
+      let groupsToUse = _ms.getConfig().groupList;
 
-      vm.carGroupList = [
-        {
-          key: 'G001',
-          val: 'Group A',
-        },
-        {
-          key: 'G002',
-          val: 'Group B',
-        },
-        {
-          key: 'G003',
-          val: 'Group C',
-        },
-      ];
+      _update();
+
+      $rootScope.$on('lang_change', function (e) {
+        _update();
+      });
+
+      function _update() {
+        vm.carGroupList = [];
+        vm.langToUse = _ms.getLang(); // current language
+
+        groupsToUse[vm.langToUse].map(function (elem) {
+          let groupNameVal = vm.groupName[vm.langToUse] || 'Group';
+          vm.carGroupList.push({
+            key: elem.key,
+            val: groupNameVal + ' ' + elem.group + ': ' + elem.group_details,
+          })
+        });
+      }; // _update
+
       vm.startDate = new Date();
       vm.startDate.setDate(vm.startDate.getDate() - 1);
       vm.busyBook = false;
