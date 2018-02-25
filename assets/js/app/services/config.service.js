@@ -33,8 +33,8 @@
       return {
         en: {
           'BOOKING_SUCCESS_TITLE': 'Thank you for the booking!',
-          'BOOKING_SUCCESS_BODY_1': 'Your request for booking object #',
-          'BOOKING_SUCCESS_BODY_2': ' was successfully submitted. We\'ll contact you shortly.',
+          'BOOKING_SUCCESS_BODY_1': 'Your request for booking car (',
+          'BOOKING_SUCCESS_BODY_2': ') was successfully submitted. We\'ll contact you shortly.',
 
           'BOOKING_ERROR_TITLE': 'Oops...',
           'BOOKING_ERROR_BODY_1': 'Unfortunately your request for booking object #',
@@ -68,8 +68,8 @@
         },
         ru: {
           'BOOKING_SUCCESS_TITLE': 'Благодарим за бронирование!',
-          'BOOKING_SUCCESS_BODY_1': 'Ваш запрос на бронирование объекта №',
-          'BOOKING_SUCCESS_BODY_2': ' был успешно отправлен. Мы свяжемся с вами в ближайшее время.',
+          'BOOKING_SUCCESS_BODY_1': 'Ваш запрос на бронирование автомобиля (',
+          'BOOKING_SUCCESS_BODY_2': ') был успешно отправлен. Мы свяжемся с вами в ближайшее время.',
 
           'BOOKING_ERROR_TITLE': 'Небольшие проблемы...',
           'BOOKING_ERROR_BODY_1': 'К сожалению ваш запрос на бронирование объекта #',

@@ -7,7 +7,8 @@ div(data-ng-controller='CarBookCtrl as ctrl').row
 
       .container.text-vertical-center-7
         form(novalidate='novalidate',
-        data-ng-submit='ctrl.book()')
+          name='ctrl.bookForm',
+          data-ng-submit='ctrl.book()')
           .form-group.clearfix
             label(for='clientName', translate='LBL_FIELD_NAME').col-sm-4.control-label.text-right.wsp-label
             .col-sm-4

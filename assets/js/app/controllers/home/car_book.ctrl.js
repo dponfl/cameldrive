@@ -110,22 +110,23 @@
             toaster.pop({
               type: 'success',
               title: __.t('BOOKING_SUCCESS_TITLE'),
-              body: __.t('BOOKING_SUCCESS_BODY_1') + vm.objectInfo +
+              body: __.t('BOOKING_SUCCESS_BODY_1') + vm.formData.carGroup.val +
               __.t('BOOKING_SUCCESS_BODY_2'),
-              toasterId: vm.formData.objnumber,
+              toasterId: '12345',
               showCloseButton: true,
-              timeout: 15000,
+              timeout: 60000,
             });
+            _clear();
           } else {
             vm.busyBook = false;
             toaster.pop({
               type: 'error',
               title: __.t('BOOKING_ERROR_TITLE'),
-              body: __.t('BOOKING_ERROR_BODY_1') + vm.objectInfo +
+              body: __.t('BOOKING_ERROR_BODY_1') + vm.formData.carGroup.val +
               __.t('BOOKING_ERROR_BODY_2'),
-              toasterId: vm.formData.objnumber,
+              toasterId: '12345',
               showCloseButton: true,
-              timeout: 15000,
+              timeout: 60000,
             });
           }
         });
@@ -133,6 +134,8 @@
 
     function _clear() {
       $log.info(vm.title + ', _clear activated...');
+      vm.bookForm.$setPristine();
+      vm.bookForm.$setUntouched();
       vm.formData = {};
       _ms.setCarGroup('');
       vm.formData.req_type = 'booking';
