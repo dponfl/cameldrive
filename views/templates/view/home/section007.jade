@@ -35,6 +35,7 @@ div(data-ng-controller='CommentsCtrl as ctrl').row
       .container.text-vertical-center-3
         .wsp-contact-form-header {{'BLK_07_CONTACT_FORM_TITLE' | translate}}
           form(novalidate='novalidate',
+          name='ctrl.infoForm',
           data-ng-submit='ctrl.sendMessage()').wsp-contact-form
             .form-group.clearfix
               label(for='clientName', translate='LBL_FIELD_NAME').col-sm-4.control-label.text-right.wsp-label
@@ -67,7 +68,7 @@ div(data-ng-controller='CommentsCtrl as ctrl').row
               .col-sm-6
                 select(name='commentGroup',
                 required,
-                data-ng-options='option.val for option in ctrl.commentsGroupList track by option.key',
+                data-ng-options='option.val for option in ctrl.commentToUse track by option.key',
                 data-ng-model='ctrl.formData.commentGroup').form-control#commentGroup
 
             .form-group.clearfix
@@ -81,7 +82,7 @@ div(data-ng-controller='CommentsCtrl as ctrl').row
               .wsp-section06-btn
                 button(type='submit',
                 translate='BTN_CONTACT_US').btn.wsp-btn.wsp-btn-md.wsp-btn-book
-                button(type="button", data-ng-click='ctrl.clear()',
+                a(data-ng-click='ctrl.clear()',
                 translate='BTN_CLR').btn.wsp-btn.wsp-btn-md.wsp-btn-details
 
 

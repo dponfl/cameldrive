@@ -40,12 +40,11 @@
           'BOOKING_ERROR_BODY_1': 'Unfortunately your request for booking car (',
           'BOOKING_ERROR_BODY_2': ') was not submitted. Please try again later or contact admin.',
 
-          'INFO_SUCCESS_TITLE': 'Thank you for information request!',
-          'INFO_SUCCESS_BODY_1': 'It was successfully submitted. We\'ll contact you shortly.',
+          'INFO_SUCCESS_TITLE': 'Thank you!',
+          'INFO_SUCCESS_BODY_1': 'Information was successfully submitted.',
 
           'INFO_ERROR_TITLE': 'Oops...',
-          'INFO_ERROR_BODY_1': 'Unfortunately your request for booking object #',
-          'INFO_ERROR_BODY_2': ' was not submitted. Please try again later or contact admin.',
+          'INFO_ERROR_BODY_1': 'Unfortunately your message was not submitted. Please try again later or contact admin by email.',
 
           'ADMIN_CREATE_SUCCESS_TITLE': 'Create record request',
           'ADMIN_CREATE_SUCCESS_BODY_1': 'was successfully performed',
@@ -76,13 +75,11 @@
           'BOOKING_ERROR_BODY_2': ') не был отправлен. Повторите попытку немного позже или ' +
           'свяжитесь с администратором сайта.',
 
-          'INFO_SUCCESS_TITLE': 'Благодарим за ваш интерес!',
-          'INFO_SUCCESS_BODY_1': 'Запрос был успешно отправлен. Мы свяжемся с вами в ближайшее время.',
+          'INFO_SUCCESS_TITLE': 'Благодарим вас!',
+          'INFO_SUCCESS_BODY_1': 'Информация была успешно отправлена.',
 
           'INFO_ERROR_TITLE': 'Небольшие проблемы...',
-          'INFO_ERROR_BODY_1': 'К сожалению ваш запрос',
-          'INFO_ERROR_BODY_2': ' не был отправлен. Повторите попытку немного позже или ' +
-          'свяжитесь с администратором сайта.',
+          'INFO_ERROR_BODY_1': 'К сожалению информация не была отправлена. Повторите попытку немного позже или свяжитесь с администратором сайта по email.',
 
           'ADMIN_CREATE_SUCCESS_TITLE': 'Создание объекта',
           'ADMIN_CREATE_SUCCESS_BODY_1': 'было успешно выполнено',

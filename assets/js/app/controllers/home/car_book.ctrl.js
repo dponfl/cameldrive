@@ -28,7 +28,6 @@
 
     function activate() {
       vm.formData = {};
-      vm.emptyForm = {};
 
       vm.groupName = {
         en: 'Group',
@@ -136,6 +135,7 @@
     function _clear() {
       $log.info(vm.title + ', _clear activated...');
       vm.formData = {};
+      vm.formData.email = '';
       vm.formData.req_type = 'booking';
       vm.busyBook = false;
       vm.bookForm.$setPristine();
