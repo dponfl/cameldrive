@@ -28,6 +28,7 @@
 
     function activate() {
       vm.formData = {};
+      vm.emptyForm = {};
 
       vm.groupName = {
         en: 'Group',
@@ -134,12 +135,12 @@
 
     function _clear() {
       $log.info(vm.title + ', _clear activated...');
-      vm.bookForm.$setPristine();
-      vm.bookForm.$setUntouched();
       vm.formData = {};
-      _ms.setCarGroup('');
       vm.formData.req_type = 'booking';
       vm.busyBook = false;
+      vm.bookForm.$setPristine();
+      vm.bookForm.$setUntouched();
+      _ms.setCarGroup('');
     } // _clear
   }
 
