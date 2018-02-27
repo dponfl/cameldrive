@@ -117,7 +117,7 @@ function translateConfig ($translateProvider) {
     'LBL_FIELD_D_LOCATION': 'Drop-off location',
     'HOME_TITLE_07': 'Our offices',
     'HOME_SUBTITLE_07_01': 'Poseidonas Avenue, 52A, Shop1, 8042, Paphos',
-    'HOME_SUBTITLE_07_02': 'Poseidonas Avenue, 52A, Shop2, 8042, Paphos',
+    'HOME_SUBTITLE_07_02': 'Mosfilion, Kalellia Court, Shop2, 8574, Kissonerga',
     'HOME_SUBTITLE_07_A': '(click the "bouncing" sign for additional information)',
     'HOME_SEASON': 'Season',
     'HOME_HIGH_SEASON': 'High season',
@@ -130,6 +130,10 @@ function translateConfig ($translateProvider) {
     'BTN_CONTACT_US': 'SEND',
     'LBL_COMMENT_TYPE': 'Comment type',
     'LBL_COMMENT_BODY': 'Message',
+    'LBL_CONTACT_FORM_OFFICE_PHONE': 'Office',
+    'LBL_CONTACT_FORM_OFFICE_FAX': 'Fax',
+    'LBL_CONTACT_FORM_OFFICE_MOBILE_1': 'Mob-1',
+    'LBL_CONTACT_FORM_OFFICE_MOBILE_2': 'Mob-2',
 
     // Booking terms
     'BOOK_HEADER': 'Vehicle lease terms',
@@ -370,7 +374,7 @@ function translateConfig ($translateProvider) {
     'LBL_FIELD_D_LOCATION': 'Место возврата',
     'HOME_TITLE_07': 'Наши офисы',
     'HOME_SUBTITLE_07_01': 'Poseidonas Avenue, 52A, Shop1, 8042, Paphos',
-    'HOME_SUBTITLE_07_02': 'Poseidonas Avenue, 52A, Shop2, 8042, Paphos',
+    'HOME_SUBTITLE_07_02': 'Mosfilion, Kalellia Court, Shop2, 8574, Kissonerga',
     'HOME_SUBTITLE_07_A': '(кликните на "прыгающий" указатель для дополнительной информации)',
     'HOME_SEASON': 'Сезон',
     'HOME_HIGH_SEASON': 'Лето',
@@ -383,6 +387,12 @@ function translateConfig ($translateProvider) {
     'BTN_CONTACT_US': 'ОТПРАВИТЬ',
     'LBL_COMMENT_TYPE': 'Тип сообщения',
     'LBL_COMMENT_BODY': 'Сообщение',
+    'LBL_CONTACT_FORM_OFFICE_PHONE': 'Офис',
+    'LBL_CONTACT_FORM_OFFICE_FAX': 'Факс',
+    'LBL_CONTACT_FORM_OFFICE_MOBILE_1': 'Моб-1',
+    'LBL_CONTACT_FORM_OFFICE_MOBILE_2': 'Моб-2',
+
+
 
     // Booking terms
     'BOOK_HEADER': 'Условия аренды автомобиля',
