@@ -23,13 +23,17 @@
 
       // todo: try to use createInfo for all cases
 
+      var action = '';
+
       switch (type) {
         case 'booking':
-          var action = 'create';
+          action = 'create';
           break;
         case 'info':
-        case 'review':
-          var action = 'createInfo';
+          action = 'createInfo';
+          break;
+        case 'feedback':
+          action = 'createInfo';
           break;
       }
 

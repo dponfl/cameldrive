@@ -29,8 +29,7 @@ module.exports = {
       size: 50
     },
     additionalInfo: {
-      type: 'string',
-      size: 255
+      type: 'text',
     },
     period_start: {
       type: 'datetime',

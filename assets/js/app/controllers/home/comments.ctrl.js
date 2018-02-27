@@ -79,7 +79,7 @@
       $log.info(vm.formData);
 
       let recData = {
-        req_type: vm.formData.commentGroup || null,
+        req_type: vm.formData.commentGroup.key || null,
         name: vm.formData.name || null,
         email: vm.formData.email || null,
         phone: vm.formData.phone || null,
@@ -100,8 +100,9 @@
               body: __.t('INFO_SUCCESS_BODY_1'),
               toasterId: '12345',
               showCloseButton: true,
-              timeout: 15000,
+              timeout: 60000,
             });
+            _clear();
           } else {
             vm.busysendMessage = false;
             toaster.pop({
@@ -110,7 +111,7 @@
               body: __.t('INFO_ERROR_BODY_1'),
               toasterId: '12345',
               showCloseButton: true,
-              timeout: 15000,
+              timeout: 60000,
             });
           }
         });
@@ -118,10 +119,6 @@
 
     function _clear() {
       $log.info(vm.title + ', _clear activated...');
-
-      // todo: delete
-      console.log('formData before clear:');
-      console.dir(vm.formData);
 
       vm.formData = {};
       vm.formData.email = '';

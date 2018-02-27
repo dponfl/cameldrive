@@ -54,7 +54,6 @@ div(data-ng-controller='CommentsCtrl as ctrl').row
                 data-ng-pattern='/^([0-9a-zA-Z\\.]([\\.\\-\\+\\w])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]*\\.)+[a-zA-Z]{2,9})$/',
                 data-ng-required-err-type="{{'AV_REQ' | translate}}",
                 data-ng-pattern-err-type="{{'FIELD_EMAIL_ERR' | translate}}",
-                required,
                 data-ng-model='ctrl.formData.email').form-control#clientEmail
 
             .form-group.clearfix
@@ -75,6 +74,7 @@ div(data-ng-controller='CommentsCtrl as ctrl').row
               label(for='clientInfo', translate='LBL_COMMENT_BODY').col-sm-4.control-label.text-right.wsp-label
               .col-sm-6
                 textarea(type="text",
+                required,
                 rows="7",
                 data-ng-model='ctrl.formData.message').form-control#clientInfo
 
