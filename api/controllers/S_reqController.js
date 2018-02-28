@@ -186,46 +186,25 @@ module.exports = {
         console.dir(data);
 
         var keys = [
-          'car_group',
           'name',
           'email',
           'phone',
           'additionalInfo',
-          'period_start',
-          'pariod_end',
-          'pLocation',
-          'dLocation',
-          'rate',
         ];
 
         var lables = {
-          'car_group': 'Тип авто: ',
           'name': 'Имя/фамилия: ',
           'email': 'Email: ',
           'phone': 'Телефон: ',
-          'additionalInfo': 'Доп. информация: ',
-          'period_start': 'Начало: ',
-          'pariod_end': 'Окончание: ',
-          'pLocation': 'Место подачи: ',
-          'dLocation': 'Место приемки: ',
-          'rate': 'Оценка',
+          'additionalInfo': 'Сообщение: ',
         };
 
         var req_type_lables = {
-          'booking': 'Бронирование',
           'info': 'Сообщение',
           'feedback': 'Отзыв',
         };
 
         switch (data.req_type) {
-          case 'booking':
-            var subject = 'Новый заказ, тип авто: ' + data.car_group;
-            var html = `
-              <h2>Поступил новый заказ</h2>
-              <hr>
-              <table style="border: 1px; color: #8AB512;">
-            `;
-            break;
           case 'info':
             var subject = 'Поступило новое сообщение';
             var html = `

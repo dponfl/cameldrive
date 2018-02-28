@@ -14,7 +14,8 @@ module.exports = {
 
     var data = {
       from: 'info@cameldrive.com',
-      to: 'dshchfl@gmail.com',
+      // to: 'dshchfl@gmail.com',
+      to: 'info@cameldrive.com',
       subject: subject,
       html: html,
     };
