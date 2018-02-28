@@ -214,7 +214,7 @@ module.exports = {
         var req_type_lables = {
           'booking': 'Бронирование',
           'info': 'Сообщение',
-          'review': 'Отзыв',
+          'feedback': 'Отзыв',
         };
 
         switch (data.req_type) {
@@ -235,7 +235,7 @@ module.exports = {
               <table style="border: 1px; color: #8AB512;">
             `;
             break;
-          case 'review':
+          case 'feedback':
             var subject = 'Поступил новый отзыв';
             var html = `
               <h2>Поступил отзыв</h2>
