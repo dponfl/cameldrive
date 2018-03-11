@@ -32,15 +32,15 @@ function camelDriveMaps() {
   });
 
   var infowindow01 = new google.maps.InfoWindow({
-    content:"<h4>Camel Car Hire, Shop 1</h4>" +
+    content:"<h4>Camel Car Hire, Office 1</h4>" +
     "<h5></h5>" +
-    "<h6>Часы работы/Working hours: 08:00 - 20:00</h6>"
+    "<h6>Часы работы/Working hours: 09:00 - 19:00</h6>"
   });
 
   var infowindow02 = new google.maps.InfoWindow({
-    content:"<h4>Camel Car Hire, Shop 2</h4>" +
-    "<h5>Glad to see you at: Some address here...</h5>" +
-    "<h6>Часы работы/Working hours: 08:00 - 20:00</h6>"
+    content:"<h4>Camel Car Hire, Office 2</h4>" +
+    "<h5></h5>" +
+    "<h6>Часы работы/Working hours: 09:00 - 19:00</h6>"
   });
 
   google.maps.event.addListener(marker01, 'click', function() {

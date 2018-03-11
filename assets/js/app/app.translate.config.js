@@ -88,7 +88,7 @@ function translateConfig ($translateProvider) {
 
 
     // Home - Main
-    'HOME_TITLE_01': 'Camel Car Hire',
+    'HOME_TITLE_01': 'CAMEL CAR HIRE',
     'HOME_SUBTITLE_01': 'We will not disappoint you',
     'HOME_TITLE_02': 'Camel Car Hire - we\'ll do our best for you',
     'HOME_SUBTITLE_02': 'If you ask our clients they reply: the perfect cars for the reasonable price',
@@ -116,8 +116,8 @@ function translateConfig ($translateProvider) {
     'LBL_FIELD_P_LOCATION': 'Pick-up location',
     'LBL_FIELD_D_LOCATION': 'Drop-off location',
     'HOME_TITLE_07': 'Our offices',
-    'HOME_SUBTITLE_07_01': 'Poseidonas Avenue, 52A, Shop1, 8042, Paphos',
-    'HOME_SUBTITLE_07_02': 'Mosfilion, Kalellia Court, Shop2, 8574, Kissonerga',
+    'HOME_SUBTITLE_07_01': 'Office 1: Poseidonas Avenue, 52A, 8042, Paphos',
+    'HOME_SUBTITLE_07_02': 'Office 2: Mosfilion, Kalellia Court, 8574, Kissonerga',
     'HOME_SUBTITLE_07_A': '(click the "bouncing" sign for additional information)',
     'HOME_SEASON': 'Season',
     'HOME_HIGH_SEASON': 'High season',
@@ -345,7 +345,7 @@ function translateConfig ($translateProvider) {
 
 
     // Home - Main
-    'HOME_TITLE_01': 'Camel Car Hire',
+    'HOME_TITLE_01': 'РУССКИЙ ПРОКАТ МАШИН',
     'HOME_SUBTITLE_01': 'Мы не разочаруем вас',
     'HOME_TITLE_02': 'Camel Car Hire - лучшее для Вас!',
     'HOME_SUBTITLE_02': 'Спросите наших клиентов о Camel Car Hire и они вам ответят: разумные цены при безупречном качестве',
@@ -373,8 +373,8 @@ function translateConfig ($translateProvider) {
     'LBL_FIELD_P_LOCATION': 'Место подачи',
     'LBL_FIELD_D_LOCATION': 'Место возврата',
     'HOME_TITLE_07': 'Наши офисы',
-    'HOME_SUBTITLE_07_01': 'Poseidonas Avenue, 52A, Shop1, 8042, Paphos',
-    'HOME_SUBTITLE_07_02': 'Mosfilion, Kalellia Court, Shop2, 8574, Kissonerga',
+    'HOME_SUBTITLE_07_01': 'Офис 1: Poseidonas Avenue, 52A, 8042, Paphos',
+    'HOME_SUBTITLE_07_02': 'Офис 2: Mosfilion, Kalellia Court, 8574, Kissonerga',
     'HOME_SUBTITLE_07_A': '(кликните на "прыгающий" указатель для дополнительной информации)',
     'HOME_SEASON': 'Сезон',
     'HOME_HIGH_SEASON': 'Лето',

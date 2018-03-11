@@ -246,7 +246,8 @@ html, body {
   color: @full-colors-primary-0;
   text-align: center;
   font-weight: 700;
-  font-size: 8rem;
+  font-size: 7rem;
+  margin-top: 10px;
 }
 
 .wsp-home-subheader {
@@ -262,25 +263,18 @@ html, body {
     display: block;
     margin: 0 auto;
     vertical-align: middle;
-    height: 270px;
+    height: 570px;
   }
 }
 
 .wsp-section01-btn {
   text-align: center;
-  /*
-  margin-top: @section1_height/2+150px !important;
-  */
-  padding-top: 57%;
+  margin-top: 30px;
   padding-bottom: 3%;
   .wsp-btn {
     display: inline-block !important;
     border-radius: 10px !important;
     margin: 3% 5% !important;
-    /*
-    padding-left: 40px !important;
-    padding-right: 40px !important;
-    */
   }
 }
 
@@ -300,7 +294,7 @@ html, body {
 }
 
 .wsp-section002-block-message01 {
-  margin-top: 30%;
+  margin-top: 55%;
   img {
     display: block;
     margin: 0 auto;
@@ -310,7 +304,7 @@ html, body {
 }
 
 .wsp-section002-block-message02 {
-  margin-top: 30px;
+  margin-top: 120px;
   img {
     display: block;
     margin: 0 auto;
@@ -620,16 +614,15 @@ html, body {
 }
 
 .wsp-thumbnail-border05 {
-  background-color: @dark-pastel-primary-1;
-  color: gold;
-  border: 0;
-  border-radius: 10px;
+  background-color: @block04_item;
+  color: black;
+  border: @block04 double 20px;
+  border-radius: 30px;
   text-align: center;
-  padding-top: 3%;
   padding-left: 5%;
   padding-right: 5%;
-  box-shadow: 4px 4px 5px @dark-primary-1;
-  margin-bottom: 20%;
+  margin-bottom: 50px;
+  position: relative;
 }
 
 .wsp-thumbnail-text05 {
@@ -637,6 +630,7 @@ html, body {
   padding-bottom: 3%;
   font-size: 1.8rem;
   font-weight: 700;
+  word-wrap: break-word;
   color: @block04_text;
 }
 
@@ -760,20 +754,21 @@ html, body {
 }
 
 .wsp-contacts-block01 {
-  margin-top: 30px;
+  padding-top: 20px;
 }
 
 .wsp-contacts-block02 {
-  margin-top: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .wsp-contacts-block03 {
-  margin-top: 0;
+  padding-top: 10px;
 }
 
 .wsp-contacts-block04 {
-  margin-top: 3px;
-  margin-bottom: 10px;;
+  padding-top: 5px;
+  padding-bottom: 10px;;
 }
 
 .wsp-contacts-text {
@@ -827,6 +822,13 @@ html, body {
   }
 }
 
+.wsp-messangers {
+  padding-right: 0;
+}
+
+.wsp-mobile {
+  padding-left: 0;
+}
 
 /*
 ***   Booing terms   ***
@@ -987,11 +989,6 @@ html, body {
   width: 40%;
 }
 
-#toast-container {
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
 
 
 /*
@@ -1002,380 +999,3 @@ html, body {
 
 
 
-/* --------------------------------------
-   Media Queries
-   -------------------------------------- */
-
-/* Portrait & landscape phone */
-@media (max-width: 480px) {
-
-  html, body {
-    font-size: 10px;
-  }
-
-  .wsp-home-center {
-    img {
-      display: block;
-      margin: 0 auto;
-      vertical-align: middle;
-      height: 130px;
-    }
-  }
-
-  .wsp-section002-block-message01 {
-    font-size: 5rem;
-  }
-
-
-  .wsp-home-header04 {
-    font-size: 4rem;
-  }
-
-
-  .wsp-home-header05 {
-    font-weight: 700;
-    font-size: 4rem;
-    margin-top: 10%;
-    margin-bottom: 5%;
-  }
-
-
-  .wsp-btn-lg {
-    font-size: 1.5rem;
-  }
-
-  .wsp-btn-md {
-    font-size: 1.2rem;
-  }
-
-  .wsp-btn-sm {
-    font-size: 1rem;
-  }
-
-  .wsp-label {
-    padding-top: 3px;
-  }
-
-  /*
-  *** Section 6 ***
-   */
-
-  .wsp-home-header06 {
-    font-weight: 700;
-    font-size: 4rem;
-  }
-
-  .wsp-home-subheader06 {
-    font-weight: 700;
-    font-size: 2rem;
-  }
-
-
-
-  /*
-  *** Section 7 ***
-   */
-
-  .wsp-home-subheader07 {
-    font-weight: 500;
-    font-size: 2rem;
-  }
-
-
-  .wsp-home-header07 {
-    font-weight: 700;
-    font-size: 4rem;
-  }
-
-  .wsp-contact-form-header {
-    font-weight: 700;
-    font-size: 3rem;
-  }
-
-  .wsp-contacts-text {
-    font-weight: 700;
-    font-size: 1.5rem;
-    img {
-      width: 30px;
-    }
-    .wsp-contacts-mob {
-      text-align: center;
-    }
-  }
-
-  /*
-  *** Conditioins
-   */
-
-  .wsp-cond-header {
-    font-weight: 700;
-    font-size: 3rem;
-  }
-
-  .wsp-cond-subheader {
-    font-weight: 500;
-    font-size: 2rem;
-  }
-
-  .wsp-cond-text {
-    font-weight: 300;
-    font-size: 1.5rem;
-    span {
-      font-weight: 300 !important;
-      font-size: 1.5rem !important;
-    }
-  }
-
-  /*
-  *** Insurance
-   */
-
-  .wsp-ins-header {
-    font-weight: 700;
-    font-size: 3rem;
-  }
-
-  .wsp-ins-subheader {
-    font-weight: 500;
-    font-size: 2rem;
-  }
-
-  .wsp-ins-text {
-    font-weight: 300;
-    font-size: 1.5rem;
-    span {
-      font-weight: 300 !important;
-      font-size: 1rem !important;
-    }
-  }
-
-  .wsp-ins-tbl01-body {
-    margin-top: 10px;
-    tr {
-      font-weight: 300;
-      font-size: 1.1rem;
-      th {
-        margin: 5px;
-        padding: 2px 5px;
-      }
-      td {
-        margin: 5px;
-        padding: 2px 5px;
-      }
-    }
-  }
-
-  .wsp-ins-tbl02-body {
-    display: table;
-    margin-top: 10px;
-    tr {
-      font-weight: 300;
-      font-size: 1.1rem;
-      th {
-        margin: 5px;
-        padding: 2px 5px;
-      }
-      td {
-        margin: 5px;
-        padding: 2px 5px;
-      }
-    }
-  }
-
-
-}
-
-/* Landscape phone to portrait tablet */
-@media (max-width: 768px) {
-  html, body {
-    font-size: 10px;
-  }
-
-  .wsp-home-center {
-    img {
-      display: block;
-      margin: 0 auto;
-      vertical-align: middle;
-      height: 130px;
-    }
-  }
-
-  .wsp-section002-block-message01 {
-    font-size: 5rem;
-  }
-
-
-  .wsp-home-header04 {
-    font-size: 4rem;
-  }
-
-
-  .wsp-home-header05 {
-    font-weight: 700;
-    font-size: 4rem;
-    margin-top: 10%;
-    margin-bottom: 5%;
-  }
-
-
-  .wsp-btn-lg {
-    font-size: 1.5rem;
-  }
-
-  .wsp-btn-md {
-    font-size: 1.2rem;
-  }
-
-  .wsp-btn-sm {
-    font-size: 1rem;
-  }
-
-  .wsp-label {
-    padding-top: 3px;
-  }
-
-  /*
-  *** Section 6 ***
-   */
-
-  .wsp-home-header06 {
-    font-weight: 700;
-    font-size: 4rem;
-  }
-
-  .wsp-home-subheader06 {
-    font-weight: 700;
-    font-size: 2rem;
-  }
-
-
-
-  /*
-  *** Section 7 ***
-   */
-
-  .wsp-home-subheader07 {
-    font-weight: 500;
-    font-size: 2rem;
-  }
-
-
-  .wsp-home-header07 {
-    font-weight: 700;
-    font-size: 4rem;
-  }
-
-  .wsp-contact-form-header {
-    font-weight: 700;
-    font-size: 3rem;
-  }
-
-  .wsp-contacts-text {
-    font-weight: 700;
-    font-size: 1.5rem;
-    img {
-      width: 30px;
-    }
-    .wsp-contacts-mob {
-      text-align: center;
-    }
-  }
-
-  /*
-  *** Conditioins
-   */
-
-  .wsp-cond-header {
-    font-weight: 700;
-    font-size: 3rem;
-  }
-
-  .wsp-cond-subheader {
-    font-weight: 500;
-    font-size: 2rem;
-  }
-
-  .wsp-cond-text {
-    font-weight: 300;
-    font-size: 1.5rem;
-    span {
-      font-weight: 300 !important;
-      font-size: 1.5rem !important;
-    }
-  }
-
-  /*
-  *** Insurance
-   */
-
-  .wsp-ins-header {
-    font-weight: 700;
-    font-size: 3rem;
-  }
-
-  .wsp-ins-subheader {
-    font-weight: 500;
-    font-size: 2rem;
-  }
-
-  .wsp-ins-text {
-    font-weight: 300;
-    font-size: 1.5rem;
-    span {
-      font-weight: 300 !important;
-      font-size: 1rem !important;
-    }
-  }
-
-  .wsp-ins-tbl01-body {
-    margin-top: 10px;
-    tr {
-      font-weight: 300;
-      font-size: 1.1rem;
-      th {
-        margin: 5px;
-        padding: 2px 5px;
-      }
-      td {
-        margin: 5px;
-        padding: 2px 5px;
-      }
-    }
-  }
-
-  .wsp-ins-tbl02-body {
-    display: table;
-    margin-top: 10px;
-    tr {
-      font-weight: 300;
-      font-size: 1.1rem;
-      th {
-        margin: 5px;
-        padding: 2px 5px;
-      }
-      td {
-        margin: 5px;
-        padding: 2px 5px;
-      }
-    }
-  }
-}
-
-/* Large desktop */
-@media (max-width: 1200px) {
-  .wsp-btn-lg {
-    font-size: 4rem;
-  }
-
-  .wsp-btn-md {
-    font-size: 3rem;
-  }
-
-  .wsp-btn-sm {
-    font-size: 2rem;
-  }
-
-  .wsp-label {
-    padding-top: 5px;
-  }
-}

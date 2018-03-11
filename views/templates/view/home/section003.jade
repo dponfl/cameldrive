@@ -1,12 +1,12 @@
-.row
+div(data-ng-controller="GeneralCtrl as gen").row
   .container-fluid#know_more
     .parallax-section.section3
       span(data-picture,
       data-alt="Camel Car Hire - Section 03",
       mr-px-parallax,
-      mr-px-max-px="0.3").mr-px-img
+      mr-px-max-px="gen.parallaxSpeed").mr-px-img
         span(data-src="../../images/block03.jpg",
-        mr-px-size="1920,1078")
+        mr-px-size="1920,1400")
 
 
       .on-parallax.section3
