@@ -17,7 +17,7 @@ module.exports.models = {
   * connections (see `config/connections.js`)                                *
   *                                                                          *
   ***************************************************************************/
-  connection: 'orangeMysqlServer',
+  connection: 'camelMysqlServer',
 
   /***************************************************************************
   *                                                                          *
@@ -27,7 +27,6 @@ module.exports.models = {
   * See http://sailsjs.org/#!/documentation/concepts/ORM/model-settings.html  *
   *                                                                          *
   ***************************************************************************/
-  // migrate: 'alter',
   migrate: 'safe',
 
 };
