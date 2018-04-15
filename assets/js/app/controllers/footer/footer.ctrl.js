@@ -45,15 +45,15 @@
         //   img: '/images/youtube.png',
         // },
         {
-          href: 'https://www.facebook.com/camel.car.rental.cyprus.paphos',
+          href: 'https://www.facebook.com/Camel.Drive',
           text: 'FOOTER_SUBSCRIBE_FACEBOOK',
           img: '/images/facebook.png',
         },
-        // {
-        //   href: 'http://www.instagram.com',
-        //   text: 'FOOTER_SUBSCRIBE_INST',
-        //   img: '/images/instagram.png',
-        // },
+        {
+          href: 'http://www.instagram.com/Camel.Drive',
+          text: 'FOOTER_SUBSCRIBE_INST',
+          img: '/images/instagram.png',
+        },
       ];
 
       vm.developer = {
