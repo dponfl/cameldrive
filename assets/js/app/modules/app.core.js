@@ -7,7 +7,7 @@
       'ui.router',
       'ngLodash',
       'jcs-autoValidate',
-      'infinite-scroll',
+      // 'infinite-scroll',
       // 'angularSpinner',
       // 'angular-ladda',
       'mgcrea.ngStrap',
@@ -17,7 +17,7 @@
       'tmh.dynamicLocale',
       'angularUtils.directives.dirPagination',
       'angularFileUpload',
-      'mrResponsiveParallax',
+      // 'mrResponsiveParallax',
     ])
     .run(errorMsgResolver);
 
