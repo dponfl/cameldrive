@@ -10,7 +10,7 @@ var _ = require('lodash');
 module.exports = {
 	create: function (req, res) {
 
-    console.log('<== S_reqController.js:create ==>');
+    // console.log('<== S_reqController.js:create ==>');
 
 /*
     console.log('=======================');
@@ -45,8 +45,8 @@ module.exports = {
     createObj['ip'] = req.ip || '';
     createObj['cookie'] = req.headers.cookie || '';
 
-    console.log('createObj:');
-    console.dir(createObj);
+    // console.log('createObj:');
+    // console.dir(createObj);
 
     S_req.create(createObj)
       .exec(function (err, data) {
@@ -61,8 +61,8 @@ module.exports = {
           return res.serverError(err);
         }
 
-        console.log('Sending email with request...');
-        console.dir(data);
+        // console.log('Sending email with request...');
+        // console.dir(data);
 
         var keys = [
           'car_group',
@@ -131,7 +131,7 @@ module.exports = {
 
   createInfo: function (req, res) {
 
-    console.log('<== S_reqController.js:createInfo ==>');
+    // console.log('<== S_reqController.js:createInfo ==>');
 
     /*
      console.log('=======================');
@@ -166,8 +166,8 @@ module.exports = {
     createObj['ip'] = req.ip || '';
     createObj['cookie'] = req.headers.cookie || '';
 
-    console.log('createObj:');
-    console.dir(createObj);
+    // console.log('createObj:');
+    // console.dir(createObj);
 
     S_req.create(createObj)
       .exec(function (err, data) {
@@ -182,8 +182,8 @@ module.exports = {
           return res.serverError(err);
         }
 
-        console.log('Sending email with request...');
-        console.dir(data);
+        // console.log('Sending email with request...');
+        // console.dir(data);
 
         var keys = [
           'name',

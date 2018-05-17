@@ -5,7 +5,7 @@ const _ = require('lodash');
 module.exports = {
   loadConfig: function (req, res) {
 
-    console.log('<== ConfigController.js:loadConfig ==>');
+    // console.log('<== ConfigController.js:loadConfig ==>');
 
     Promise.all([capacityPromise(), climatPromise(), fuelPromise(), groupPromise(),
       luggagePromise(), periodsPromise(), transmissionPromise(), tagPromise(),
@@ -52,13 +52,13 @@ module.exports = {
           ],
         };
 
-        console.log('loadConfig, result:');
-        console.dir(result);
+        // console.log('loadConfig, result:');
+        // console.dir(result);
 
         return res.ok({result: 'ok', data: result, token: '123'});
       }, function (reason) {
-        console.log('Promise.all error, reason:');
-        console.dir(reason);
+        // console.log('Promise.all error, reason:');
+        // console.dir(reason);
       });
 
     /*
@@ -69,23 +69,23 @@ module.exports = {
       return Capacity.find()
         .then(function (data) {
 
-          console.log('Capacity, data:');
-          console.log(data);
+          // console.log('Capacity, data:');
+          // console.log(data);
 
           var capacityConfig = [];
           capacityConfig.capacityList = {};
 
           if (!_.isArray(data)) {
             // todo: Log error message and get data from Sails config
-            console.log('Capacity data is not an array');
+            // console.log('Capacity data is not an array');
           }
 
           data.map(_mapCapacityData, capacityConfig);
 
           _excludeEmptyElem(capacityConfig.capacityList);
 
-          console.log('Capacity, capacityConfig.capacityList after _excludeEmptyElem:');
-          console.dir(capacityConfig.capacityList);
+          // console.log('Capacity, capacityConfig.capacityList after _excludeEmptyElem:');
+          // console.dir(capacityConfig.capacityList);
 
           return {capacityList: capacityConfig.capacityList};
 
@@ -96,23 +96,23 @@ module.exports = {
       return Climat.find()
         .then(function (data) {
 
-          console.log('Climat, data:');
-          console.log(data);
+          // console.log('Climat, data:');
+          // console.log(data);
 
           var climatConfig = [];
           climatConfig.climatList = {};
 
           if (!_.isArray(data)) {
             // todo: Log error message and get data from Sails config
-            console.log('Climat data is not an array');
+            // console.log('Climat data is not an array');
           }
 
           data.map(_mapClimatData, climatConfig);
 
           _excludeEmptyElem(climatConfig.climatList);
 
-          console.log('Climat, climatConfig.climatList after _excludeEmptyElem:');
-          console.dir(climatConfig.climatList);
+          // console.log('Climat, climatConfig.climatList after _excludeEmptyElem:');
+          // console.dir(climatConfig.climatList);
 
           return {climatList: climatConfig.climatList};
 
@@ -123,23 +123,23 @@ module.exports = {
       return Fuel.find()
         .then(function (data) {
 
-          console.log('Fuel, data:');
-          console.log(data);
+          // console.log('Fuel, data:');
+          // console.log(data);
 
           var fuelConfig = [];
           fuelConfig.fuelList = {};
 
           if (!_.isArray(data)) {
             // todo: Log error message and get data from Sails config
-            console.log('Fuel data is not an array');
+            // console.log('Fuel data is not an array');
           }
 
           data.map(_mapFuelData, fuelConfig);
 
           _excludeEmptyElem(fuelConfig.fuelList);
 
-          console.log('Fuel, fuelConfig.fuelList after _excludeEmptyElem:');
-          console.dir(fuelConfig.fuelList);
+          // console.log('Fuel, fuelConfig.fuelList after _excludeEmptyElem:');
+          // console.dir(fuelConfig.fuelList);
 
           return {fuelList: fuelConfig.fuelList};
 
@@ -150,23 +150,23 @@ module.exports = {
       return Group.find()
         .then(function (data) {
 
-          console.log('Group, data:');
-          console.log(data);
+          // console.log('Group, data:');
+          // console.log(data);
 
           var groupConfig = [];
           groupConfig.groupList = {};
 
           if (!_.isArray(data)) {
             // todo: Log error message and get data from Sails config
-            console.log('Group data is not an array');
+            // console.log('Group data is not an array');
           }
 
           data.map(_mapGroupData, groupConfig);
 
           _excludeEmptyElem(groupConfig.groupList);
 
-          console.log('Group, groupConfig.groupList after _excludeEmptyElem:');
-          console.dir(groupConfig.groupList);
+          // console.log('Group, groupConfig.groupList after _excludeEmptyElem:');
+          // console.dir(groupConfig.groupList);
 
           return {groupList: groupConfig.groupList};
 
@@ -177,23 +177,23 @@ module.exports = {
       return Luggage.find()
         .then(function (data) {
 
-          console.log('Luggage, data:');
-          console.log(data);
+          // console.log('Luggage, data:');
+          // console.log(data);
 
           var luggageConfig = [];
           luggageConfig.luggageList = {};
 
           if (!_.isArray(data)) {
             // todo: Log error message and get data from Sails config
-            console.log('Luggage data is not an array');
+            // console.log('Luggage data is not an array');
           }
 
           data.map(_mapLuggageData, luggageConfig);
 
           _excludeEmptyElem(luggageConfig.luggageList);
 
-          console.log('Luggage, luggageConfig.luggageList after _excludeEmptyElem:');
-          console.dir(luggageConfig.luggageList);
+          // console.log('Luggage, luggageConfig.luggageList after _excludeEmptyElem:');
+          // console.dir(luggageConfig.luggageList);
 
           return {luggageList: luggageConfig.luggageList};
 
@@ -204,23 +204,23 @@ module.exports = {
       return Periods.find()
         .then(function (data) {
 
-          console.log('Periods, data:');
-          console.log(data);
+          // console.log('Periods, data:');
+          // console.log(data);
 
           var periodsConfig = [];
           periodsConfig.periodsList = {};
 
           if (!_.isArray(data)) {
             // todo: Log error message and get data from Sails config
-            console.log('Periods data is not an array');
+            // console.log('Periods data is not an array');
           }
 
           data.map(_mapPeriodsData, periodsConfig);
 
           _excludeEmptyElem(periodsConfig.periodsList);
 
-          console.log('Periods, periodsConfig.periodsList after _excludeEmptyElem:');
-          console.dir(periodsConfig.periodsList);
+          // console.log('Periods, periodsConfig.periodsList after _excludeEmptyElem:');
+          // console.dir(periodsConfig.periodsList);
 
           return {periodsList: periodsConfig.periodsList};
 
@@ -231,23 +231,23 @@ module.exports = {
       return Transmission.find()
         .then(function (data) {
 
-          console.log('Transmission, data:');
-          console.log(data);
+          // console.log('Transmission, data:');
+          // console.log(data);
 
           var transmissionConfig = [];
           transmissionConfig.transmissionList = {};
 
           if (!_.isArray(data)) {
             // todo: Log error message and get data from Sails config
-            console.log('Transmission data is not an array');
+            // console.log('Transmission data is not an array');
           }
 
           data.map(_mapTransmissionData, transmissionConfig);
 
           _excludeEmptyElem(transmissionConfig.transmissionList);
 
-          console.log('Transmission, transmissionConfig.transmissionList after _excludeEmptyElem:');
-          console.dir(transmissionConfig.transmissionList);
+          // console.log('Transmission, transmissionConfig.transmissionList after _excludeEmptyElem:');
+          // console.dir(transmissionConfig.transmissionList);
 
           return {transmissionList: transmissionConfig.transmissionList};
 
@@ -258,23 +258,23 @@ module.exports = {
       return Tag.find()
         .then(function (data) {
 
-          console.log('Tag, data:');
-          console.log(data);
+          // console.log('Tag, data:');
+          // console.log(data);
 
           var tagConfig = [];
           tagConfig.tagList = {};
 
           if (!_.isArray(data)) {
             // todo: Log error message and get data from Sails config
-            console.log('Tag data is not an array');
+            // console.log('Tag data is not an array');
           }
 
           data.map(_mapTagData, tagConfig);
 
           _excludeEmptyElem(tagConfig.tagList);
 
-          console.log('Tag, tagConfig.tagList after _excludeEmptyElem:');
-          console.dir(tagConfig.tagList);
+          // console.log('Tag, tagConfig.tagList after _excludeEmptyElem:');
+          // console.dir(tagConfig.tagList);
 
           return {tagList: tagConfig.tagList};
 
@@ -285,23 +285,23 @@ module.exports = {
       return Promo.find()
         .then(function (data) {
 
-          console.log('Promo, data:');
-          console.log(data);
+          // console.log('Promo, data:');
+          // console.log(data);
 
           var promoConfig = [];
           promoConfig.promoList = {};
 
           if (!_.isArray(data)) {
             // todo: Log error message and get data from Sails config
-            console.log('Promo data is not an array');
+            // console.log('Promo data is not an array');
           }
 
           data.map(_mapPromoData, promoConfig);
 
           _excludeEmptyElem(promoConfig.promoList);
 
-          console.log('Promo, promoConfig.promoList after _excludeEmptyElem:');
-          console.dir(promoConfig.promoList);
+          // console.log('Promo, promoConfig.promoList after _excludeEmptyElem:');
+          // console.dir(promoConfig.promoList);
 
           return {promoList: promoConfig.promoList};
 

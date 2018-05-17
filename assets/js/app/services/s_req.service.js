@@ -42,8 +42,8 @@
 
       function successCb(data) {
 
-        $log.info('_createSReq, successCb, data:');
-        $log.info(data);
+        // $log.info('_createSReq, successCb, data:');
+        // $log.info(data);
 
         return {
           status: 200,
@@ -53,8 +53,8 @@
 
       function errorCb(err) {
 
-        $log.info('_createSReq, errorCb, err:');
-        $log.info(err);
+        // $log.info('_createSReq, errorCb, err:');
+        // $log.info(err);
 
 
         return {

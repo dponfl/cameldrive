@@ -13,14 +13,14 @@ module.exports = {
 	  var rec = [];
 	  var numRecToShow = 1;
 
-    console.log('<== TestimonialsController.js:find ==>');
+    // console.log('<== TestimonialsController.js:find ==>');
 
     // todo: make parameters validation
     var requestParams = req.allParams();
     var whereObj = requestParams;
 
-    console.log('whereObj:');
-    console.dir(whereObj);
+    // console.log('whereObj:');
+    // console.dir(whereObj);
 
     Testimonials.find({
       where: whereObj
@@ -113,14 +113,14 @@ module.exports = {
      console.dir(req.allParams());
      */
 
-    console.log('<== TestimonialsController.js:put ==>');
+    // console.log('<== TestimonialsController.js:put ==>');
 
     // todo: make parameters validation
     var newRecordParams = req.allParams();
     var newObj = newRecordParams;
 
-    console.log('Ready to create new record:');
-    console.dir(newObj);
+    // console.log('Ready to create new record:');
+    // console.dir(newObj);
 
     Testimonials.create(newObj)
       .exec(function (err, data) {
@@ -128,8 +128,8 @@ module.exports = {
           return res.serverError(err);
         }
 
-        console.log('data: ');
-        console.dir(data);
+        // console.log('data: ');
+        // console.dir(data);
 
         return res.created({
           code: 201,
@@ -157,14 +157,14 @@ module.exports = {
      console.dir(req.allParams());
      */
 
-    console.log('<== TestimonialsController.js:update ==>');
+    // console.log('<== TestimonialsController.js:update ==>');
 
     // todo: make parameters validation
     var newRecordParams = req.allParams();
     var newObj = newRecordParams;
 
-    console.log('Ready to update record:');
-    console.dir(newObj);
+    // console.log('Ready to update record:');
+    // console.dir(newObj);
 
     var findCriteria = {
       id: newObj.id,
@@ -176,8 +176,8 @@ module.exports = {
           return res.serverError(err);
         }
 
-        console.log('data: ');
-        console.dir(data);
+        // console.log('data: ');
+        // console.dir(data);
 
         return res.json({
           code: 200,

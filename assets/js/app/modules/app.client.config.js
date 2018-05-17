@@ -12,7 +12,7 @@
 
 
     // todo: delete
-    console.log('app.client.config');
+    // console.log('app.client.config');
 
 
     laddaProvider.setOption({
@@ -45,12 +45,12 @@
     var _ = lodash;
     var configData;
 
-    console.log('configCamel...');
+    // console.log('configCamel...');
 
     this.initialize = function (data) {
 
-      console.log('configCamel.initialize...');
-      console.log(data);
+      // console.log('configCamel.initialize...');
+      // console.log(data);
 
       configData = _.assign(configData, data);
     };

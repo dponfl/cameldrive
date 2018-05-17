@@ -28,7 +28,7 @@
 
       function successCb(data) {
 
-        $log.info('_getTestimonials, successCb');
+        // $log.info('_getTestimonials, successCb');
 
         if (!_.isArray(data.data.result)) {
           return new Error('_getTestimonials, Testimonials data is not an array');
@@ -87,7 +87,7 @@
 
       function errorCb(err) {
 
-        $log.info('_getTestimonials, errorCb');
+        // $log.info('_getTestimonials, errorCb');
 
         return {
           status: err.status,
@@ -104,8 +104,8 @@
 
       function successCb(data) {
 
-        $log.info('_putTestimonials, successCb, data:');
-        $log.info(data);
+        // $log.info('_putTestimonials, successCb, data:');
+        // $log.info(data);
 
         if (!_.isNumber(data.data.result.id)) {
           return new Error('_putTestimonials, Testimonials data has wrong format');
@@ -170,16 +170,16 @@
 
     function _updateTestimonials(reqObj) {
 
-      $log.info('_updateTestimonials, reqObj:');
-      console.dir(reqObj);
+      // $log.info('_updateTestimonials, reqObj:');
+      // console.dir(reqObj);
 
       return $http.post(_ms.getHost() + '/testimonials/update', reqObj)
         .then(successCb, errorCb);
 
       function successCb(data) {
 
-        $log.info('_updateTestimonials, successCb, data:');
-        $log.info(data);
+        // $log.info('_updateTestimonials, successCb, data:');
+        // $log.info(data);
 
         if (!_.isNumber(data.data.result[0].id)) {
           return new Error('_updateTestimonials, Testimonials data has wrong format');

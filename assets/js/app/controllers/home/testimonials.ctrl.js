@@ -193,8 +193,8 @@
         })
         .catch(function (err) {
           // todo: change by Log
-          $log.warn(vm.title + ', Error...');
-          $log.error(err);
+          // $log.warn(vm.title + ', Error...');
+          // $log.error(err);
 
           return {
             performed: false,

@@ -12,7 +12,7 @@
 
 
     // todo: delete
-    console.log('app.client.routes: CameldriveRoutesConfig');
+    // console.log('app.client.routes: CameldriveRoutesConfig');
 
 
     $stateProvider
@@ -79,7 +79,7 @@
 
 
     // todo: delete
-    console.log('app.client.routes: CameldriveRoutes');
+    // console.log('app.client.routes: CameldriveRoutes');
 
     $urlRouterProvider
       .otherwise('/');

@@ -15,7 +15,7 @@
 
 
     // todo: delete
-    $log.info('Cameldrive, setupGlobalScope...');
+    // $log.info('Cameldrive, setupGlobalScope...');
 
 
     //Generale

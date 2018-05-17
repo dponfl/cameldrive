@@ -7,10 +7,10 @@ const imgFileNameElement = '$$$_-_$$$';
 module.exports = {
   upload: function (req, res) {
 
-    console.log('<== FileController.js:upload ==>');
+    // console.log('<== FileController.js:upload ==>');
 
-    console.log('req.allParams():');
-    console.dir(req.allParams());
+    // console.log('req.allParams():');
+    // console.dir(req.allParams());
 
     objNum = req.allParams().obj;
 
@@ -24,8 +24,8 @@ module.exports = {
         files: uploadedFiles
       };
 
-      console.log('FileController, upload result:');
-      console.dir(result);
+      // console.log('FileController, upload result:');
+      // console.dir(result);
 
       return res.json(result);
     });
@@ -34,10 +34,10 @@ module.exports = {
 
   uploadmain: function (req, res) {
 
-    console.log('<== FileController.js:uploadmain ==>');
+    // console.log('<== FileController.js:uploadmain ==>');
 
-    console.log('req.allParams():');
-    console.dir(req.allParams());
+    // console.log('req.allParams():');
+    // console.dir(req.allParams());
 
     objNum = req.allParams().obj;
 
@@ -51,8 +51,8 @@ module.exports = {
         files: uploadedFiles
       };
 
-      console.log('FileController, uploadmain result:');
-      console.dir(result);
+      // console.log('FileController, uploadmain result:');
+      // console.dir(result);
 
       return res.json(result);
     });
@@ -61,10 +61,10 @@ module.exports = {
 
   upload2: function (req, res) {
 
-    console.log('<== FileController.js:upload2 ==>');
+    // console.log('<== FileController.js:upload2 ==>');
 
-    console.log('req.allParams():');
-    console.dir(req.allParams());
+    // console.log('req.allParams():');
+    // console.dir(req.allParams());
 
     objNum = req.allParams().obj;
 
@@ -78,8 +78,8 @@ module.exports = {
         files: uploadedFiles
       };
 
-      console.log('FileController, upload2 result:');
-      console.dir(result);
+      // console.log('FileController, upload2 result:');
+      // console.dir(result);
 
       return res.json(result);
     });
@@ -88,10 +88,10 @@ module.exports = {
 
   uploadmain2: function (req, res) {
 
-    console.log('<== FileController.js:uploadmain2 ==>');
+    // console.log('<== FileController.js:uploadmain2 ==>');
 
-    console.log('req.allParams():');
-    console.dir(req.allParams());
+    // console.log('req.allParams():');
+    // console.dir(req.allParams());
 
     objNum = req.allParams().obj;
 
@@ -105,8 +105,8 @@ module.exports = {
         files: uploadedFiles
       };
 
-      console.log('FileController, uploadmain2 result:');
-      console.dir(result);
+      // console.log('FileController, uploadmain2 result:');
+      // console.dir(result);
 
       return res.json(result);
     });
