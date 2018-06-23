@@ -36,48 +36,34 @@
 
         var response = data.data.result;
 
-        var __objs = {
-          en: [],
-          ru: [],
-        };
+        $log.info('TestimonialsService::_getTestimonials, response:');
+        $log.info(response);
 
-        for (var i = 0; i < response.length; i++) {
+        var __objs = {};
 
-          __objs['en'].push({
-            show: response[i].show,
-            original: response[i].original,
-            name: response[i].name_en,
-            email: response[i].email,
-            phone: response[i].phone,
-            info: response[i].info_en,
-            position: response[i].position_en,
-            rate: response[i].rate,
-            user_agent: response[i].user_agent,
-            ip: response[i].ip,
-            cookie: response[i].cookie,
-            id: response[i].id,
-            createdAt: response[i].createdAt,
-            updatedAt: response[i].updatedAt,
+        let langList = _ms.getLangList();
+
+        _.forEach(langList, (lang) => {
+          __objs[lang] = [];
+        });
+
+        _.forEach(response, (elem) => {
+          __objs[elem.lang].push({
+            show: elem.show,
+            name: elem.name,
+            email: elem.email,
+            phone: elem.phone,
+            info: elem.info,
+            position: elem.position,
+            rate: elem.rate,
+            id: elem.id,
+            createdAt: elem.createdAt,
+            updatedAt: elem.updatedAt,
           });
+        });
 
-          __objs['ru'].push({
-            show: response[i].show,
-            original: response[i].original,
-            name: response[i].name_ru,
-            email: response[i].email,
-            phone: response[i].phone,
-            info: response[i].info_ru,
-            position: response[i].position_ru,
-            rate: response[i].rate,
-            user_agent: response[i].user_agent,
-            ip: response[i].ip,
-            cookie: response[i].cookie,
-            id: response[i].id,
-            createdAt: response[i].createdAt,
-            updatedAt: response[i].updatedAt,
-          });
-
-        }
+        // $log.info('TestimonialsService::_getTestimonials, __objs:');
+        // $log.info(__objs);
 
         return {
           status: 200,

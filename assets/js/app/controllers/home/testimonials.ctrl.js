@@ -49,54 +49,59 @@
           var rec = [];
           var tmpArray = [];
           var numRecToShow = _ms.getTestimonialsNumber();
+          var numLang = _ms.getNumLang(); // get number of languages used in the syster
+          var result = res;
 
-/*
-          $log.info('TestimonialsCtrl, activate, res:');
-          $log.info(res);
-*/
+          // $log.info('TestimonialsCtrl, activate, res:');
+          // $log.info(res);
 
           if (!res.performed &&
             (res.reason == 'notFound' || res.reason == 'serverError')) {
             return;
           }
 
-          numRecs = res.data.objs.en.length;
+          _.forEach(res.data.objs, (langVal, langKey) => {
 
-/*
-          $log.info('Number of records: ' + numRecs);
-*/
+            rec = [];
 
-          for (let i = 1; i <= numRecToShow; i++) {
+            // $log.info('Key: ');
+            // $log.info(langKey);
+            // $log.info('Val: ');
+            // $log.info(langVal);
 
-            var j = 0;
+            numRecs = langVal.length;
 
-            do {
-              j++;
-              randRec = _.random(numRecs-1);
-            } while (_some(randRec, rec) && j < 10000);
+            // $log.info('Number of records: ' + numRecs);
 
-            rec.push(randRec);
-          }
+            for (let i = 1; i <= numRecToShow; i++) {
 
-/*
-          $log.info('Generated rec:');
-          $log.info(rec);
-*/
+              var j = 0;
 
-          for (var key in res.data.objs) {
+              do {
+                j++;
+                randRec = _.random(numRecs-1);
+              } while (_some(randRec, rec) && j < 10000);
+
+              rec.push(randRec);
+            }
+
+             // $log.info('Generated rec:');
+             // $log.info(rec);
+
             tmpArray = [];
             rec.map(function (elem) {
-              tmpArray.push(res.data.objs[key][elem]);
+              tmpArray.push(langVal[elem]);
             });
-            res.data.objs[key]=tmpArray;
-          }
+            result.data.objs[langKey]=tmpArray;
 
-          var buildResult = _buildPanel(res);
 
-/*
-          $log.info('TestimonialsCtrl, activate, buildResult:');
-          $log.info(buildResult);
-*/
+          });
+
+
+          var buildResult = _buildPanel(result);
+
+          // $log.info('TestimonialsCtrl, activate, buildResult:');
+          // $log.info(buildResult);
 
           if (!buildResult.performed) return;
 
@@ -221,7 +226,7 @@
 
       var langList = _ms.getLangList();
       langList.map(function (elem) {
-        result[elem] = __buildPanelOneLang(requestResult.data.objs[elem], elem);
+        result[elem] = __buildPanelOneLang(requestResult.data.objs[elem]);
       });
 
       return {
@@ -230,7 +235,7 @@
         data: result,
       };
 
-      function __buildPanelOneLang(panelObjs, lang) {
+      function __buildPanelOneLang(panelObjs) {
 
         var panels = [];
         var record = {};

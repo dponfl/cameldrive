@@ -9,17 +9,13 @@ module.exports = {
   tableName: 'testimonials',
   attributes: {
     show: {
-      type: 'integer',
+      type: 'boolean',
     },
-    original: {
+    lang: {
       type: 'string',
       size: 2
     },
-    name_en: {
-      type: 'string',
-      size: 50
-    },
-    name_ru: {
+    name: {
       type: 'string',
       size: 50
     },
@@ -31,34 +27,15 @@ module.exports = {
       type: 'string',
       size: 50
     },
-    info_en: {
+    info: {
       type: 'text',
     },
-    info_ru: {
-      type: 'text',
-    },
-    position_en: {
-      type: 'string',
-      size: 50
-    },
-    position_ru: {
+    position: {
       type: 'string',
       size: 50
     },
     rate: {
       type: 'integer',
-    },
-    user_agent: {
-      type: 'string',
-      size: 255
-    },
-    ip: {
-      type: 'string',
-      size: 50
-    },
-    cookie: {
-      type: 'string',
-      size: 255
     },
   },
 };
