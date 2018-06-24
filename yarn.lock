@@ -7573,31 +7573,6 @@ websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
 
-"webstudiopro-sails-auth@github:dponfl/webstudiopro-sails-auth#new":
-  version "2.2.0"
-  resolved "https://codeload.github.com/dponfl/webstudiopro-sails-auth/tar.gz/d1ed94c74bf518fa47514adf1b1d052944eaedf8"
-  dependencies:
-    babel "^6.5.2"
-    babel-cli "^6.14.0"
-    babel-core "^6.14.0"
-    babel-plugin-add-module-exports "^0.2.1"
-    babel-preset-es2015 "^6.14.0"
-    base64url "^2.0.0"
-    bcryptjs "^2.2"
-    gulp "^3.9.0"
-    gulp-babel "^6.1.2"
-    lodash "^4.16"
-    marlinspike "^1.0"
-    mocha "^3.1.0"
-    passport "^0.3"
-    passport-http "^0.3"
-    passport-http-bearer "^1.0.1"
-    passport-local "^1.0.0"
-    sails "^0.12.5"
-    socket.io-client "^1.3.5"
-    supertest "^2.0.0"
-    waterline-sqlite3 "^1.0.3"
-
 when@^3.7.8:
   version "3.7.8"
   resolved "https://registry.yarnpkg.com/when/-/when-3.7.8.tgz#c7130b6a7ea04693e842cdc9e7a1f2aa39a39f82"

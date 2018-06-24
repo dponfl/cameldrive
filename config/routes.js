@@ -40,7 +40,7 @@ module.exports.routes = {
     view: 'index'
   },
 
-  '/discount': {
+  '/insurance': {
     view: 'index'
   },
 
@@ -48,9 +48,10 @@ module.exports.routes = {
     view: 'index'
   },
 
-  '/account': {
+  '/signup': {
     view: 'index'
   },
+
 
 
   /***************************************************************************
@@ -77,18 +78,6 @@ module.exports.routes = {
   'POST /sreq/createInfo': 'S_reqController.createInfo',
 
   'GET /config': 'ConfigController.loadConfig',
-
-  // orange-sails-auth
-
-  'POST /register': 'UserController.create',
-  'GET /me': 'UserController.me',
-
-  'POST /update': 'UserController.update',
-
-  'POST /logout': 'AuthController.logout',
-
-  'POST /auth/local': 'AuthController.callback',
-  'POST /auth/local/:action': 'AuthController.callback',
 
   // FileUpload
 

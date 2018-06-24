@@ -19,6 +19,21 @@ function translateConfig ($translateProvider) {
     'BTN_ADMIN_LOGIN': 'Login',
     'BTN_ADMIN_CLEAR': 'Clear',
     'HEADER_PANEL_EDIT': 'Edit object #',
+    'NAV_ADM_TESTIMONIALS': 'Testimonials',
+    'NAV_ADM': 'Admin section',
+    'TITLE_SIGNIN': 'Sign in',
+    'TITLE_SIGNUP': 'Sign up',
+    'LOGIN_LABEL': 'User name',
+    'LOGIN_TEXT': 'Enter user name',
+    'PASSWORD_LABEL': 'Password',
+    'PASSWORD_TEXT': 'Enter password',
+    'MSG_WRONG_PASSWORD': 'Wrong login/password',
+    'MSG_WRONG_SIGNUP': 'This profile was created already. Pls sign in at /login',
+    'MSG_WRONG_SIGNUP_2': 'This user does not exist. Pls contact administrator.',
+    'MSG_WRONG_SIGNUP_3': 'This user does not have Admin rights. Pls contact administrator.',
+    'MSG_GEN_ERROR': 'Server error. Pls contact administrator.',
+
+
 
     // Footer
     'FOOTER_ABOUT_COMPANY_TITLE': 'About us',
@@ -262,6 +277,22 @@ function translateConfig ($translateProvider) {
     'LBL_IMG_TBL_LABEL_STATUS': 'Статус',
     'LBL_IMG_TBL_LABEL_ACTION': 'Действие',
     'HEADER_PANEL_EDIT': 'Редактирование объекта #',
+    'NAV_ADM_TESTIMONIALS': 'Отзывы',
+    'NAV_ADM': 'Административный раздел',
+    'TITLE_SIGNIN': 'Авторизация',
+    'TITLE_SIGNUP': 'Авторизация профиля и создание пароля',
+    'LOGIN_LABEL': 'Логин',
+    'LOGIN_TEXT': 'Введите имя пользователя',
+    'PASSWORD_LABEL': 'Пароль',
+    'PASSWORD_TEXT': 'Введите пароль',
+    'MSG_WRONG_PASSWORD': 'Неверный логин/пароль',
+    'MSG_WRONG_SIGNUP': 'Этот профиль уже создан. Авторизуйтесь на странице /login',
+    'MSG_WRONG_SIGNUP_2': 'Этот пользователь не существует. Свяжитесь с администратором.',
+    'MSG_WRONG_SIGNUP_3': 'Этот пользователь не имеет административных прав. Свяжитесь с администратором.',
+    'MSG_GEN_ERROR': 'Серверная ошибка. Обратитесь к администратору.',
+
+
+
 
 
     // Footer
