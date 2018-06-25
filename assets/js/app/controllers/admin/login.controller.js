@@ -30,15 +30,17 @@
 
       $translate.use('ru');
       GeneralConfigService.setLang('ru');
-      _initController();
     };
 
 
 
     ////////////////
 
-    function _initController() {
+    function _initController(param) {
 
+      // $log.info('_initController, param: ' + param);
+
+      vm.username = param;
 
       // get current user
       // UserService.getCurrentUser().then(function (data) {

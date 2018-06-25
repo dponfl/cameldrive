@@ -31,6 +31,7 @@ function translateConfig ($translateProvider) {
     'MSG_WRONG_SIGNUP': 'This profile was created already. Pls sign in at /login',
     'MSG_WRONG_SIGNUP_2': 'This user does not exist. Pls contact administrator.',
     'MSG_WRONG_SIGNUP_3': 'This user does not have Admin rights. Pls contact administrator.',
+    'MSG_WRONG_SIGNUP_4': 'Passwords are not equal. Pls try again.',
     'MSG_GEN_ERROR': 'Server error. Pls contact administrator.',
 
 
@@ -289,6 +290,7 @@ function translateConfig ($translateProvider) {
     'MSG_WRONG_SIGNUP': 'Этот профиль уже создан. Авторизуйтесь на странице /login',
     'MSG_WRONG_SIGNUP_2': 'Этот пользователь не существует. Свяжитесь с администратором.',
     'MSG_WRONG_SIGNUP_3': 'Этот пользователь не имеет административных прав. Свяжитесь с администратором.',
+    'MSG_WRONG_SIGNUP_4': 'Пароли не одинаковые. Попробуйте еще раз..',
     'MSG_GEN_ERROR': 'Серверная ошибка. Обратитесь к администратору.',
 
 

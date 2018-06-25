@@ -73,6 +73,9 @@ module.exports.routes = {
   'POST /testimonials/put': 'TestimonialsController.put',
   'POST /testimonials/update': 'TestimonialsController.update',
 
+  'POST /user/find': 'UserController.find',
+  'POST /user/update': 'UserController.update',
+
 
   'POST /sreq/create': 'S_reqController.create',
   'POST /sreq/createInfo': 'S_reqController.createInfo',

@@ -28,6 +28,7 @@
     vm.userNotFound = false;
     vm.userNotAdmin = false;
     vm.generalError = false;
+    vm.notEqualPasswords = false;
 
     this.$onInit = function () {
 
@@ -53,9 +54,18 @@
       vm.userNotFound = false;
       vm.userNotAdmin = false;
       vm.generalError = false;
+      vm.notEqualPasswords = vm.password != vm.password2;
+
+      if (vm.notEqualPasswords) {
+        return;
+      }
+
 
       $q.all({
-        user: UserService.getUser({username: vm.username})
+        user: UserService.getUser({
+          username: vm.username,
+          deleted: false,
+        })
       })
         .then((data) => {
 
@@ -71,27 +81,60 @@
               // $log.info(_getFullModuleName(moduleName) + ', data.user: ');
               // $log.info(data.user);
 
-              if (!_.isNil(data.user.data) && !_.isNil(data.user.data.result)
-              && !_.isNil(data.user.data.result.admin)) {
+              if (!_.isNil(data.user.data) && !_.isNil(data.user.data.result)) {
 
-                switch (data.user.data.result.admin) {
-                  case true:
-
-                    $log.info('111111111111111111111');
-                    $log.info('data.user.data.result.admin: ' + data.user.data.result.admin);
-
-                    break;
-                  case false:
-
-                    $log.info('22222222222222222222222222222');
-                    $log.info('data.user.data.result.admin: ' + data.user.data.result.admin);
-
-                    break;
+                if (data.user.data.result.pw) {
+                  vm.wrongSignup = true;
+                  setTimeout(() => {
+                    $state.go('login', {login: data.user.data.result.username});
+                  }, 3000);
+                  return;
                 }
 
-              }
+                if (data.user.data.result.admin) {
 
-              // vm.userNotAdmin = true;
+                  // $log.info('111111111111111111111');
+                  // $log.info('data.user.data.result.admin: ' + data.user.data.result.admin);
+
+                  /**
+                   * save password
+                   */
+
+                  $q.all({
+                    updatedUser: UserService.updateUser({
+                      id: data.user.data.result.id
+                    }, {
+                      pw: vm.password
+                    })
+                  }).then((rec) => {
+
+                    $log.info('updated user: ');
+                    $log.info(rec);
+                    $state.go('admin');
+                  })
+                    .catch((error) => {
+
+                      $log.info(_getFullModuleName(moduleName) + ', error: ');
+                      $log.info(err);
+
+                      vm.generalError = true;
+                    });
+                } else {
+
+                  // $log.info('22222222222222222222222222222');
+                  // $log.info('data.user.data.result.admin: ' + data.user.data.result.admin);
+
+                  /**
+                   * save password
+                   */
+
+
+                  vm.userNotAdmin = true;
+                  setTimeout(() => {
+                    $state.go('home');
+                  }, 3000);
+                }
+              }
 
 
 
@@ -144,6 +187,7 @@
       vm.userNotFound = false;
       vm.userNotAdmin = false;
       vm.generalError = false;
+      vm.notEqualPasswords = false;
     } // _clear
 
   } // SignupController

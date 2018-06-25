@@ -9,8 +9,15 @@
           .form-group.clearfix
             label(for="username").col-sm-2.control-label.text-right.wsp-admin-label {{ 'LOGIN_LABEL' | translate}}
             .col-sm-4
-              input(type="text", placeholder="{{ 'LOGIN_TEXT' | translate}}",
-              name="username", data-ng-model="sc.username", autofocus).wsp-admin-text#username
+              input(
+              type="text",
+              required,
+              data-ng-required-err-type="{{'AV_REQ' | translate}}",
+              placeholder="{{ 'LOGIN_TEXT' | translate}}",
+              name="username",
+              data-ng-model="sc.username",
+              autofocus
+              ).wsp-admin-text#username
 
           .form-group.clearfix
             .col-sm-6.col-sm-offset-2
@@ -20,14 +27,26 @@
           .form-group.clearfix
             label(for="password").col-sm-2.control-label.text-right.wsp-admin-label {{ 'PASSWORD_LABEL' | translate}}
             .col-sm-4
-              input(type="password", placeholder="{{ 'PASSWORD_TEXT' | translate}}",
-              name="password", data-ng-model="sc.password").wsp-admin-text#password
+              input(
+              type="password",
+              required,
+              data-ng-required-err-type="{{'AV_REQ' | translate}}",
+              placeholder="{{ 'PASSWORD_TEXT' | translate}}",
+              name="password",
+              data-ng-model="sc.password"
+              ).wsp-admin-text#password
 
           .form-group.clearfix
             label(for="password2").col-sm-2.control-label.text-right.wsp-admin-label Повторите пароль
             .col-sm-4
-              input(type="password", placeholder="Повторите пароль",
-              name="password2", data-ng-model="sc.password2").wsp-admin-text#password2
+              input(
+              type="password",
+              required,
+              data-ng-required-err-type="{{'AV_REQ' | translate}}",
+              placeholder="Повторите пароль",
+              name="password2",
+              data-ng-model="sc.password2"
+              ).wsp-admin-text#password2
 
           .form-group.clearfix
             .col-sm-6.col-sm-offset-2
@@ -48,6 +67,11 @@
             .col-sm-6.col-sm-offset-2
               div(role="alert", data-ng-show="sc.userNotAdmin").alert.alert-danger.col-sm-6
                 strong {{ 'MSG_WRONG_SIGNUP_3' | translate}}
+
+          .form-group.clearfix
+            .col-sm-6.col-sm-offset-2
+              div(role="alert", data-ng-show="sc.notEqualPasswords").alert.alert-danger.col-sm-6
+                strong {{ 'MSG_WRONG_SIGNUP_4' | translate}}
 
           .form-group.clearfix
             .col-sm-6.col-sm-offset-2

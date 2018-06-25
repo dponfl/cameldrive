@@ -1,7 +1,7 @@
 .row
   .container-fluid
     .container
-      div(data-ng-controller="LoginController as lc").form-container.login-form-admin
+      div(data-ng-controller="LoginController as lc", data-ng-init="lc.init(login)").form-container.login-form-admin
 
         form(novalidate='novalidate',
         data-ng-submit='lc.login()').form-horisontal
