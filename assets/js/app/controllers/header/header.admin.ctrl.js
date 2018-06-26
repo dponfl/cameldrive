@@ -5,18 +5,57 @@
     .module('Cameldrive')
     .controller('HeaderAdminCtrl', HeaderAdminCtrl);
 
-  HeaderAdminCtrl.$inject = ['GeneralConfigService', '$translate', '$log', 'lodash'];
+  HeaderAdminCtrl.$inject = ['GeneralConfigService', '$translate', '$state', '$log',
+    'lodash', '$q', 'UserService'];
 
   /* @ngInject */
-  function HeaderAdminCtrl(GeneralConfigService, $translate, $log, lodash) {
+  function HeaderAdminCtrl(GeneralConfigService, $translate, $state, $log,
+                           lodash, $q, UserService) {
     var vm = this;
     vm.title = 'HeaderAdminCtrl';
     var _ = lodash;
     var __=GeneralConfigService;
 
+    vm.user = '';
+
+    vm.logout = _logout;
+
     activate();
 
     ////////////////
+
+    this.$onInit = function () {
+
+      const moduleName = 'onInit';
+
+      $q.all({
+        user: UserService.checkLogInUser()
+      })
+        .then((rec) => {
+
+          $log.info('checkLogInUser, user:');
+          $log.info(rec);
+
+          if (!_.isNil(rec.user.data.activeSession)
+            && rec.user.data.activeSession) {
+
+            vm.user = rec.user.data.result.username;
+          }
+
+
+        })
+        .catch((error) => {
+
+          $log.info(_getFullModuleName(moduleName) + ', error: ');
+          $log.info(error);
+        });
+    };
+
+    function _getFullModuleName(moduleName) {
+      return vm.title + "::" + moduleName;
+    } // _getFullModuleName
+
+
 
     function activate() {
 
@@ -32,6 +71,26 @@
       ];
 
     } // activate
+
+    function _logout() {
+
+      let moduleName = '_logout';
+
+      $q.all({
+        logoutUser: UserService.logoutUser()
+      })
+        .then((rec) => {
+
+          $log.info('logout user: ');
+          $log.info(rec);
+          $state.go('home');
+        })
+        .catch((error) => {
+
+          $log.info(_getFullModuleName(moduleName) + ', error: ');
+          $log.info(error);
+        });
+    } // _logout
 
   }
 

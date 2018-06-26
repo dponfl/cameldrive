@@ -75,6 +75,8 @@ module.exports.routes = {
 
   'POST /user/find': 'UserController.find',
   'POST /user/update': 'UserController.update',
+  'POST /user/logout': 'UserController.logout',
+  'POST /user/check': 'UserController.check',
 
 
   'POST /sreq/create': 'S_reqController.create',

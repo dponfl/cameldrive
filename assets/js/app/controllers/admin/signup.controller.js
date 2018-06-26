@@ -29,13 +29,56 @@
     vm.userNotAdmin = false;
     vm.generalError = false;
     vm.notEqualPasswords = false;
+    vm.authorized = false;
 
     this.$onInit = function () {
+
+      const moduleName = 'onInit';
 
       // $log.info('$onInit...');
 
       $translate.use('ru');
       GeneralConfigService.setLang('ru');
+
+      /**
+       * check if the user already logged in (based on session)
+       * and if "yes" + admin => pass to admin section
+       * if "yes" + not admin => pass to home
+       */
+
+      $q.all({
+        user: UserService.checkLogInUser()
+      })
+        .then((rec) => {
+
+          $log.info('checkLogInUser, user:');
+          $log.info(rec);
+
+          if (!_.isNil(rec.user.data.activeSession)
+            && rec.user.data.activeSession) {
+
+            vm.authorized = true;
+
+            if (rec.user.data.result.admin) {
+              setTimeout(() => {
+                $state.go('admin');
+              }, 3000);
+            } else {
+              setTimeout(() => {
+                $state.go('home');
+              }, 3000);
+            }
+
+          }
+
+
+        })
+        .catch((error) => {
+
+          $log.info(_getFullModuleName(moduleName) + ', error: ');
+          $log.info(error);
+        });
+
     };
 
 
@@ -54,6 +97,7 @@
       vm.userNotFound = false;
       vm.userNotAdmin = false;
       vm.generalError = false;
+      vm.authorized = false;
       vm.notEqualPasswords = vm.password != vm.password2;
 
       if (vm.notEqualPasswords) {
@@ -83,6 +127,14 @@
 
               if (!_.isNil(data.user.data) && !_.isNil(data.user.data.result)) {
 
+                if (!_.isNil(data.user.data.activeSession)
+                  && data.user.data.activeSession
+                  && data.user.data.result.admin
+                ) {
+                  $state.go('admin');
+                  return;
+                }
+
                 if (data.user.data.result.pw) {
                   vm.wrongSignup = true;
                   setTimeout(() => {
@@ -106,7 +158,8 @@
                     }, {
                       pw: vm.password
                     })
-                  }).then((rec) => {
+                  })
+                    .then((rec) => {
 
                     $log.info('updated user: ');
                     $log.info(rec);
@@ -128,19 +181,34 @@
                    * save password
                    */
 
+                  $q.all({
+                    updatedUser: UserService.updateUser({
+                      id: data.user.data.result.id
+                    }, {
+                      pw: vm.password
+                    })
+                  })
+                    .then((rec) => {
 
-                  vm.userNotAdmin = true;
-                  setTimeout(() => {
-                    $state.go('home');
-                  }, 3000);
+                      $log.info('updated user: ');
+                      $log.info(rec);
+                      vm.userNotAdmin = true;
+                      $state.go('home');
+                    })
+                    .catch((error) => {
+
+                      $log.info(_getFullModuleName(moduleName) + ', error: ');
+                      $log.info(error);
+
+                      vm.generalError = true;
+                    });
                 }
               }
-
-
-
               break;
             case 404:
               vm.userNotFound = true;
+              vm.password = '';
+              vm.password2 = '';
               break;
           }
 
@@ -155,28 +223,6 @@
         vm.generalError = true;
 
       });
-
-      // vm.wrongSignup = false;
-      // UserService.loginUser({
-      //   identifier: vm.username,
-      //   password: vm.password
-      // }).then(function (data) {
-      //   $log.info('_loginUser, data:');
-      //   $log.info(data);
-      //   $rootScope.currentUser = {
-      //     id: data.id,
-      //     username: data.username,
-      //     email: data.email,
-      //     first_name: data.first_name,
-      //     last_name: data.last_name,
-      //   };
-      //   $state.go('admin_longterm');
-      // }).catch(function (err) {
-      //   $log.info('_loginUser, error:');
-      //   $log.info(err);
-      //   vm.wrongSignup = true;
-      // });
-
     } // _signupUser
 
     function _clear() {
@@ -188,6 +234,7 @@
       vm.userNotAdmin = false;
       vm.generalError = false;
       vm.notEqualPasswords = false;
+      vm.authorized = false;
     } // _clear
 
   } // SignupController

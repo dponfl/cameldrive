@@ -24,6 +24,9 @@ nav.navbar.navbar-inverse.navbar-fixed-top
               translate='{{elem.text}}').wsp-nav-item.link-and-scroll
 
           li
-            button.btn.btn-success.wsp-header-btn-logout Выйти из Админ. раздела
+            button.btn.btn-default.wsp-header-btn-user Пользователь: {{ hc.user }}
+
+          li
+            button(data-ng-click='hc.logout()').btn.btn-danger.wsp-header-btn-logout Выйти из Админ. раздела
 
 

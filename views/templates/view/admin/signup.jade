@@ -1,7 +1,7 @@
 .row
   .container-fluid
     .container
-      div(data-ng-controller="SignupController as sc").form-container.login-form-admin
+      div(data-ng-controller="SignupController as sc", data-ng-init="sc.check()").form-container.login-form-admin
 
         form(novalidate='novalidate',
         data-ng-submit='sc.signup()').form-horisontal
@@ -72,6 +72,11 @@
             .col-sm-6.col-sm-offset-2
               div(role="alert", data-ng-show="sc.notEqualPasswords").alert.alert-danger.col-sm-6
                 strong {{ 'MSG_WRONG_SIGNUP_4' | translate}}
+
+          .form-group.clearfix
+            .col-sm-6.col-sm-offset-2
+              div(role="alert", data-ng-show="sc.authorized").alert.alert-danger.col-sm-6
+                strong {{ 'MSG_WRONG_SIGNUP_5' | translate}}
 
           .form-group.clearfix
             .col-sm-6.col-sm-offset-2

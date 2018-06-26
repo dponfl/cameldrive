@@ -31,7 +31,8 @@ function translateConfig ($translateProvider) {
     'MSG_WRONG_SIGNUP': 'This profile was created already. Pls sign in at /login',
     'MSG_WRONG_SIGNUP_2': 'This user does not exist. Pls contact administrator.',
     'MSG_WRONG_SIGNUP_3': 'This user does not have Admin rights. Pls contact administrator.',
-    'MSG_WRONG_SIGNUP_4': 'Passwords are not equal. Pls try again.',
+    'MSG_WRONG_SIGNUP_4': 'Passwords are to be equal. Pls try again.',
+    'MSG_WRONG_SIGNUP_5': 'This user is authorized already.',
     'MSG_GEN_ERROR': 'Server error. Pls contact administrator.',
 
 
@@ -281,7 +282,7 @@ function translateConfig ($translateProvider) {
     'NAV_ADM_TESTIMONIALS': 'Отзывы',
     'NAV_ADM': 'Административный раздел',
     'TITLE_SIGNIN': 'Авторизация',
-    'TITLE_SIGNUP': 'Авторизация профиля и создание пароля',
+    'TITLE_SIGNUP': 'Активация профиля и создание пароля',
     'LOGIN_LABEL': 'Логин',
     'LOGIN_TEXT': 'Введите имя пользователя',
     'PASSWORD_LABEL': 'Пароль',
@@ -290,7 +291,8 @@ function translateConfig ($translateProvider) {
     'MSG_WRONG_SIGNUP': 'Этот профиль уже создан. Авторизуйтесь на странице /login',
     'MSG_WRONG_SIGNUP_2': 'Этот пользователь не существует. Свяжитесь с администратором.',
     'MSG_WRONG_SIGNUP_3': 'Этот пользователь не имеет административных прав. Свяжитесь с администратором.',
-    'MSG_WRONG_SIGNUP_4': 'Пароли не одинаковые. Попробуйте еще раз..',
+    'MSG_WRONG_SIGNUP_4': 'Пароли должны быть одинаковые. Попробуйте еще раз.',
+    'MSG_WRONG_SIGNUP_5': 'Этот пользователь уже авторизован',
     'MSG_GEN_ERROR': 'Серверная ошибка. Обратитесь к администратору.',
 
 

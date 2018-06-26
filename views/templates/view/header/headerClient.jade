@@ -37,5 +37,12 @@ nav.navbar.navbar-inverse.navbar-fixed-top
                   img(src='../../images/flag_icon_ru.png')
                   | &nbsp;&nbsp;&nbsp;Русский
 
-  toaster-container(data-toaster-options="{'toaster-id': '12345'}")
+          li(data-ng-show='hc.showUser')
+            button.btn.btn-default.wsp-header-btn-user Пользователь: {{ hc.user }}
+
+          li(data-ng-show='hc.showUser')
+            button(data-ng-click='hc.logout()').btn.btn-danger.wsp-header-btn-logout Выйти из Админ. раздела
+
+
+toaster-container(data-toaster-options="{'toaster-id': '12345'}")
 

@@ -15,6 +15,9 @@
     var self = {
       getUser: _getUser,
       updateUser: _updateUser,
+      logoutUser: _logoutUser,
+      checkLogInUser: _checkLogInUser,
+      // logIntUser: _logInUser,
     };
 
     return self;
@@ -99,6 +102,61 @@
       return deferred.promise;
 
     } // _updateUser
+
+
+    function _logoutUser() {
+
+      var deferred = $q.defer();
+
+      $http.post(_ms.getHost() + '/user/logout')
+        .then(successCb, errorCb);
+
+      function successCb(rec) {
+
+        console.log('<<<<<<<<< successCb >>>>>>>>>>>');
+        console.dir(rec);
+
+        deferred.resolve(rec);
+      } // successCb
+
+      function errorCb(err) {
+
+        console.log('<<<<<<<<<<< errorCb >>>>>>>>>>>');
+        console.dir(err);
+
+        deferred.reject(err);
+      } // errorCb
+
+      return deferred.promise;
+
+    } // _logoutUser
+
+    function _checkLogInUser() {
+
+      var deferred = $q.defer();
+
+      $http.post(_ms.getHost() + '/user/check')
+        .then(successCb, errorCb);
+
+      function successCb(rec) {
+
+        console.log('<<<<<<<<< successCb >>>>>>>>>>>');
+        console.dir(rec);
+
+        deferred.resolve(rec);
+      } // successCb
+
+      function errorCb(err) {
+
+        console.log('<<<<<<<<<<< errorCb >>>>>>>>>>>');
+        console.dir(err);
+
+        deferred.reject(err);
+      } // errorCb
+
+      return deferred.promise;
+
+    } // _checkLogInUser
 
   } // UserService
 
