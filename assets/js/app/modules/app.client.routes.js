@@ -83,9 +83,6 @@
           },
           section001: {
             templateUrl: 'templates/view/admin/login.html',
-            controller: ['$scope', '$stateParams', function ($scope, $stateParams) {
-              $scope.login = $stateParams.login;
-            }],
           },
           footer: {
             templateUrl: 'templates/view/footer/footerClient.html'

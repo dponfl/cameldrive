@@ -16,8 +16,8 @@
       getUser: _getUser,
       updateUser: _updateUser,
       logoutUser: _logoutUser,
+      loginUser: _loginUser,
       checkLogInUser: _checkLogInUser,
-      // logIntUser: _logInUser,
     };
 
     return self;
@@ -36,11 +36,6 @@
 
         console.log('<<<<<<<<< successCb >>>>>>>>>>>');
         console.dir(rec);
-
-        // if (!_.isNil(rec) && !_.isNil(rec.data)
-        //   && !_.isNil(rec.data.result) && !_.isArray(rec.data.result)) {
-        //   return new Error('_getUser, User data is not an array');
-        // }
 
         deferred.resolve(rec);
 
@@ -75,11 +70,6 @@
 
         console.log('<<<<<<<<< successCb >>>>>>>>>>>');
         console.dir(rec);
-
-        // if (!_.isNil(rec) && !_.isNil(rec.data)
-        //   && !_.isNil(rec.data.result) && !_.isArray(rec.data.result)) {
-        //   return new Error('_getUser, User data is not an array');
-        // }
 
         deferred.resolve(rec);
 
@@ -157,6 +147,40 @@
       return deferred.promise;
 
     } // _checkLogInUser
+
+    function _loginUser(reqObj) {
+
+      var deferred = $q.defer();
+
+      $http.post(_ms.getHost() + '/user/login', reqObj)
+        .then(successCb, errorCb);
+
+      function successCb(rec) {
+
+        console.log('<<<<<<<<< successCb >>>>>>>>>>>');
+        console.dir(rec);
+
+        deferred.resolve(rec);
+
+
+      } // successCb
+
+      function errorCb(err) {
+
+        console.log('<<<<<<<<<<< errorCb >>>>>>>>>>>');
+        console.dir(err);
+
+        if (!_.isNil(err) && !_.isNil(err.status) && err.status == 404) {
+          deferred.resolve(err);
+        } else {
+          deferred.reject(err);
+        }
+
+      } // errorCb
+
+      return deferred.promise;
+
+    } // _loginUser
 
   } // UserService
 

@@ -180,7 +180,7 @@ module.exports = {
 
       console.log('logout, req.session.user does not exist');
 
-      return res.badRequest('does not exist');
+      return res.notFound('user not found');
     }
   }, // logout
 

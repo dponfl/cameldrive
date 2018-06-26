@@ -79,7 +79,7 @@
           $log.info(error);
         });
 
-    };
+    }; // $onInit
 
 
 
