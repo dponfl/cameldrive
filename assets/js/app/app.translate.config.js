@@ -33,7 +33,11 @@ function translateConfig ($translateProvider) {
     'MSG_WRONG_SIGNUP_3': 'This user does not have Admin rights. Pls contact administrator.',
     'MSG_WRONG_SIGNUP_4': 'Passwords are to be equal. Pls try again.',
     'MSG_WRONG_SIGNUP_5': 'This user is authorized already.',
+    'MSG_WRONG_SIGNUP_6': 'Invalid login/password. Pls try again.',
     'MSG_GEN_ERROR': 'Server error. Pls contact administrator.',
+    'HEADER_USER': 'User:',
+    'HEADER_LOGOUT': 'Logout',
+
 
 
 
@@ -293,7 +297,10 @@ function translateConfig ($translateProvider) {
     'MSG_WRONG_SIGNUP_3': 'Этот пользователь не имеет административных прав. Свяжитесь с администратором.',
     'MSG_WRONG_SIGNUP_4': 'Пароли должны быть одинаковые. Попробуйте еще раз.',
     'MSG_WRONG_SIGNUP_5': 'Этот пользователь уже авторизован',
+    'MSG_WRONG_SIGNUP_6': 'Неверный логин/пароль. Попробуйте снова.',
     'MSG_GEN_ERROR': 'Серверная ошибка. Обратитесь к администратору.',
+    'HEADER_USER': 'Пользователь:',
+    'HEADER_LOGOUT': 'Выйти',
 
 
 
