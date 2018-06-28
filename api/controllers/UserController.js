@@ -6,6 +6,7 @@
  */
 
 const _ = require('lodash');
+const Passwords = require('machinepack-passwords');
 
 module.exports = {
   find: function (req, res) {
@@ -55,27 +56,65 @@ module.exports = {
 
   login: function (req, res) {
 
+    // todo: make parameters validation
+    var whereObj = req.allParams();
+
+    if (_.isNil(whereObj.username)) {
+      return res.badRequest('username is missing');
+    }
+
+    if (_.isNil(whereObj.pw)
+    ) {
+      return res.badRequest('pw is missing');
+    }
+
     if (!_.isNil(req.session.user) && !_.isNil(req.session.user.pw) && req.session.user.pw) {
 
       console.log('req.session.user:');
       console.dir(req.session.user);
 
-      return res.ok({
-        code: 200,
-        message: 'OK',
-        activeSession: true,
-        result: req.session.user
+      Passwords.checkPassword({
+
+        passwordAttempt: whereObj.pw,
+        encryptedPassword: req.session.user.pw,
+      }).exec({
+
+        error: function (err) {
+
+          return res.serverError(err);
+        },
+
+        incorrect: function () {
+
+          return res.notFound({
+            code: 404,
+            message: 'Not found: incorrect pw'
+          });
+        },
+
+        success: function () {
+
+          return res.ok({
+            code: 200,
+            message: 'OK',
+            activeSession: true,
+            result: req.session.user
+          });
+        },
+
       });
+
+
     } else {
       console.log('req.session.user is not defined');
     }
 
+    console.log('whereObj:');
+    console.dir(whereObj);
 
-    // todo: make parameters validation
-    var whereObj = req.allParams();
 
     User.findOne({
-      where: whereObj
+      username: whereObj.username
     })
       .exec((err, data) => {
 
@@ -86,20 +125,44 @@ module.exports = {
         if (_.isNil(data) || data.length == 0) {
           return res.notFound({
             code: 404,
-            message: 'Not found'});
+            message: 'Not found: no such user'
+          });
         }
 
-        req.session.user = data;
+        Passwords.checkPassword({
 
-        console.log('findOne, req.session.user:');
-        console.dir(req.session.user);
+          passwordAttempt: whereObj.pw,
+          encryptedPassword: data.pw,
+        }).exec({
 
-        return res.ok({
-          code: 200,
-          message: 'OK',
-          result: data
+          error: function (err) {
+
+            return res.serverError(err);
+          },
+
+          incorrect: function () {
+
+            return res.notFound({
+              code: 404,
+              message: 'Not found: incorrect pw'
+            });
+          },
+
+          success: function () {
+
+            req.session.user = data;
+            delete data.pw;
+
+            console.log('findOne, req.session.user:');
+            console.dir(req.session.user);
+
+            return res.ok({
+              activeSession: true,
+              result: data
+            });
+          },
+
         });
-
       });
   }, // login
 
@@ -114,6 +177,26 @@ module.exports = {
 
     if (_.isNil(params.val)) {
       return res.badRequest('Val parameter not defined');
+    }
+
+    if (!_.isNil(params.val.pw)) {
+
+      Passwords.encryptPassword({
+
+        password: params.val.pw,
+      }).exec({
+
+          error: function (err) {
+
+            return res.serverError(err);
+        },
+
+        success: function (result) {
+
+          params.val.pw = result;
+        },
+
+      });
     }
 
     User.update(params.criteria, params.val)
@@ -192,11 +275,14 @@ module.exports = {
       console.log('check, req.session.user:');
       console.dir(req.session.user);
 
+      let data = req.session.user;
+      delete data.pw;
+
       return res.ok({
         code: 200,
         message: 'OK',
         activeSession: req.session.user.pw != '',
-        result: req.session.user
+        result: data
       });
 
     } else {

@@ -30,7 +30,7 @@
 
     this.$onInit = function () {
 
-      // const moduleName = 'onInit';
+      const moduleName = 'onInit';
 
       // $log.info('$onInit...');
 
@@ -50,7 +50,7 @@
       })
         .then((rec) => {
 
-          $log.info('checkLogInUser, user:');
+          $log.info('onInit, user:');
           $log.info(rec);
 
           if (!_.isNil(rec.user.data.activeSession)
