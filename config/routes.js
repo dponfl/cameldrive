@@ -70,6 +70,8 @@ module.exports.routes = {
   'POST /cars/update': 'CarsController.update',
 
   'POST /testimonials/find': 'TestimonialsController.find',
+  'POST /testimonials/findp': 'TestimonialsController.findPager',
+  'POST /testimonials/findone': 'TestimonialsController.findOne',
   'POST /testimonials/put': 'TestimonialsController.put',
   'POST /testimonials/update': 'TestimonialsController.update',
 

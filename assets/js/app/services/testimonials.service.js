@@ -5,41 +5,58 @@
     .module('Cameldrive')
     .service('TestimonialsService', TestimonialsService);
 
-  TestimonialsService.$inject = ['MajorService', '$http', '$log', 'lodash', '$q'];
+  TestimonialsService.$inject = ['MajorService', '$log', '$rootScope', '$http',
+    'lodash', '$q'];
 
   /* @ngInject */
-  function TestimonialsService(MajorService, $http, $log, lodash, $q) {
-    var _ = lodash;
-    var _ms = MajorService;
+  function TestimonialsService(MajorService, $log, $rootScope, $http,
+                               lodash, $q) {
+    const _ = lodash;
+    const _ms = MajorService;
+
+    var name = 'TestimonialsService::';
+
     var self = {
-      getTestimonials: _getTestimonials,
-      putTestimonials: _putTestimonials,
-      updateTestimonials: _updateTestimonials,
+      getAllTestimonialsObjects: _getAllTestimonialsObjects,
+      getAllTestimonialsObjectsEdit: _getAllTestimonialsObjectsEdit,
+      getOneTestimonialsObject: _getOneTestimonialsObject,
+      getAllTestimonialsObjectsPager: _getAllTestimonialsObjectsPager,
+      putTestimonialsObject: _putTestimonialsObject,
+      updateTestimonialsObject: _updateTestimonialsObject,
     };
 
     return self;
 
     ////////////////
 
-    function _getTestimonials(reqObj) {
+
+    function _getAllTestimonialsObjects(reqObj) {
+
+      // todo: return object having result code (200, 404, etc.) and data
 
       return $http.post(_ms.getHost() + '/testimonials/find', reqObj)
         .then(successCb, errorCb);
 
       function successCb(data) {
 
-        // $log.info('_getTestimonials, successCb');
+        $log.info('TestimonialsService::_getAllTestimonialsObjects, data:');
+        $log.info(data);
 
-        if (!_.isArray(data.data.result)) {
-          return new Error('_getTestimonials, Testimonials data is not an array');
+        let evalServerResp = _ms.validateServerResponse(data);
+
+        $log.info('TestimonialsService::_getAllTestimonialsObjects, evalServerResp:');
+        $log.info(evalServerResp);
+
+        if (evalServerResp.status != 200) {
+          return evalServerResp;
         }
 
-        var response = data.data.result;
+        let response = evalServerResp.data;
 
-        $log.info('TestimonialsService::_getTestimonials, response:');
+        $log.info('TestimonialsService::_getAllTestimonialsObjects, response:');
         $log.info(response);
 
-        var __objs = {};
+        let __objs = {};
 
         let langList = _ms.getLangList();
 
@@ -62,8 +79,8 @@
           });
         });
 
-        // $log.info('TestimonialsService::_getTestimonials, __objs:');
-        // $log.info(__objs);
+        $log.info('TestimonialsService::_getAllTestimonialsObjects, __objs:');
+        $log.info(__objs);
 
         return {
           status: 200,
@@ -73,76 +90,45 @@
 
       function errorCb(err) {
 
-        // $log.info('_getTestimonials, errorCb');
-
         return {
           status: err.status,
           error: err,
         }
       } // errorCb
+    } // _getAllTestimonialsObjects
 
-    } // _getTestimonials
+    function _getAllTestimonialsObjectsEdit(reqObj) {
 
-    function _putTestimonials(reqObj) {
+      // todo: return object having result code (200, 404, etc.) and data
 
-      return $http.post(_ms.getHost() + '/testimonials/put', reqObj)
+      return $http.post(_ms.getHost() + '/testimonials/find', reqObj)
         .then(successCb, errorCb);
 
       function successCb(data) {
 
-        // $log.info('_putTestimonials, successCb, data:');
-        // $log.info(data);
+        $log.info('TestimonialsService::_getAllTestimonialsObjectsEdit, data:');
+        $log.info(data);
 
-        if (!_.isNumber(data.data.result.id)) {
-          return new Error('_putTestimonials, Testimonials data has wrong format');
+        let evalServerResp = _ms.validateServerResponse(data);
+
+        $log.info('TestimonialsService::_getAllTestimonialsObjectsEdit, evalServerResp:');
+        $log.info(evalServerResp);
+
+        if (evalServerResp.status != 200) {
+          return evalServerResp;
         }
 
-        var response = data.data.result;
+        let response = evalServerResp.data;
 
-        var __objs = {
-          en: [],
-          ru: [],
-        };
+        $log.info('TestimonialsService::_getAllTestimonialsObjectsEdit, response:');
+        $log.info(response);
 
-        __objs['en'].push({
-          show: response.show,
-          original: response.original,
-          name: response.name_en,
-          email: response.email,
-          phone: response.phone,
-          info: response.info_en,
-          position: response.position_en,
-          rate: response.rate,
-          user_agent: response.user_agent,
-          ip: response.ip,
-          cookie: response.cookie,
-          id: response.id,
-          createdAt: response.createdAt,
-          updatedAt: response.updatedAt,
-        });
-
-        __objs['ru'].push({
-          show: response.show,
-          original: response.original,
-          name: response.name_ru,
-          email: response.email,
-          phone: response.phone,
-          info: response.info_ru,
-          position: response.position_ru,
-          rate: response.rate,
-          user_agent: response.user_agent,
-          ip: response.ip,
-          cookie: response.cookie,
-          id: response.id,
-          createdAt: response.createdAt,
-          updatedAt: response.updatedAt,
-        });
 
         return {
-          status: 201,
-          data: __objs,
+          status: 200,
+          data: response,
         };
-      }
+      } // successCb
 
       function errorCb(err) {
 
@@ -150,74 +136,51 @@
           status: err.status,
           error: err,
         }
-      }
+      } // errorCb
+    } // _getAllTestimonialsObjectsEdit
 
-    } // _putTestimonials
+    function _getOneTestimonialsObject(reqObj) {
 
-    function _updateTestimonials(reqObj) {
+      // todo: return object having result code (200, 404, etc.) and data
 
-      // $log.info('_updateTestimonials, reqObj:');
-      // console.dir(reqObj);
-
-      return $http.post(_ms.getHost() + '/testimonials/update', reqObj)
+      return $http.post(_ms.getHost() + '/testimonials/findone', reqObj)
         .then(successCb, errorCb);
 
       function successCb(data) {
 
-        // $log.info('_updateTestimonials, successCb, data:');
-        // $log.info(data);
+        $log.info('TestimonialsService::_getOneTestimonialsObject, data:');
+        $log.info(data);
 
-        if (!_.isNumber(data.data.result[0].id)) {
-          return new Error('_updateTestimonials, Testimonials data has wrong format');
+        let evalServerResp = _ms.validateServerResponse(data);
+
+        $log.info('TestimonialsService::_getOneTestimonialsObject, evalServerResp:');
+        $log.info(evalServerResp);
+
+        if (evalServerResp.status != 200) {
+          return evalServerResp;
         }
 
-        var response = data.data.result[0];
+        let response = evalServerResp.data;
 
-        /*
-         $log.info('_updateTestimonials, response:');
-         console.dir(response);
-         $log.info('_updateTestimonials, response.length:');
-         console.dir(response.length);
-         */
+        $log.info('TestimonialsService::_getOneTestimonialsObject, response:');
+        $log.info(response);
 
-        var __objs = {
-          en: [],
-          ru: [],
+        let __objs = {
+          lang: response.lang,
+          show: response.show,
+          name: response.name,
+          email: response.email,
+          phone: response.phone,
+          info: response.info,
+          position: response.position,
+          rate: response.rate,
+          id: response.id,
+          createdAt: response.createdAt,
+          updatedAt: response.updatedAt,
         };
 
-        __objs['en'].push({
-          show: response.show,
-          original: response.original,
-          name: response.name_en,
-          email: response.email,
-          phone: response.phone,
-          info: response.info_en,
-          position: response.position_en,
-          rate: response.rate,
-          user_agent: response.user_agent,
-          ip: response.ip,
-          cookie: response.cookie,
-          id: response.id,
-          createdAt: response.createdAt,
-          updatedAt: response.updatedAt,
-        });
-
-        __objs['ru'].push({
-          show: response.show,
-          original: response.original,
-          name: response.name_ru,
-          email: response.email,
-          phone: response.phone,
-          info: response.info_ru,
-          position: response.position_ru,
-          rate: response.rate,
-          user_agent: response.user_agent,
-          ip: response.ip,
-          cookie: response.cookie,
-          id: response.id,
-          createdAt: response.createdAt,
-          updatedAt: response.updatedAt,
-        });
+        // $log.info('TestimonialsService::_getOneTestimonialsObject, __objs:');
+        // $log.info(__objs);
 
         return {
           status: 200,
@@ -232,9 +195,109 @@
           error: err,
         }
       }
+    } // _getOneTestimonialsObject
 
-    } // _updateTestimonials
+    function _getAllTestimonialsObjectsPager(reqObj, pager) {
+
+      return $http.post(_ms.getHost() + '/testimonials/findp', {
+        conditions: reqObj,
+        pager: pager
+      } )
+        .then(successCb, errorCb);
+
+      function successCb(data) {
+
+        $log.info('TestimonialsService::_getAllTestimonialsObjectsPager, data:');
+        $log.info(data);
+
+        let evalServerResp = _ms.validateServerResponse(data);
+
+        $log.info('TestimonialsService::_getAllTestimonialsObjectsPager, evalServerResp:');
+        $log.info(evalServerResp);
+
+        if (evalServerResp.status != 200) {
+          return evalServerResp;
+        }
+
+        let response = evalServerResp.data;
+
+        $log.info('TestimonialsService::_getAllTestimonialsObjectsPager, response:');
+        $log.info(response);
+
+        return {
+          status: 200,
+          data: response,
+        };
+      } // successCb
+
+      function errorCb(err) {
+
+        return {
+          status: err.status,
+          error: err,
+        }
+      } // errorCb
+    } // _getAllTestimonialsObjectsPager
+
+    function _putTestimonialsObject(reqObj) {
+
+      const methodName = '_putTestimonialsObject';
+
+      var deferred = $q.defer();
+
+      // todo: return object having result code (200, 404, etc.) and data
+
+      $http.post(_ms.getHost() + '/testimonials/put', reqObj)
+        .then(successCb, errorCb);
+
+      function successCb(data) {
+
+        $log.info(name + methodName + ', successCb, data:');
+        $log.info(data);
+
+        deferred.resolve(data);
+      } // successCb
+
+      function errorCb(err) {
+
+        $log.info(name + methodName + ', error:');
+        $log.info(err);
+
+        deferred.reject(err);
+      } // errorCb
+
+      return deferred.promise;
+
+    } // _putTestimonialsObject
+
+    function _updateTestimonialsObject(rec) {
+
+      const methodName = '_updateTestimonialsObject';
+
+      var deferred = $q.defer();
+
+      $http.post(_ms.getHost() + '/testimonials/update', rec)
+        .then(successCb, errorCb);
+
+      function successCb(rec) {
+
+        $log.info(name + methodName + ', successCb, data:');
+        $log.info(rec);
+
+        deferred.resolve(rec);
+      } // successCb
+
+      function errorCb(err) {
+
+        $log.info(name + methodName + ', error:');
+        $log.info(err);
+
+        deferred.reject(err);
+      } // errorCb
+
+      return deferred.promise;
+
+    } // _updateTestimonialsObject
   } // TestimonialsService
-
 })();
 
