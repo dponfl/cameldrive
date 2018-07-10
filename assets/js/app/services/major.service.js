@@ -21,7 +21,7 @@
     var camelConfig = configCamel;
     var scrollDisabled = false;
     var imgFileNameElement = '$$$_-_$$$';
-    var testimonialsNumber = 3; // number of testimonials to be shown
+    var testimonialsNumber = 6; // number of testimonials to be shown
 
     var cars = {
       panelsAllLangs: [],

@@ -73,7 +73,9 @@
 
             // $log.info('Number of records: ' + numRecs);
 
-            for (let i = 1; i <= numRecToShow; i++) {
+            let useNumRecToShow = _.min([numRecs, numRecToShow]);
+
+            for (let i = 1; i <= useNumRecToShow; i++) {
 
               var j = 0;
 
