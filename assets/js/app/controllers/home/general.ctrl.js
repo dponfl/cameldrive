@@ -10,24 +10,29 @@
   /* @ngInject */
   function GeneralCtrl() {
     var vm = this;
+
     vm.title = 'GeneralCtrl';
     vm.isMobile = isMobile;
 
-    this.$onInit = function () {
-      activate();
-    };
+    // this.$onInit = function () {
+    //   checkMobile();
+    // };
+
 
     ////////////////
 
-    function activate() {
+
+    function checkMobile() {
 
       if (vm.isMobile.any) {
         vm.parallaxSpeed = 1;
       } else {
         vm.parallaxSpeed = 0.3;
       }
-    }
-  }
+    } // checkMobile
+
+
+  } // GeneralCtrl
 
 })();
 

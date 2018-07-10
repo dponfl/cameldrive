@@ -60,7 +60,7 @@
             templateUrl: 'templates/view/footer/footerClient.html'
           },
         },
-        url: '/',
+        url: '/conditions',
       })
       .state('insurance', {
         views: {
@@ -74,8 +74,68 @@
             templateUrl: 'templates/view/footer/footerClient.html'
           },
         },
-        url: '/',
+        url: '/insurance',
+      })
+      .state('login', {
+        views: {
+          header: {
+            templateUrl: 'templates/view/header/headerClient.html'
+          },
+          section001: {
+            templateUrl: 'templates/view/admin/login.html',
+          },
+          footer: {
+            templateUrl: 'templates/view/footer/footerClient.html'
+          },
+        },
+        url: '/login',
+        params: {
+          login: null,
+        },
+      })
+      .state('signup', {
+        views: {
+          header: {
+            templateUrl: 'templates/view/header/headerClient.html'
+          },
+          section001: {
+            templateUrl: 'templates/view/admin/signup.html',
+          },
+          footer: {
+            templateUrl: 'templates/view/footer/footerClient.html'
+          },
+        },
+        url: '/signup',
+      })
+      .state('admin', {
+        views: {
+          header: {
+            templateUrl: 'templates/view/header/headerAdmin.html'
+          },
+          section001: {
+            templateUrl: 'templates/view/admin/admin.html',
+          },
+          footer: {
+            templateUrl: 'templates/view/footer/footerClient.html'
+          },
+        },
+        url: '/admin',
+      })
+      .state('admin_testimonials', {
+        views: {
+          header: {
+            templateUrl: 'templates/view/header/headerAdmin.html'
+          },
+          section001: {
+            templateUrl: 'templates/view/admin/testimonials.html',
+          },
+          footer: {
+            templateUrl: 'templates/view/footer/footerClient.html'
+          },
+        },
+        url: '/admin_testimonials',
       });
+
 
 
     // todo: delete

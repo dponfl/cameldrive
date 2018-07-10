@@ -1,0 +1,94 @@
+#testimonials
+  .row#testimonialsCallout
+    .cal-12
+      .well
+        .page-header.page-primary
+          h1 {{'TESTIMONIALS_PAGE_HEADER_TITLE' | translate}}
+
+        div(data-ng-controller='TestimonialsPanelAdminTblCtrl as p').page-body#block-long
+
+          div(bs-active-pane="p.activeTabMain", bs-tabs)
+
+            //=================
+            // New objects
+            //=================
+
+            div(data-title="Создание новых отзывов",
+            name="new_obj",
+            bs-pane
+            ).tabs-block
+
+              div(data-ng-controller='TestimonialsCreateAdminCtrl')
+                testimonials-admin-create()
+
+
+            //=================
+            // Existing objects
+            //=================
+
+            div(data-title="Редактирование отзывов",
+            name="existing_obj",
+            bs-pane
+            ).tabs-block
+              .row#block-testimonials-filter-admin
+                .col-sm-6.col-sm-offset-3#testimonialsFilterWrapper
+                  .panel.panel-info#testimonialsFilter
+                    .panel-heading
+                      h3(translate='PANEL_HEADER')
+                    div(data-ng-controller='AdminеestimonialsFiltersCtrl as e').panel-body
+                      admin-testimonials-object-filter(land-list='e.langList',
+                      show-list='e.showList',
+                      )
+
+              div(data-ng-controller='TestimonialsCtrl', data-ng-init="updateDataEdit()")
+
+                div(data-ng-if='testimonials.showFoundNothing')
+                  nothing-found
+
+                div(data-ng-hide='testimonials.showFoundNothing').row
+                  .col-sm-10
+                    h2 Список отзывов
+                    button(data-ng-click='p.clearSort();').btn.btn-info Очистить сортировку
+                    table.table.table-striped.table-hover
+                      thead
+                        tr
+                          th(data-ng-click='p.sort("lang");').sort-th Язык отзыва
+                            span(data-ng-show="p.sortKey=='lang'",
+                            data-ng-class="{'glyphicon-chevron-up':!p.reverse,'glyphicon-chevron-down':p.reverse}").glyphicon.sort-icon
+                          th(data-ng-click='p.sort("name");').sort-th Имя
+                            span(data-ng-show="p.sortKey=='name'",
+                            data-ng-class="{'glyphicon-chevron-up':!p.reverse,'glyphicon-chevron-down':p.reverse}").glyphicon.sort-icon
+                          th Текст отзыва
+                          th
+                            div.text-center Открыт для показа
+                          th
+                            div.text-center Действие
+                      tbody
+                        tr(data-dir-paginate='panel in testimonials.panelsEdit|orderBy:p.sortKey:p.reverse|itemsPerPage:7')
+                          td {{panel.lang}}
+                          td {{panel.name}}
+                          td {{panel.info}}
+                          td
+                            div(data-ng-if="panel.show").text-center
+                              span(aria-hidden="true").glyphicon.glyphicon-ok.admin-text-green
+                            div(data-ng-if="!panel.show").text-center
+                              span(aria-hidden="true").glyphicon.glyphicon-remove.admin-text-red
+                          td
+                            button(data-ng-click='p.edit(panel.id)',
+                            data-ng-disabled="!admin.testimonials.editObjEnableButton"
+                            ).btn.btn-sm.btn-info Редактировать
+
+                    dir-pagination-controls(max-size="3", boundary-links="true")
+
+              div(data-ng-controller='TestimonialsEditAdminCtrl as leac',
+              data-ng-show='admin.testimonials.editPanelShow'
+              )
+                .panel.panel-info
+                  .panel-heading
+                    h3 {{"HEADER_PANEL_EDIT" | translate}}
+                      | {{leac.formData.objnumber}}
+                  .panel.panel-body
+                    testimonials-admin-edit-directive()
+
+
+

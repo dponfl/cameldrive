@@ -5,10 +5,12 @@
     .module('Cameldrive')
     .factory('MajorService', MajorService);
 
-  MajorService.$inject = ['$log', 'configCamel', '$rootScope'];
+  MajorService.$inject = ['$log', 'configCamel', '$rootScope', 'lodash'];
 
   /* @ngInject */
-  function MajorService($log, configCamel, $rootScope) {
+  function MajorService($log, configCamel, $rootScope, lodash) {
+
+    const _ = lodash;
 
     var numLang = 2;
     var lang = 'en';
@@ -19,7 +21,7 @@
     var camelConfig = configCamel;
     var scrollDisabled = false;
     var imgFileNameElement = '$$$_-_$$$';
-    var testimonialsNumber = 3; // number of testimonials to be shown
+    var testimonialsNumber = 6; // number of testimonials to be shown
 
     var cars = {
       panelsAllLangs: [],
@@ -56,6 +58,7 @@
       getHost: _getHost, // get host
       getCarGroup: _getCarGroup, // get selected car group
       setCarGroup: _setCarGroup, // set selected car group
+      validateServerResponse: _validateServerResponse, // analyse server response and create unified reply
     };
     return service;
 
@@ -149,6 +152,33 @@
     function _setCarGroup(group) {
       selectedCarGroup = group;
     } // _setCarGroup
+
+    function _validateServerResponse(resp) {
+
+      if (_.isNil(resp.status)) {
+        return {
+          status: 500,
+          statusText: 'Server error'
+        }
+      } else if (resp.status != 200) {
+        return {
+          status: resp.status,
+          statusText: (_.isNil(resp.statusText) ? 'Error with no statusText' : resp.statusText)
+        }
+      } else if (_.isNil(resp.data)) {
+        return {
+          status: 404,
+          statusText: 'Server code 200 but no data received'
+        }
+      } else {
+        return {
+          status: 200,
+          statusText: (_.isNil(resp.statusText) ? 'OK with no statusText' : resp.statusText),
+          data: resp.data,
+        }
+      }
+    } // _validateServerResponse
+
 
   } // MajorService
 
