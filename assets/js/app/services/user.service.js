@@ -44,8 +44,8 @@
 
       function errorCb(err) {
 
-        console.log('<<<<<<<<<<< errorCb >>>>>>>>>>>');
-        console.dir(err);
+        // console.log('<<<<<<<<<<< errorCb >>>>>>>>>>>');
+        // console.dir(err);
 
         if (!_.isNil(err) && !_.isNil(err.status) && err.status == 404) {
           deferred.resolve(err);
@@ -78,8 +78,8 @@
 
       function errorCb(err) {
 
-        console.log('<<<<<<<<<<< errorCb >>>>>>>>>>>');
-        console.dir(err);
+        // console.log('<<<<<<<<<<< errorCb >>>>>>>>>>>');
+        // console.dir(err);
 
         if (!_.isNil(err) && !_.isNil(err.status) && err.status == 404) {
           deferred.resolve(err);
@@ -111,8 +111,8 @@
 
       function errorCb(err) {
 
-        console.log('<<<<<<<<<<< errorCb >>>>>>>>>>>');
-        console.dir(err);
+        // console.log('<<<<<<<<<<< errorCb >>>>>>>>>>>');
+        // console.dir(err);
 
         deferred.reject(err);
       } // errorCb
@@ -138,8 +138,8 @@
 
       function errorCb(err) {
 
-        console.log('<<<<<<<<<<< errorCb >>>>>>>>>>>');
-        console.dir(err);
+        // console.log('<<<<<<<<<<< errorCb >>>>>>>>>>>');
+        // console.dir(err);
 
         deferred.reject(err);
       } // errorCb
@@ -167,8 +167,8 @@
 
       function errorCb(err) {
 
-        console.log('<<<<<<<<<<< errorCb >>>>>>>>>>>');
-        console.dir(err);
+        // console.log('<<<<<<<<<<< errorCb >>>>>>>>>>>');
+        // console.dir(err);
 
         if (!_.isNil(err) && !_.isNil(err.status) && err.status == 404) {
           deferred.resolve(err);
