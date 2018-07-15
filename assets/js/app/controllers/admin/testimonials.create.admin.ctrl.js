@@ -13,6 +13,9 @@
     vm.name = 'TestimonialsCreateAdminCtrl::';
     var _ = lodash;
 
+    vm.createError = false;
+    vm.createSuccess = false;
+
     vm.create = _create;
     vm.clear = _clear;
 
@@ -30,6 +33,16 @@
     function _create() {
 
       let methodName = '_create';
+
+      if (vm.createSuccess) {
+        return;
+      }
+
+      if (_.trim(vm.formData.name) == ''
+        || _.trim(vm.formData.msg) == ''
+      ) {
+        return;
+      }
 
       let createRecord = {
         show: (vm.formData.show == "show"),
