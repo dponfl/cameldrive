@@ -135,8 +135,8 @@
       var reqParams = {};
 
 
-      $log.info(name + methodName + ', vm.formData:');
-      $log.info(vm.formData);
+      // $log.info(name + methodName + ', vm.formData:');
+      // $log.info(vm.formData);
 
       /**
        * Get records from database according to filter data
@@ -164,14 +164,14 @@
         }
       }
 
-      $log.info(name + methodName + ', reqParams:');
-      $log.info(reqParams);
+      // $log.info(name + methodName + ', reqParams:');
+      // $log.info(reqParams);
 
       $q.all({rec: TestimonialsService.getAllTestimonialsObjectsEdit(reqParams)})
         .then((result) => {
 
-          $log.info(vm.name + methodName + ', result:');
-          $log.info(result);
+          // $log.info(vm.name + methodName + ', result:');
+          // $log.info(result);
 
           if (!_.isNil(result.rec.status)) {
 
@@ -201,8 +201,8 @@
 
           $scope.records = [];
 
-          $log.info(vm.name + methodName + ', error:');
-          $log.info(error);
+          // $log.info(vm.name + methodName + ', error:');
+          // $log.info(error);
         });
 
       vm.filterDisabled = false;
@@ -222,10 +222,10 @@
       vm.formData.show = vm.showList[0];
       vm.formData.lang = vm.langList[0];
 
-      $log.info(name + methodName + ', vm.formData:');
-      $log.info(vm.formData);
-      $log.info(name + methodName + ', $scope.showFoundNothing:');
-      $log.info($scope.showFoundNothing);
+      // $log.info(name + methodName + ', vm.formData:');
+      // $log.info(vm.formData);
+      // $log.info(name + methodName + ', $scope.showFoundNothing:');
+      // $log.info($scope.showFoundNothing);
 
 
       vm.filterDisabled = false;
@@ -241,7 +241,7 @@
     function _sort(keyName) {
       const methodName = '_sort';
 
-      $log.info(vm.name + methodName + ', keyName: ' + keyName);
+      // $log.info(vm.name + methodName + ', keyName: ' + keyName);
 
 
       vm.sortKey = keyName;
@@ -251,7 +251,7 @@
     function _clearSort() {
       const methodName = '_clearSort';
 
-      $log.info(vm.name + methodName);
+      // $log.info(vm.name + methodName);
 
       vm.sortKey ='';
       vm.reverse = false;
@@ -260,7 +260,7 @@
     function _edit(recId) {
       const methodName = '_edit';
 
-      $log.info(vm.name + methodName + ', recId: ' + recId);
+      // $log.info(vm.name + methodName + ', recId: ' + recId);
 
       $scope.editMode = true;
 
@@ -283,17 +283,17 @@
     function _delete(recId) {
       const methodName = '_delete';
 
-      $log.info(vm.name + methodName + ', recId: ' + recId);
+      // $log.info(vm.name + methodName + ', recId: ' + recId);
 
     } // _delete
 
     function _update() {
       const methodName = '_update';
 
-      $log.info(vm.name + methodName);
+      // $log.info(vm.name + methodName);
 
-      $log.info(vm.name + methodName + ', vm.objData:');
-      $log.info(vm.formData);
+      // $log.info(vm.name + methodName + ', vm.objData:');
+      // $log.info(vm.formData);
 
       let updateRecord = {
         id: vm.objData.id,
@@ -309,8 +309,8 @@
       $q.all({rec: TestimonialsService.updateTestimonialsObject(updateRecord)})
         .then((result) => {
 
-          $log.info(vm.name + methodName + ', result:');
-          $log.info(result);
+          // $log.info(vm.name + methodName + ', result:');
+          // $log.info(result);
 
           $scope.updateSuccess = true;
 
@@ -332,8 +332,8 @@
         })
         .catch((error) => {
 
-          $log.info(vm.name + methodName + ', error:');
-          $log.info(error);
+          // $log.info(vm.name + methodName + ', error:');
+          // $log.info(error);
 
           $scope.updateError = true;
 
@@ -349,7 +349,7 @@
     function _cancel() {
       const methodName = '_cancel';
 
-      $log.info(vm.name + methodName);
+      // $log.info(vm.name + methodName);
 
       $scope.editMode = false;
     } // _cancel

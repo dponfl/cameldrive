@@ -39,13 +39,13 @@
 
       function successCb(data) {
 
-        $log.info('TestimonialsService::_getAllTestimonialsObjects, data:');
-        $log.info(data);
+        // $log.info('TestimonialsService::_getAllTestimonialsObjects, data:');
+        // $log.info(data);
 
         let evalServerResp = _ms.validateServerResponse(data);
 
-        $log.info('TestimonialsService::_getAllTestimonialsObjects, evalServerResp:');
-        $log.info(evalServerResp);
+        // $log.info('TestimonialsService::_getAllTestimonialsObjects, evalServerResp:');
+        // $log.info(evalServerResp);
 
         if (evalServerResp.status != 200) {
           return evalServerResp;
@@ -53,8 +53,8 @@
 
         let response = evalServerResp.data;
 
-        $log.info('TestimonialsService::_getAllTestimonialsObjects, response:');
-        $log.info(response);
+        // $log.info('TestimonialsService::_getAllTestimonialsObjects, response:');
+        // $log.info(response);
 
         let __objs = {};
 
@@ -79,8 +79,8 @@
           });
         });
 
-        $log.info('TestimonialsService::_getAllTestimonialsObjects, __objs:');
-        $log.info(__objs);
+        // $log.info('TestimonialsService::_getAllTestimonialsObjects, __objs:');
+        // $log.info(__objs);
 
         return {
           status: 200,
@@ -106,13 +106,13 @@
 
       function successCb(data) {
 
-        $log.info('TestimonialsService::_getAllTestimonialsObjectsEdit, data:');
-        $log.info(data);
+        // $log.info('TestimonialsService::_getAllTestimonialsObjectsEdit, data:');
+        // $log.info(data);
 
         let evalServerResp = _ms.validateServerResponse(data);
 
-        $log.info('TestimonialsService::_getAllTestimonialsObjectsEdit, evalServerResp:');
-        $log.info(evalServerResp);
+        // $log.info('TestimonialsService::_getAllTestimonialsObjectsEdit, evalServerResp:');
+        // $log.info(evalServerResp);
 
         if (evalServerResp.status != 200) {
           return evalServerResp;
@@ -120,8 +120,8 @@
 
         let response = evalServerResp.data;
 
-        $log.info('TestimonialsService::_getAllTestimonialsObjectsEdit, response:');
-        $log.info(response);
+        // $log.info('TestimonialsService::_getAllTestimonialsObjectsEdit, response:');
+        // $log.info(response);
 
 
         return {
@@ -148,13 +148,13 @@
 
       function successCb(data) {
 
-        $log.info('TestimonialsService::_getOneTestimonialsObject, data:');
-        $log.info(data);
+        // $log.info('TestimonialsService::_getOneTestimonialsObject, data:');
+        // $log.info(data);
 
         let evalServerResp = _ms.validateServerResponse(data);
 
-        $log.info('TestimonialsService::_getOneTestimonialsObject, evalServerResp:');
-        $log.info(evalServerResp);
+        // $log.info('TestimonialsService::_getOneTestimonialsObject, evalServerResp:');
+        // $log.info(evalServerResp);
 
         if (evalServerResp.status != 200) {
           return evalServerResp;
@@ -162,8 +162,8 @@
 
         let response = evalServerResp.data;
 
-        $log.info('TestimonialsService::_getOneTestimonialsObject, response:');
-        $log.info(response);
+        // $log.info('TestimonialsService::_getOneTestimonialsObject, response:');
+        // $log.info(response);
 
         let __objs = {
           lang: response.lang,
@@ -207,13 +207,13 @@
 
       function successCb(data) {
 
-        $log.info('TestimonialsService::_getAllTestimonialsObjectsPager, data:');
-        $log.info(data);
+        // $log.info('TestimonialsService::_getAllTestimonialsObjectsPager, data:');
+        // $log.info(data);
 
         let evalServerResp = _ms.validateServerResponse(data);
 
-        $log.info('TestimonialsService::_getAllTestimonialsObjectsPager, evalServerResp:');
-        $log.info(evalServerResp);
+        // $log.info('TestimonialsService::_getAllTestimonialsObjectsPager, evalServerResp:');
+        // $log.info(evalServerResp);
 
         if (evalServerResp.status != 200) {
           return evalServerResp;
@@ -221,8 +221,8 @@
 
         let response = evalServerResp.data;
 
-        $log.info('TestimonialsService::_getAllTestimonialsObjectsPager, response:');
-        $log.info(response);
+        // $log.info('TestimonialsService::_getAllTestimonialsObjectsPager, response:');
+        // $log.info(response);
 
         return {
           status: 200,
@@ -252,16 +252,16 @@
 
       function successCb(data) {
 
-        $log.info(name + methodName + ', successCb, data:');
-        $log.info(data);
+        // $log.info(name + methodName + ', successCb, data:');
+        // $log.info(data);
 
         deferred.resolve(data);
       } // successCb
 
       function errorCb(err) {
 
-        $log.info(name + methodName + ', error:');
-        $log.info(err);
+        // $log.info(name + methodName + ', error:');
+        // $log.info(err);
 
         deferred.reject(err);
       } // errorCb
@@ -281,16 +281,16 @@
 
       function successCb(rec) {
 
-        $log.info(name + methodName + ', successCb, data:');
-        $log.info(rec);
+        // $log.info(name + methodName + ', successCb, data:');
+        // $log.info(rec);
 
         deferred.resolve(rec);
       } // successCb
 
       function errorCb(err) {
 
-        $log.info(name + methodName + ', error:');
-        $log.info(err);
+        // $log.info(name + methodName + ', error:');
+        // $log.info(err);
 
         deferred.reject(err);
       } // errorCb

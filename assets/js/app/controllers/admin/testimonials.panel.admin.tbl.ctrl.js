@@ -13,9 +13,9 @@
     vm.title = 'TestimonialsPanelAdminTblCtrl::';
 
     this.$onInit = function () {
-      $log.info(vm.title + ', $onInit...');
-      $log.info('$scope:');
-      $log.info($scope);
+      // $log.info(vm.title + ', $onInit...');
+      // $log.info('$scope:');
+      // $log.info($scope);
     };
 
     activate();
@@ -24,7 +24,8 @@
 
     function activate() {
 
-      $log.info(vm.title + ', activate...');
+      // $log.info(vm.title + ', activate...');
+
       vm.sort = _sort;
       vm.clearSort = _clearSort;
       vm.edit = _edit;
@@ -41,7 +42,7 @@
     function _sort(keyName) {
       const method = '_sort';
 
-      $log.info(vm.title + method + ', keyName: ' + keyName);
+      // $log.info(vm.title + method + ', keyName: ' + keyName);
 
 
       vm.sortKey = keyName;
@@ -51,7 +52,7 @@
     function _clearSort() {
       const method = '_clearSort';
 
-      $log.info(vm.title + method);
+      // $log.info(vm.title + method);
 
       vm.sortKey ='';
       vm.reverse = false;
@@ -60,7 +61,7 @@
     function _edit(recId) {
       const method = '_edit';
 
-      $log.info(vm.title + method + ', recId: ' + recId);
+      // $log.info(vm.title + method + ', recId: ' + recId);
 
       vm.editMode = true;
 
@@ -70,7 +71,7 @@
     function _delete(recId) {
       const method = '_delete';
 
-      $log.info(vm.title + method + ', recId: ' + recId);
+      // $log.info(vm.title + method + ', recId: ' + recId);
 
     } // _delete
   }

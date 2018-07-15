@@ -12,7 +12,7 @@
   function LoginController($log, $state, lodash, $translate, GeneralConfigService,
                            UserService, $q, $stateParams) {
 
-    $log.info('LoginController');
+    // $log.info('LoginController');
 
     var _ = lodash;
     var vm = this;
@@ -50,8 +50,8 @@
       })
         .then((rec) => {
 
-          $log.info('onInit, user:');
-          $log.info(rec);
+          // $log.info('onInit, user:');
+          // $log.info(rec);
 
           if (!_.isNil(rec.user.data.activeSession)
             && rec.user.data.activeSession) {
@@ -71,8 +71,8 @@
         })
         .catch((error) => {
 
-          $log.info(_getFullModuleName(moduleName) + ', error: ');
-          $log.info(error);
+          // $log.info(_getFullModuleName(moduleName) + ', error: ');
+          // $log.info(error);
         });
 
     }; // $onInit
@@ -92,7 +92,7 @@
 
       const moduleName = '_loginUser';
 
-      $log.info(_getFullModuleName(moduleName));
+      // $log.info(_getFullModuleName(moduleName));
 
       $q.all({
         user: UserService.loginUser({
@@ -102,8 +102,8 @@
       })
         .then((rec) => {
 
-          $log.info('user: ');
-          $log.info(rec);
+          // $log.info('user: ');
+          // $log.info(rec);
 
           if (!_.isNil(rec)
             && !_.isNil(rec.user)
@@ -140,8 +140,8 @@
         })
         .catch((error) => {
 
-          $log.info(_getFullModuleName(moduleName) + ', error: ');
-          $log.info(error);
+          // $log.info(_getFullModuleName(moduleName) + ', error: ');
+          // $log.info(error);
         });
     } // _loginUser
 
@@ -149,7 +149,7 @@
 
       const moduleName = '_clear';
 
-      $log.info(_getFullModuleName(moduleName));
+      // $log.info(_getFullModuleName(moduleName));
 
       vm.username = '';
       vm.password = '';

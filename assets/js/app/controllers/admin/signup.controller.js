@@ -12,7 +12,7 @@
   function SignupController(UserService, $log, $state, lodash, $translate,
                             GeneralConfigService, $q) {
 
-    $log.info('SignupController');
+    // $log.info('SignupController');
 
     var _ = lodash;
     var vm = this;
@@ -51,8 +51,8 @@
       })
         .then((rec) => {
 
-          $log.info('checkLogInUser, user:');
-          $log.info(rec);
+          // $log.info('checkLogInUser, user:');
+          // $log.info(rec);
 
           if (!_.isNil(rec.user.data.activeSession)
             && rec.user.data.activeSession) {
@@ -75,8 +75,8 @@
         })
         .catch((error) => {
 
-          $log.info(_getFullModuleName(moduleName) + ', error: ');
-          $log.info(error);
+          // $log.info(_getFullModuleName(moduleName) + ', error: ');
+          // $log.info(error);
         });
 
     }; // $onInit
@@ -113,8 +113,8 @@
       })
         .then((data) => {
 
-        $log.info(_getFullModuleName(moduleName) + ', data: ');
-        $log.info(data);
+        // $log.info(_getFullModuleName(moduleName) + ', data: ');
+        // $log.info(data);
 
         if (!_.isNil(data) && !_.isNil(data.user)
           && !_.isNil(data.user.status)) {
@@ -161,14 +161,14 @@
                   })
                     .then((rec) => {
 
-                    $log.info('updated user: ');
-                    $log.info(rec);
+                    // $log.info('updated user: ');
+                    // $log.info(rec);
                     $state.go('admin');
                   })
                     .catch((error) => {
 
-                      $log.info(_getFullModuleName(moduleName) + ', error: ');
-                      $log.info(err);
+                      // $log.info(_getFullModuleName(moduleName) + ', error: ');
+                      // $log.info(err);
 
                       vm.generalError = true;
                     });
@@ -190,15 +190,15 @@
                   })
                     .then((rec) => {
 
-                      $log.info('updated user: ');
-                      $log.info(rec);
+                      // $log.info('updated user: ');
+                      // $log.info(rec);
                       vm.userNotAdmin = true;
                       $state.go('home');
                     })
                     .catch((error) => {
 
-                      $log.info(_getFullModuleName(moduleName) + ', error: ');
-                      $log.info(error);
+                      // $log.info(_getFullModuleName(moduleName) + ', error: ');
+                      // $log.info(error);
 
                       vm.generalError = true;
                     });
@@ -217,8 +217,8 @@
       })
         .catch((err) => {
 
-        $log.info(_getFullModuleName(moduleName) + ', error: ');
-        $log.info(err);
+        // $log.info(_getFullModuleName(moduleName) + ', error: ');
+        // $log.info(err);
 
         vm.generalError = true;
 

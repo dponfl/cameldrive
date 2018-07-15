@@ -31,8 +31,8 @@
       })
         .then((rec) => {
 
-          $log.info('checkLogInUser, user:');
-          $log.info(rec);
+          // $log.info('checkLogInUser, user:');
+          // $log.info(rec);
 
           if (!_.isNil(rec.user.data.activeSession)
             && rec.user.data.activeSession) {
@@ -45,8 +45,8 @@
         })
         .catch((error) => {
 
-          $log.info(_getFullModuleName(moduleName) + ', error: ');
-          $log.info(error);
+          // $log.info(_getFullModuleName(moduleName) + ', error: ');
+          // $log.info(error);
         });
     };
 
@@ -88,8 +88,8 @@
       })
         .then((rec) => {
 
-          $log.info('logout user: ');
-          $log.info(rec);
+          // $log.info('logout user: ');
+          // $log.info(rec);
 
           vm.user = '';
           vm.showUser = false;
@@ -98,8 +98,8 @@
         })
         .catch((error) => {
 
-          $log.info(_getFullModuleName(moduleName) + ', error: ');
-          $log.info(error);
+          // $log.info(_getFullModuleName(moduleName) + ', error: ');
+          // $log.info(error);
         });
     } // _logout
 

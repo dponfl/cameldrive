@@ -42,14 +42,14 @@
       };
 
 
-      $log.info(vm.name + methodName + ', vm.formData:');
-      $log.info(vm.formData);
+      // $log.info(vm.name + methodName + ', vm.formData:');
+      // $log.info(vm.formData);
 
       $q.all({rec: TestimonialsService.putTestimonialsObject(createRecord)})
         .then((result) => {
 
-          $log.info(vm.name + methodName + ', result:');
-          $log.info(result);
+          // $log.info(vm.name + methodName + ', result:');
+          // $log.info(result);
 
           // todo: if success => show success alarm for 5 sec. else - show error alarm
           vm.createSuccess = true;
@@ -57,8 +57,8 @@
         })
         .catch((error) => {
 
-          $log.info(vm.name + methodName + ', error:');
-          $log.info(error);
+          // $log.info(vm.name + methodName + ', error:');
+          // $log.info(error);
 
           vm.createError = true;
         });

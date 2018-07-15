@@ -161,8 +161,8 @@
       })
         .then(function (results) {
 
-          $log.info('TestimonialsCtrl, __performRequest results:');
-          $log.info(results);
+          // $log.info('TestimonialsCtrl, __performRequest results:');
+          // $log.info(results);
 
           if (results.objs.status == 404) {
 
@@ -200,8 +200,8 @@
         .catch(function (err) {
           // todo: change by Log
 
-          $log.warn(vm.title + ', Error...');
-          $log.error(err);
+          // $log.warn(vm.title + ', Error...');
+          // $log.error(err);
 
           return {
             performed: false,
