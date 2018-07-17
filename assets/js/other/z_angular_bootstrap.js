@@ -39,7 +39,7 @@
 
     angular.element(document).ready(function() {
       console.log('Angular manual bootstrap');
-      angular.bootstrap(document);
+      angular.bootstrap(document, ['Cameldrive']);
     });
 }
 
