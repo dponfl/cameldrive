@@ -1,8 +1,8 @@
 "use strict";
 
-const _ = require('lodash');
+var _ = require('lodash');
 let objNum = '';
-const imgFileNameElement = '$$$_-_$$$';
+var imgFileNameElement = '$$$_-_$$$';
 
 module.exports = {
   upload: function (req, res) {

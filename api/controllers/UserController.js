@@ -5,8 +5,8 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
-const _ = require('lodash');
-const Passwords = require('machinepack-passwords');
+var _ = require('lodash');
+var Passwords = require('machinepack-passwords');
 
 module.exports = {
   find: function (req, res) {
