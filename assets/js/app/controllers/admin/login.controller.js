@@ -30,7 +30,7 @@
 
     this.$onInit = function () {
 
-      const moduleName = 'onInit';
+      var moduleName = 'onInit';
 
       // $log.info('$onInit...');
 
@@ -90,7 +90,7 @@
 
     function _loginUser() {
 
-      const moduleName = '_loginUser';
+      var moduleName = '_loginUser';
 
       // $log.info(_getFullModuleName(moduleName));
 
@@ -147,7 +147,7 @@
 
     function _clear() {
 
-      const moduleName = '_clear';
+      var moduleName = '_clear';
 
       // $log.info(_getFullModuleName(moduleName));
 

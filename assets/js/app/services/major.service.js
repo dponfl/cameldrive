@@ -10,7 +10,7 @@
   /* @ngInject */
   function MajorService($log, configCamel, $rootScope, lodash) {
 
-    const _ = lodash;
+    var _ = lodash;
 
     var numLang = 2;
     var lang = 'en';

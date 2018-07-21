@@ -10,8 +10,8 @@
   /* @ngInject */
   function UserService(MajorService, $http, $log, lodash, $q) {
 
-    const _ = lodash;
-    const _ms = MajorService;
+    var _ = lodash;
+    var _ms = MajorService;
     var self = {
       getUser: _getUser,
       updateUser: _updateUser,

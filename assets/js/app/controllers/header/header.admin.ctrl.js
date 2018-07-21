@@ -26,7 +26,7 @@
 
     this.$onInit = function () {
 
-      const moduleName = 'onInit';
+      var moduleName = 'onInit';
 
       $q.all({
         user: UserService.checkLogInUser()

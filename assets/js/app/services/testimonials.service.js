@@ -11,8 +11,8 @@
   /* @ngInject */
   function TestimonialsService(MajorService, $log, $rootScope, $http,
                                lodash, $q) {
-    const _ = lodash;
-    const _ms = MajorService;
+    var _ = lodash;
+    var _ms = MajorService;
 
     var name = 'TestimonialsService::';
 
@@ -241,7 +241,7 @@
 
     function _putTestimonialsObject(reqObj) {
 
-      const methodName = '_putTestimonialsObject';
+      var methodName = '_putTestimonialsObject';
 
       var deferred = $q.defer();
 
@@ -272,7 +272,7 @@
 
     function _updateTestimonialsObject(rec) {
 
-      const methodName = '_updateTestimonialsObject';
+      var methodName = '_updateTestimonialsObject';
 
       var deferred = $q.defer();
 
