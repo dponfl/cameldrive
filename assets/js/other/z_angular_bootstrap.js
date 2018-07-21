@@ -35,11 +35,11 @@
 
     } // CameldriveConfiguration
 
-    // angular.bootstrap(document, ['Cameldrive']);
+    angular.bootstrap(document, ['Cameldrive']);
 
-    angular.element(document).ready(function() {
-      console.log('Angular manual bootstrap');
-      angular.bootstrap(document, ['Cameldrive']);
-    });
+    // angular.element(document).ready(function() {
+    //   console.log('Angular manual bootstrap');
+    //   angular.bootstrap(document, ['Cameldrive']);
+    // });
 }
 
