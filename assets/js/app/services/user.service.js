@@ -34,8 +34,8 @@
 
       function successCb(rec) {
 
-        console.log('<<<<<<<<< successCb >>>>>>>>>>>');
-        console.dir(rec);
+        // console.log('<<<<<<<<< successCb >>>>>>>>>>>');
+        // console.dir(rec);
 
         deferred.resolve(rec);
 
@@ -68,8 +68,8 @@
 
       function successCb(rec) {
 
-        console.log('<<<<<<<<< successCb >>>>>>>>>>>');
-        console.dir(rec);
+        // console.log('<<<<<<<<< successCb >>>>>>>>>>>');
+        // console.dir(rec);
 
         deferred.resolve(rec);
 
@@ -103,8 +103,8 @@
 
       function successCb(rec) {
 
-        console.log('<<<<<<<<< successCb >>>>>>>>>>>');
-        console.dir(rec);
+        // console.log('<<<<<<<<< successCb >>>>>>>>>>>');
+        // console.dir(rec);
 
         deferred.resolve(rec);
       } // successCb
@@ -130,8 +130,8 @@
 
       function successCb(rec) {
 
-        console.log('<<<<<<<<< successCb >>>>>>>>>>>');
-        console.dir(rec);
+        // console.log('<<<<<<<<< successCb >>>>>>>>>>>');
+        // console.dir(rec);
 
         deferred.resolve(rec);
       } // successCb
@@ -157,8 +157,8 @@
 
       function successCb(rec) {
 
-        console.log('<<<<<<<<< successCb >>>>>>>>>>>');
-        console.dir(rec);
+        // console.log('<<<<<<<<< successCb >>>>>>>>>>>');
+        // console.dir(rec);
 
         deferred.resolve(rec);
 
