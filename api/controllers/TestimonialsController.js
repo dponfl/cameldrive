@@ -118,7 +118,7 @@ module.exports = {
     // console.log(moduleName + methodName);
 
     // todo: make parameters validation
-    let newObj = req.allParams();
+    var newObj = req.allParams();
 
     console.log(moduleName + methodName + ', ready to create new record:');
     console.dir(newObj);

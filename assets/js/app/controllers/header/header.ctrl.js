@@ -81,7 +81,7 @@
 
     function _logout() {
 
-      let moduleName = '_logout';
+      var moduleName = '_logout';
 
       $q.all({
         logoutUser: UserService.logoutUser()

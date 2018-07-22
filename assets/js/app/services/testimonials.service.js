@@ -42,7 +42,7 @@
         // $log.info('TestimonialsService::_getAllTestimonialsObjects, data:');
         // $log.info(data);
 
-        let evalServerResp = _ms.validateServerResponse(data);
+        var evalServerResp = _ms.validateServerResponse(data);
 
         // $log.info('TestimonialsService::_getAllTestimonialsObjects, evalServerResp:');
         // $log.info(evalServerResp);
@@ -51,14 +51,14 @@
           return evalServerResp;
         }
 
-        let response = evalServerResp.data;
+        var response = evalServerResp.data;
 
         // $log.info('TestimonialsService::_getAllTestimonialsObjects, response:');
         // $log.info(response);
 
-        let __objs = {};
+        var __objs = {};
 
-        let langList = _ms.getLangList();
+        var langList = _ms.getLangList();
 
         _.forEach(langList, (lang) => {
           __objs[lang] = [];
@@ -109,7 +109,7 @@
         // $log.info('TestimonialsService::_getAllTestimonialsObjectsEdit, data:');
         // $log.info(data);
 
-        let evalServerResp = _ms.validateServerResponse(data);
+        var evalServerResp = _ms.validateServerResponse(data);
 
         // $log.info('TestimonialsService::_getAllTestimonialsObjectsEdit, evalServerResp:');
         // $log.info(evalServerResp);
@@ -118,7 +118,7 @@
           return evalServerResp;
         }
 
-        let response = evalServerResp.data;
+        var response = evalServerResp.data;
 
         // $log.info('TestimonialsService::_getAllTestimonialsObjectsEdit, response:');
         // $log.info(response);
@@ -151,7 +151,7 @@
         // $log.info('TestimonialsService::_getOneTestimonialsObject, data:');
         // $log.info(data);
 
-        let evalServerResp = _ms.validateServerResponse(data);
+        var evalServerResp = _ms.validateServerResponse(data);
 
         // $log.info('TestimonialsService::_getOneTestimonialsObject, evalServerResp:');
         // $log.info(evalServerResp);
@@ -160,12 +160,12 @@
           return evalServerResp;
         }
 
-        let response = evalServerResp.data;
+        var response = evalServerResp.data;
 
         // $log.info('TestimonialsService::_getOneTestimonialsObject, response:');
         // $log.info(response);
 
-        let __objs = {
+        var __objs = {
           lang: response.lang,
           show: response.show,
           name: response.name,
@@ -210,7 +210,7 @@
         // $log.info('TestimonialsService::_getAllTestimonialsObjectsPager, data:');
         // $log.info(data);
 
-        let evalServerResp = _ms.validateServerResponse(data);
+        var evalServerResp = _ms.validateServerResponse(data);
 
         // $log.info('TestimonialsService::_getAllTestimonialsObjectsPager, evalServerResp:');
         // $log.info(evalServerResp);
@@ -219,7 +219,7 @@
           return evalServerResp;
         }
 
-        let response = evalServerResp.data;
+        var response = evalServerResp.data;
 
         // $log.info('TestimonialsService::_getAllTestimonialsObjectsPager, response:');
         // $log.info(response);

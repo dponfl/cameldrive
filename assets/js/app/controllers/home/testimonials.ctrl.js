@@ -73,9 +73,9 @@
 
             // $log.info('Number of records: ' + numRecs);
 
-            let useNumRecToShow = _.min([numRecs, numRecToShow]);
+            var useNumRecToShow = _.min([numRecs, numRecToShow]);
 
-            for (let i = 1; i <= useNumRecToShow; i++) {
+            for (var i = 1; i <= useNumRecToShow; i++) {
 
               var j = 0;
 
@@ -144,7 +144,7 @@
 
     function _update() {
 
-      let panelsAllLangs = _ms.getTestimonialsPanelsAllLangs();
+      var panelsAllLangs = _ms.getTestimonialsPanelsAllLangs();
       vm.panels = panelsAllLangs[_ms.getLang()];
       _ms.setTestimonialsPanels(vm.panels);
 

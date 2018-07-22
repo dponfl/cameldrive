@@ -33,7 +33,7 @@
         en: 'Group',
         ru: 'Категория',
       };
-      let groupsToUse = _ms.getConfig().groupList;
+      var groupsToUse = _ms.getConfig().groupList;
 
       _update();
 
@@ -50,7 +50,7 @@
         vm.langToUse = _ms.getLang(); // current language
 
         groupsToUse[vm.langToUse].map(function (elem) {
-          let groupNameVal = vm.groupName[vm.langToUse] || 'Group';
+          var groupNameVal = vm.groupName[vm.langToUse] || 'Group';
           vm.carGroupList.push({
             key: elem.key,
             val: groupNameVal + ' ' + elem.group + ': ' + elem.group_details,
@@ -85,7 +85,7 @@
       // $log.info('vm.formData');
       // $log.info(vm.formData);
 
-      let recData = {
+      var recData = {
         req_type: vm.formData.req_type || null,
         car_group: vm.formData.carGroup.val || null,
         name: vm.formData.name || null,

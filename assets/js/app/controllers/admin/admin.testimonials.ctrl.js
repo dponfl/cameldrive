@@ -295,7 +295,7 @@
       // $log.info(vm.name + methodName + ', vm.objData:');
       // $log.info(vm.formData);
 
-      let updateRecord = {
+      var updateRecord = {
         id: vm.objData.id,
         show: (vm.objData.show == "show"),
         lang: vm.objData.lang,

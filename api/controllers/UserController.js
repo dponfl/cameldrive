@@ -275,7 +275,7 @@ module.exports = {
       console.log('check, req.session.user:');
       console.dir(req.session.user);
 
-      let data = req.session.user;
+      var data = req.session.user;
       delete data.pw;
 
       return res.ok({

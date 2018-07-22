@@ -1,7 +1,7 @@
 "use strict";
 
 var _ = require('lodash');
-let objNum = '';
+var objNum = '';
 var imgFileNameElement = '$$$_-_$$$';
 
 module.exports = {
