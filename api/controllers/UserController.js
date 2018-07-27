@@ -5,8 +5,8 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
-const _ = require('lodash');
-const Passwords = require('machinepack-passwords');
+var _ = require('lodash');
+var Passwords = require('machinepack-passwords');
 
 module.exports = {
   find: function (req, res) {
@@ -275,7 +275,7 @@ module.exports = {
       console.log('check, req.session.user:');
       console.dir(req.session.user);
 
-      let data = req.session.user;
+      var data = req.session.user;
       delete data.pw;
 
       return res.ok({

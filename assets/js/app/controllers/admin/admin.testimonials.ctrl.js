@@ -9,11 +9,11 @@
 
   /* @ngInject */
   function AdminTestimonialsCtrl(MajorService, TestimonialsService, $log, $rootScope, $scope,  $q, lodash) {
-    const vm = this;
+    var vm = this;
     vm.name = 'AdminTestimonialsCtrl::';
 
-    const _ = lodash;
-    const _ms = MajorService;
+    var _ = lodash;
+    var _ms = MajorService;
 
 
     vm.find = _find;
@@ -124,7 +124,7 @@
 
 
     function _find() {
-      const methodName = '_find';
+      var methodName = '_find';
 
       if (vm.filterDisabled) {
         return;
@@ -210,7 +210,7 @@
 
     function _clear() {
 
-      const methodName = '_clear';
+      var methodName = '_clear';
 
       if (vm.filterDisabled) {
         return;
@@ -239,7 +239,7 @@
 
 
     function _sort(keyName) {
-      const methodName = '_sort';
+      var methodName = '_sort';
 
       // $log.info(vm.name + methodName + ', keyName: ' + keyName);
 
@@ -249,7 +249,7 @@
     } // _sort
 
     function _clearSort() {
-      const methodName = '_clearSort';
+      var methodName = '_clearSort';
 
       // $log.info(vm.name + methodName);
 
@@ -258,7 +258,7 @@
     } // _clearSort
 
     function _edit(recId) {
-      const methodName = '_edit';
+      var methodName = '_edit';
 
       // $log.info(vm.name + methodName + ', recId: ' + recId);
 
@@ -281,21 +281,21 @@
     } // _edit
 
     function _delete(recId) {
-      const methodName = '_delete';
+      var methodName = '_delete';
 
       // $log.info(vm.name + methodName + ', recId: ' + recId);
 
     } // _delete
 
     function _update() {
-      const methodName = '_update';
+      var methodName = '_update';
 
       // $log.info(vm.name + methodName);
 
       // $log.info(vm.name + methodName + ', vm.objData:');
       // $log.info(vm.formData);
 
-      let updateRecord = {
+      var updateRecord = {
         id: vm.objData.id,
         show: (vm.objData.show == "show"),
         lang: vm.objData.lang,
@@ -347,7 +347,7 @@
     } // _update
 
     function _cancel() {
-      const methodName = '_cancel';
+      var methodName = '_cancel';
 
       // $log.info(vm.name + methodName);
 

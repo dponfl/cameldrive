@@ -40,7 +40,7 @@
     } // activate()
 
     function _sort(keyName) {
-      const method = '_sort';
+      var method = '_sort';
 
       // $log.info(vm.title + method + ', keyName: ' + keyName);
 
@@ -50,7 +50,7 @@
     } // _sort
 
     function _clearSort() {
-      const method = '_clearSort';
+      var method = '_clearSort';
 
       // $log.info(vm.title + method);
 
@@ -59,7 +59,7 @@
     } // _clearSort
 
     function _edit(recId) {
-      const method = '_edit';
+      var method = '_edit';
 
       // $log.info(vm.title + method + ', recId: ' + recId);
 
@@ -69,7 +69,7 @@
     } // _edit
 
     function _delete(recId) {
-      const method = '_delete';
+      var method = '_delete';
 
       // $log.info(vm.title + method + ', recId: ' + recId);
 

@@ -33,7 +33,7 @@
 
     this.$onInit = function () {
 
-      const moduleName = 'onInit';
+      var moduleName = 'onInit';
 
       // $log.info('$onInit...');
 
@@ -91,7 +91,7 @@
 
     function _signupUser() {
 
-      const moduleName = '_signupUser';
+      var moduleName = '_signupUser';
 
       vm.wrongSignup = false;
       vm.userNotFound = false;

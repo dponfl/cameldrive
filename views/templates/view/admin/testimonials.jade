@@ -19,11 +19,105 @@
               bs-pane
               ).tabs-block
 
-                div(data-ng-controller='TestimonialsCreateAdminCtrl')
-                  testimonials-admin-create()
+                div(data-ng-controller='TestimonialsCreateAdminCtrl as tcac')
+                  form(novalidate='novalidate',
+                  data-ng-submit='tcac.create()').form-horisontal
+
+                    fieldset
+
+                      .form-group.clearfix
+                        label(for='objectShowLabel', translate='LBL_TESTIMONIAL_SHOW').col-sm-2.control-label.text-right
+                        .col-sm-4
+                          #objectShowLabel
+                            label(for='objectShow')
+                              input(type='radio',
+                              data-ng-model='tcac.formData.show',
+                              value="show"
+                              )#objectShow
+                              | Да
+                            label(for='objectNotShow')
+                              input(type='radio',
+                              data-ng-model='tcac.formData.show',
+                              value="not_show"
+                              )#objectNotShow
+                              | Нет
+
+                      .form-group.clearfix
+                        label(for='objectLangLabel', translate='LBL_OBJ_LANG').col-sm-2.control-label.text-right
+                        .col-sm-4
+                          #objectLangLabel
+                            label(for='objectEn')
+                              input(type='radio',
+                              data-ng-model='tcac.formData.lang',
+                              value="en"
+                              )#objectEn
+                              | English
+                            label(for='objectRu')
+                              input(type='radio',
+                              data-ng-model='tcac.formData.lang',
+                              value="ru"
+                              )#objectRu
+                              | Русский
+
+                      .form-group.clearfix
+                        label(for='name', translate='LBL_NAME').col-sm-2.control-label.text-right
+                        .col-sm-5
+                          input(type="text",
+                          placeholder="{{'OBJ_NAME_PLACEHOLDER' | translate}}",
+                          data-ng-model='tcac.formData.name'
+                          ).form-control#name
+
+                      .form-group.clearfix
+                        label(for='email', translate='LBL_EMAIL').col-sm-2.control-label.text-right
+                        .col-sm-5
+                          input(type="text",
+                          placeholder="{{'OBJ_EMAIL_PLACEHOLDER' | translate}}",
+                          data-ng-model='tcac.formData.email'
+                          ).form-control#email
+
+                      .form-group.clearfix
+                        label(for='phone', translate='LBL_PHONE').col-sm-2.control-label.text-right
+                        .col-sm-5
+                          input(type="text",
+                          placeholder="{{'OBJ_PHONE_PLACEHOLDER' | translate}}",
+                          data-ng-model='tcac.formData.phone'
+                          ).form-control#phone
+
+                      .form-group.clearfix
+                        label(for='msg', translate='LBL_MSG').col-sm-2.control-label.text-right
+                        .col-sm-5
+                          textarea(type="text",
+                          placeholder="{{'OBJ_MSG_PLACEHOLDER' | translate}}",
+                          data-ng-model='tcac.formData.msg'
+                          ).form-control#msg
+
+                      //.form-group.clearfix
+                      //  label(for='position', translate='LBL_POSITION').col-sm-2.control-label.text-right
+                      //  .col-sm-5
+                      //    input(type="text",
+                      //    placeholder="{{'OBJ_POSITION_PLACEHOLDER' | translate}}",
+                      //    data-ng-model='tcac.formData.position'
+                      //    ).form-control#position
+
+                      div(data-ng-show="tcac.createError").col-sm-offset-2.col-sm-5.alert.alert-error
+                        | Ошибка сохранения данных
+                      div(data-ng-show="tcac.createSuccess").col-sm-offset-2.col-sm-5.alert.alert-success
+                        | Данные успешно сохранены
+
+                      .form-group.clearfix
+                        .col-lg-7.col-lg-offset-2.col-md-offset-1.col-sm-offset-1
+                          button(type='submit',
+                          translate='BTN_ADMIN_CREATE',
+                          ).btn.btn-success.btn-lg.btn-margin
+                          button(data-ng-click='tcac.clear()',
+                          translate='BTN_CLR'
+                          ).btn.btn-warning.btn-lg.btn-margin
 
 
-              //=================
+
+
+
+          //=================
               // Existing objects
               //=================
 

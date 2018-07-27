@@ -78,7 +78,7 @@
       // $log.info('vm.formData');
       // $log.info(vm.formData);
 
-      let recData = {
+      var recData = {
         req_type: vm.formData.commentGroup.key || null,
         name: vm.formData.name || null,
         email: vm.formData.email || null,

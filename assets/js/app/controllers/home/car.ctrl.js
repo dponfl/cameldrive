@@ -121,7 +121,7 @@
       $log.info(_ms.getLang());
 */
 
-      let panelsAllLangs = _ms.getCarPanelsAllLangs();
+      var panelsAllLangs = _ms.getCarPanelsAllLangs();
       vm.panels = panelsAllLangs[_ms.getLang()];
       _ms.setCarPanels(vm.panels);
 

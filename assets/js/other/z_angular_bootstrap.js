@@ -1,14 +1,14 @@
 "use strict";
 
-  // console.log('Cameldrive bootstrap...');
+  console.log('Cameldrive bootstrap...');
 
   $.get('/config', config);
 
   config.$inject = ['data'];
 
   function config(data) {
-    // console.log('Cameldrive bootstrap, config data:');
-    // console.log(data);
+    console.log('Cameldrive bootstrap, config data:');
+    console.log(data);
 
 
     angular.module('Cameldrive')
@@ -36,5 +36,10 @@
     } // CameldriveConfiguration
 
     angular.bootstrap(document, ['Cameldrive']);
+
+    // angular.element(document).ready(function() {
+    //   console.log('Angular manual bootstrap');
+    //   angular.bootstrap(document, ['Cameldrive']);
+    // });
 }
 

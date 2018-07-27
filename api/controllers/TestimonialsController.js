@@ -5,9 +5,9 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
-const _ = require('lodash');
+var _ = require('lodash');
 
-const moduleName = 'TestimonialsController::';
+var moduleName = 'TestimonialsController::';
 
 
 module.exports = {
@@ -113,12 +113,12 @@ module.exports = {
 
   put: function (req, res) {
 
-	  const methodName = 'put';
+	  var methodName = 'put';
 
     // console.log(moduleName + methodName);
 
     // todo: make parameters validation
-    let newObj = req.allParams();
+    var newObj = req.allParams();
 
     console.log(moduleName + methodName + ', ready to create new record:');
     console.dir(newObj);

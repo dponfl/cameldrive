@@ -32,7 +32,7 @@
 
     function _create() {
 
-      let methodName = '_create';
+      var methodName = '_create';
 
       if (vm.createSuccess) {
         return;
@@ -44,7 +44,7 @@
         return;
       }
 
-      let createRecord = {
+      var createRecord = {
         show: (vm.formData.show == "show"),
         lang: vm.formData.lang,
         name: vm.formData.name,

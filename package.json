@@ -5,8 +5,8 @@
   "description": "Camel Car Hire Project",
   "keywords": [],
   "engines": {
-    "node": "8.11.1",
-    "npm": "5.6.0"
+    "node": "6.10.3",
+    "npm": "3.10.10"
   },
   "dependencies": {
     "async": "^2.5.0",

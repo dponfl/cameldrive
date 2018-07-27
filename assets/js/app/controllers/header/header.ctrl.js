@@ -24,7 +24,7 @@
 
     this.$onInit = function () {
 
-      const moduleName = 'onInit';
+      var moduleName = 'onInit';
 
       $q.all({
         user: UserService.checkLogInUser()
@@ -81,7 +81,7 @@
 
     function _logout() {
 
-      let moduleName = '_logout';
+      var moduleName = '_logout';
 
       $q.all({
         logoutUser: UserService.logoutUser()
