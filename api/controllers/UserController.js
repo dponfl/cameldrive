@@ -188,53 +188,63 @@ module.exports = {
 
           error: function (err) {
 
+            console.log('Passwords.encryptPassword, serverError:');
+            console.dir(err);
+
             return res.serverError(err);
         },
 
         success: function (result) {
 
+          console.log('Passwords.encryptPassword, success:');
+          console.dir(result);
+
           params.val.pw = result;
+
+          console.log('after Passwords.encryptPassword...');
+
+          User.update(params.criteria, params.val)
+            .exec((err, data) => {
+
+              if (err) {
+                return res.serverError(err);
+              }
+
+              if (_.isNil(data) || data.length == 0) {
+                return res.notFound({
+                  code: 404,
+                  message: 'Not found'});
+              }
+
+              if (_.isArray(data)) {
+                if (data[0].username && data[0].pw) {
+                  req.session.user = data[0];
+                }
+              } else {
+                if (data.username && data.pw) {
+                  req.session.user = data;
+                }
+              }
+
+
+              console.log('update, req.session.user:');
+              console.dir(req.session.user);
+
+
+              return res.ok({
+                code: 200,
+                message: 'OK',
+                activeSession: true,
+                result: data
+              });
+
+            });
         },
 
       });
     }
 
-    User.update(params.criteria, params.val)
-      .exec((err, data) => {
 
-        if (err) {
-          return res.serverError(err);
-        }
-
-        if (_.isNil(data) || data.length == 0) {
-          return res.notFound({
-            code: 404,
-            message: 'Not found'});
-        }
-
-        if (_.isArray(data)) {
-          if (data[0].username && data[0].pw) {
-            req.session.user = data[0];
-          }
-        } else {
-          if (data.username && data.pw) {
-            req.session.user = data;
-          }
-        }
-
-
-        console.log('update, req.session.user:');
-        console.dir(req.session.user);
-
-
-        return res.ok({
-          code: 200,
-          message: 'OK',
-          activeSession: true,
-          result: data
-        });
-
-      });
   }, // update
 
 
