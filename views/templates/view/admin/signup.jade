@@ -22,7 +22,7 @@
           .form-group.clearfix
             .col-sm-6.col-sm-offset-2
               div(role="alert").alert.alert-info.col-sm-6
-                strong Создайте и запомните пароль для доступа в административный раздел.
+                h4 Создайте и запомните пароль для доступа в административный раздел.
 
           .form-group.clearfix
             label(for="password").col-sm-2.control-label.text-right.wsp-admin-label {{ 'PASSWORD_LABEL' | translate}}
@@ -51,32 +51,32 @@
           .form-group.clearfix
             .col-sm-6.col-sm-offset-2
               div(role="alert", data-ng-show="sc.wrongSignup").alert.alert-danger.col-sm-6
-                strong {{ 'MSG_WRONG_SIGNUP' | translate}}
+                h4 {{ 'MSG_WRONG_SIGNUP' | translate}}
 
           .form-group.clearfix
             .col-sm-6.col-sm-offset-2
               div(role="alert", data-ng-show="sc.generalError").alert.alert-danger.col-sm-6
-                strong {{ 'MSG_GEN_ERROR' | translate}}
+                h4 {{ 'MSG_GEN_ERROR' | translate}}
 
           .form-group.clearfix
             .col-sm-6.col-sm-offset-2
               div(role="alert", data-ng-show="sc.userNotFound").alert.alert-danger.col-sm-6
-                strong {{ 'MSG_WRONG_SIGNUP_2' | translate}}
+                h4 {{ 'MSG_WRONG_SIGNUP_2' | translate}}
 
           .form-group.clearfix
             .col-sm-6.col-sm-offset-2
               div(role="alert", data-ng-show="sc.userNotAdmin").alert.alert-danger.col-sm-6
-                strong {{ 'MSG_WRONG_SIGNUP_3' | translate}}
+                h4 {{ 'MSG_WRONG_SIGNUP_3' | translate}}
 
           .form-group.clearfix
             .col-sm-6.col-sm-offset-2
               div(role="alert", data-ng-show="sc.notEqualPasswords").alert.alert-danger.col-sm-6
-                strong {{ 'MSG_WRONG_SIGNUP_4' | translate}}
+                h4 {{ 'MSG_WRONG_SIGNUP_4' | translate}}
 
           .form-group.clearfix
             .col-sm-6.col-sm-offset-2
               div(role="alert", data-ng-show="sc.authorized").alert.alert-danger.col-sm-6
-                strong {{ 'MSG_WRONG_SIGNUP_5' | translate}}
+                h4 {{ 'MSG_WRONG_SIGNUP_5' | translate}}
 
           .form-group.clearfix
             .col-sm-6.col-sm-offset-2
