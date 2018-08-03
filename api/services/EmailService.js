@@ -13,10 +13,10 @@ module.exports = {
     var domain = process.env.MAILGUN_DOMAIN || 'none';
 
     var data = {
-      from: 'dponfl@gmail.com',
-      to: 'dshchfl@gmail.com',
-      // from: 'info@cameldrive.com',
-      // to: 'info@cameldrive.com',
+      // from: 'dponfl@gmail.com',
+      // to: 'dshchfl@gmail.com',
+      from: 'info@cameldrive.com',
+      to: 'info@cameldrive.com',
       subject: subject,
       html: html,
     };
