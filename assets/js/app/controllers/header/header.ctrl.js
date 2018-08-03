@@ -120,6 +120,10 @@
           href: 'insurance',
           text: 'NAV_INSURANCE',
         },
+        {
+          href: 'feedback',
+          text: 'NAV_FEEDBACK',
+        },
 /*
         {
           href: 'discount',

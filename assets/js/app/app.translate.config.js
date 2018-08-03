@@ -76,6 +76,7 @@ function translateConfig ($translateProvider) {
     'NAV_HOME': 'Home',
     'NAV_CONDITIONS': 'Vehicle Lease Terms',
     'NAV_INSURANCE': 'Types of Insurance',
+    'NAV_FEEDBACK': 'Leave feedback',
     'NAV_CARS': 'Cars',
     'NAV_DISCOUNT': 'Discount card',
     'NAV_SALES': 'Sales',
@@ -231,6 +232,9 @@ function translateConfig ($translateProvider) {
     'INS_004_3': 'The client drives the vehicle in rough terrain conditions and along difficult earth roads.',
     'INS_004_4': 'The client enters the territory of North Cyprus.',
 
+    // Feedback
+    'FEEDBACK_HEADER': 'Please leave your feedback using the form',
+
 
     // Discount card
     'DISCOUNT_HEADER': 'DISCOUNT CARD',
@@ -359,6 +363,7 @@ function translateConfig ($translateProvider) {
     'NAV_HOME': 'Главная',
     'NAV_CONDITIONS': 'Условия аренды автомобиля',
     'NAV_INSURANCE': 'Виды страхования',
+    'NAV_FEEDBACK': 'Оставить отзыв',
     'NAV_CARS': 'Автомобили',
     'NAV_DISCOUNT': 'Дисконтная карта',
     'NAV_SALES': 'Продажа',
@@ -528,6 +533,11 @@ function translateConfig ($translateProvider) {
     'INS_004_2': 'Вождения автомобиля в алкогольном или наркотическом опьянении.',
     'INS_004_3': 'Вождения автомобиля по бездорожью и грунтовым дорогам.',
     'INS_004_4': 'Выезда на территорию Северного Кипра.',
+
+    // Feedback
+    'FEEDBACK_HEADER': 'Здесь вы можете оставить свой отзыв',
+
+
 
     // Discount card
     'DISCOUNT_HEADER': 'ДИСКОНТНАЯ ПРОГРАММА',

@@ -1,43 +1,10 @@
 div(data-ng-controller='CommentsCtrl as ctrl').row
   .container-fluid
-    .section7
-      .col-md-offset-3.col-md-6.text-vertical-center-3
-        .wsp-home-header07 {{'HOME_TITLE_07' | translate}}
-
-      .container-fluid
-        .col-md-offset-1.col-md-5
-          .wsp-home-subheader07 {{'HOME_SUBTITLE_07_01' | translate}}
-              .wsp-map#cameldrive01
-
-        .col-md-5
-          .wsp-home-subheader07 {{'HOME_SUBTITLE_07_02' | translate}}
-              .wsp-map#cameldrive02
-
-      .container
-        .col-md-offset-2.col-md-8.wsp-contacts
-          .col-md-12.col-sm-12.col-xs-12.wsp-contacts-block01
-            .col-md-12.wsp-contacts-text
-              .col-md-offset-1.col-md-4.col-sm-4.col-xs-4.wsp-messangers
-                span
-                  img(data-ng-src="/images/viber.png")
-                span
-                  img(data-ng-src="/images/whatsapp.png")
-              .col-md-6.col-sm-6.col-xs-8.wsp-contacts-mob.wsp-mobile
-                div {{'LBL_CONTACT_FORM_OFFICE_MOBILE_1' | translate}}: +357 95145125
-                div {{'LBL_CONTACT_FORM_OFFICE_MOBILE_2' | translate}}: +357 99559721
-          .col-md-12.col-sm-12.col-xs-12.wsp-contacts-block02
-            .col-md-12.col-sm-12.wsp-contacts-text {{'LBL_CONTACT_FORM_OFFICE_PHONE' | translate}}: +357 26103526
-          .col-md-12.col-sm-12.wsp-contacts-block03
-            .col-md-12.wsp-contacts-text
-              | www.cameldrive.com
-          .col-md-12.col-sm-12.wsp-contacts-block04
-            .col-md-12.wsp-contacts-text
-              | E-mail: info@cameldrive.com
-
+    .feedback
       .container.text-vertical-center-3
-        .wsp-contact-form-header {{'BLK_07_CONTACT_FORM_TITLE' | translate}}
+        .wsp-contact-form-feedback {{'FEEDBACK_HEADER' | translate}}
           form(novalidate='novalidate',
-          data-ng-init="ctrl.formData.commentGroup.key='info'"
+          data-ng-init="ctrl.formData.commentGroup.key='feedback'"
           name='ctrl.infoForm',
           data-ng-submit='ctrl.sendMessage()').wsp-contact-form
             .form-group.clearfix
@@ -79,14 +46,5 @@ div(data-ng-controller='CommentsCtrl as ctrl').row
                 translate='BTN_CONTACT_US').btn.wsp-btn.wsp-btn-md.wsp-btn-book
                 a(data-ng-click='ctrl.clear()',
                 translate='BTN_CLR').btn.wsp-btn.wsp-btn-md.wsp-btn-details
-
-
-
-
-script(src="js/wsp-google-map.js")
-script(async,
-defer,
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCin1llvFDDQc9VeWY4uvtM4sTbgLyQJXs&callback=camelDriveMaps")
-
 
 

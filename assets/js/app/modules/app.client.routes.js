@@ -76,6 +76,20 @@
         },
         url: '/insurance',
       })
+      .state('feedback', {
+        views: {
+          header: {
+            templateUrl: 'templates/view/header/headerClient.html'
+          },
+          section001: {
+            templateUrl: 'templates/view/feedback/section001.html',
+          },
+          footer: {
+            templateUrl: 'templates/view/footer/footerClient.html'
+          },
+        },
+        url: '/feedback',
+      })
       .state('login', {
         views: {
           header: {
