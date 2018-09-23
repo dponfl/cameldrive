@@ -91,8 +91,6 @@ function translateConfig ($translateProvider) {
     'LBL_OBJ': 'Object type',
     'LBL_SHOW': 'Show testimonial',
     'LBL_LANG': 'Language',
-    'LBL_CITY': 'City',
-    'LBL_ROOM': 'Number of rooms',
     'LBL_OBJ_NUM': 'Object number',
     'LBL_YOUTUBE': 'YouTube',
     'OBJ_NUM_PLACEHOLDER': 'Object #',
@@ -114,11 +112,6 @@ function translateConfig ($translateProvider) {
     'LBL_FIELD_VIBER': 'Viber',
     'LBL_FIELD_ADDINFO': 'Additional Info',
     'LBL_FIELD_INFO': 'Message',
-    'HEADER_INFO_SHORT': 'Short term rent information request',
-    'HEADER_INFO_LONG': 'Long term rent information request',
-    'HEADER_INFO_LET': 'Let property information submission',
-    'HEADER_INFO_BUY': 'Buy property information request',
-    'HEADER_INFO_SELL': 'Sell property information submission',
     'HEADER_INFO_GENERAL': 'Send message',
     'FIELD_NAME_ERR': 'nameErrEn',
     'FIELD_EMAIL_ERR': 'emailErrEn',
@@ -252,17 +245,6 @@ function translateConfig ($translateProvider) {
 
 
 
-    // Q&A
-    'QA_PAGE_HEADER_TITLE': '[En]Вопросы и ответы',
-    'QA_PAGE_HEADER_SUBTITLE': '[En]Несколько слов...',
-
-    // Services
-    'SERVICES_PAGE_HEADER_TITLE': '[En]Дополнительные услуги',
-    'SERVICES_PAGE_HEADER_SUBTITLE': '[En]Несколько слов...',
-
-    // Contacts
-    'CONTACTS_PAGE_HEADER_TITLE': '[En]Наши контакты',
-    'CONTACTS_PAGE_HEADER_SUBTITLE': '[En]Несколько слов...',
 
 
   });
@@ -378,8 +360,6 @@ function translateConfig ($translateProvider) {
     'LBL_OBJ': 'Тип объекта',
     'LBL_SHOW': 'Показывать отзыв',
     'LBL_LANG': 'Язык отзыва',
-    'LBL_CITY': 'Город',
-    'LBL_ROOM': 'Кол-во комнат',
     'LBL_OBJ_NUM': 'Номер объекта',
     'LBL_YOUTUBE': 'YouTube',
     'LBL_ADDRESS': 'Адрес',
@@ -413,11 +393,6 @@ function translateConfig ($translateProvider) {
     'LBL_FIELD_VIBER': 'Viber',
     'LBL_FIELD_ADDINFO': 'Доп. информация',
     'LBL_FIELD_INFO': 'Сообщение',
-    'HEADER_INFO_SHORT': 'Запрос информации по краткосрочной аренде',
-    'HEADER_INFO_LONG': 'Запрос информации по долгосрочной аренде',
-    'HEADER_INFO_LET': 'Предложение по сдаче недвижимости в аренду',
-    'HEADER_INFO_BUY': 'Запрос информации по покупке недвижимости',
-    'HEADER_INFO_SELL': 'Предложение по продаже недвижимости',
     'HEADER_INFO_GENERAL': 'Отправка сообщения',
     'FIELD_NAME_ERR': 'nameErrRu',
     'FIELD_EMAIL_ERR': 'emailErrRu',
@@ -553,17 +528,6 @@ function translateConfig ($translateProvider) {
 
 
 
-    // Q&A
-    'QA_PAGE_HEADER_TITLE': 'Вопросы и ответы',
-    'QA_PAGE_HEADER_SUBTITLE': 'Несколько слов...',
-
-    // Services
-    'SERVICES_PAGE_HEADER_TITLE': 'Дополнительные услуги',
-    'SERVICES_PAGE_HEADER_SUBTITLE': 'Несколько слов...',
-
-    // Contacts
-    'CONTACTS_PAGE_HEADER_TITLE': 'Наши контакты',
-    'CONTACTS_PAGE_HEADER_SUBTITLE': 'Несколько слов...',
 
 
   });

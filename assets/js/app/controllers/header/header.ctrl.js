@@ -54,24 +54,7 @@
 
     activate();
 
-/*
-    $log.info('$rootScope.orangeConfig:');
-    $log.info($rootScope.orangeConfig);
-    $log.info('$rootScope.orangeConfig.host:');
-    $log.info($rootScope.orangeConfig.host);
-    $log.info('$rootScope.orangeConfig.objList:');
-    $log.info($rootScope.orangeConfig.objList);
-    $log.info('$rootScope.lang:');
-    $log.info($rootScope.lang);
-    $log.info('keys:');
-    $log.info(_.keys($rootScope.orangeConfig));
-*/
 
-
-    // $log.info('$rootScope.orangeConfig.objList[$rootScope.lang][0]:');
-    // $log.info($rootScope.orangeConfig.objList[$rootScope.lang][0]);
-
-    // $rootScope.$watch('lang', update);
 
     ////////////////
 
