@@ -12,7 +12,7 @@
 
 
     // todo: delete
-    console.log('app.client.routes: CameldriveRoutesConfig');
+    // console.log('app.client.routes: CameldriveRoutesConfig');
 
 
     $stateProvider
@@ -60,7 +60,7 @@
             templateUrl: 'templates/view/footer/footerClient.html'
           },
         },
-        url: '/',
+        url: '/conditions',
       })
       .state('insurance', {
         views: {
@@ -74,12 +74,86 @@
             templateUrl: 'templates/view/footer/footerClient.html'
           },
         },
-        url: '/',
+        url: '/insurance',
+      })
+      .state('feedback', {
+        views: {
+          header: {
+            templateUrl: 'templates/view/header/headerClient.html'
+          },
+          section001: {
+            templateUrl: 'templates/view/feedback/section001.html',
+          },
+          footer: {
+            templateUrl: 'templates/view/footer/footerClient.html'
+          },
+        },
+        url: '/feedback',
+      })
+      .state('login', {
+        views: {
+          header: {
+            templateUrl: 'templates/view/header/headerClient.html'
+          },
+          section001: {
+            templateUrl: 'templates/view/admin/login.html',
+          },
+          footer: {
+            templateUrl: 'templates/view/footer/footerClient.html'
+          },
+        },
+        url: '/login',
+        params: {
+          login: null,
+        },
+      })
+      .state('signup', {
+        views: {
+          header: {
+            templateUrl: 'templates/view/header/headerClient.html'
+          },
+          section001: {
+            templateUrl: 'templates/view/admin/signup.html',
+          },
+          footer: {
+            templateUrl: 'templates/view/footer/footerClient.html'
+          },
+        },
+        url: '/signup',
+      })
+      .state('admin', {
+        views: {
+          header: {
+            templateUrl: 'templates/view/header/headerAdmin.html'
+          },
+          section001: {
+            templateUrl: 'templates/view/admin/admin.html',
+          },
+          footer: {
+            templateUrl: 'templates/view/footer/footerClient.html'
+          },
+        },
+        url: '/admin',
+      })
+      .state('admin_testimonials', {
+        views: {
+          header: {
+            templateUrl: 'templates/view/header/headerAdmin.html'
+          },
+          section001: {
+            templateUrl: 'templates/view/admin/testimonials.html',
+          },
+          footer: {
+            templateUrl: 'templates/view/footer/footerClient.html'
+          },
+        },
+        url: '/admin_testimonials',
       });
 
 
+
     // todo: delete
-    console.log('app.client.routes: CameldriveRoutes');
+    // console.log('app.client.routes: CameldriveRoutes');
 
     $urlRouterProvider
       .otherwise('/');

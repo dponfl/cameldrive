@@ -27,7 +27,7 @@
     vm.selectCarGroup = _selectCarGroup;
 
     this.$onInit = function () {
-       $log.info('$onInit...');
+       // $log.info('$onInit...');
       activate();
     };
 
@@ -38,8 +38,8 @@
 
       $rootScope.$on('lang_change', function (e) {
         _update();
-        $log.info('Event object:');
-        $log.info(e);
+        // $log.info('Event object:');
+        // $log.info(e);
       });
 
 /*
@@ -59,8 +59,8 @@
       $q.when(_performRequest())
         .then(function (res) {
 
-          $log.info('activate, res:');
-          $log.info(res);
+          // $log.info('activate, res:');
+          // $log.info(res);
 
           if (!res.performed &&
             (res.reason == 'notFound' || res.reason == 'serverError')) {
@@ -69,8 +69,8 @@
 
           var buildResult = _buildPanel(res);
 
-          $log.info('activate, buildResult:');
-          $log.info(buildResult);
+          // $log.info('activate, buildResult:');
+          // $log.info(buildResult);
 
           if (!buildResult.performed) return;
 
@@ -121,7 +121,7 @@
       $log.info(_ms.getLang());
 */
 
-      let panelsAllLangs = _ms.getCarPanelsAllLangs();
+      var panelsAllLangs = _ms.getCarPanelsAllLangs();
       vm.panels = panelsAllLangs[_ms.getLang()];
       _ms.setCarPanels(vm.panels);
 
@@ -138,8 +138,8 @@
         objs: CarsService.getAllCarObjs({show: 1})
       })
         .then(function (results) {
-          $log.info('__performRequest results:');
-          $log.info(results);
+          // $log.info('__performRequest results:');
+          // $log.info(results);
 
           if (results.objs.status == 404) {
             // $rootScope.long.showNotFound = true;
@@ -189,8 +189,8 @@
         })
         .catch(function (err) {
           // todo: change by Log
-          $log.warn(vm.title + ', Error...');
-          $log.error(err);
+          // $log.warn(vm.title + ', Error...');
+          // $log.error(err);
 
           return {
             performed: false,

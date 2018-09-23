@@ -7,9 +7,9 @@
       'ui.router',
       'ngLodash',
       'jcs-autoValidate',
-      'infinite-scroll',
-      'angularSpinner',
-      'angular-ladda',
+      // 'infinite-scroll',
+      // 'angularSpinner',
+      // 'angular-ladda',
       'mgcrea.ngStrap',
       'ngSanitize',
       'ngAnimate',
@@ -17,7 +17,7 @@
       'tmh.dynamicLocale',
       'angularUtils.directives.dirPagination',
       'angularFileUpload',
-      'mrResponsiveParallax',
+      // 'mrResponsiveParallax',
     ])
     .run(errorMsgResolver);
 
@@ -37,7 +37,7 @@
   function errorMsgResolver(defaultErrorMessageResolver) {
 
     // todo: delete
-    console.log('app.core');
+    // console.log('app.core');
 
     defaultErrorMessageResolver.getErrorMessages().then(errorMsgFunction);
   }

@@ -5,64 +5,92 @@
     .module('Cameldrive')
     .controller('HeaderAdminCtrl', HeaderAdminCtrl);
 
-  HeaderAdminCtrl.$inject = ['GeneralConfigService', '$translate', '$log', 'lodash'];
+  HeaderAdminCtrl.$inject = ['GeneralConfigService', '$translate', '$state', '$log',
+    'lodash', '$q', 'UserService'];
 
   /* @ngInject */
-  function HeaderAdminCtrl(GeneralConfigService, $translate, $log, lodash) {
+  function HeaderAdminCtrl(GeneralConfigService, $translate, $state, $log,
+                           lodash, $q, UserService) {
     var vm = this;
     vm.title = 'HeaderAdminCtrl';
     var _ = lodash;
     var __=GeneralConfigService;
 
+    vm.user = '';
+
+    vm.logout = _logout;
+
     activate();
-
-/*
-    $log.info('$rootScope.orangeConfig:');
-    $log.info($rootScope.orangeConfig);
-    $log.info('$rootScope.orangeConfig.host:');
-    $log.info($rootScope.orangeConfig.host);
-    $log.info('$rootScope.orangeConfig.objList:');
-    $log.info($rootScope.orangeConfig.objList);
-    $log.info('$rootScope.lang:');
-    $log.info($rootScope.lang);
-    $log.info('keys:');
-    $log.info(_.keys($rootScope.orangeConfig));
-*/
-
 
     ////////////////
 
+    this.$onInit = function () {
+
+      var moduleName = 'onInit';
+
+      $q.all({
+        user: UserService.checkLogInUser()
+      })
+        .then((rec) => {
+
+          // $log.info('checkLogInUser, user:');
+          // $log.info(rec);
+
+          if (!_.isNil(rec.user.data.activeSession)
+            && rec.user.data.activeSession) {
+
+            vm.user = rec.user.data.result.username;
+          }
+
+
+        })
+        .catch((error) => {
+
+          // $log.info(_getFullModuleName(moduleName) + ', error: ');
+          // $log.info(error);
+        });
+    };
+
+    function _getFullModuleName(moduleName) {
+      return vm.title + "::" + moduleName;
+    } // _getFullModuleName
+
+
+
     function activate() {
-      $translate.use('ru');
-      __.setLang('ru');
 
       vm.navMeny = [
-/*
         {
-          href: 'login',
-          text: 'HEADER_ADMIN_LOGIN',
-        },
-*/
-
-        {
-          href: 'admin_longterm',
-          text: 'NAV_LONG_TERM',
+          href: 'admin',
+          text: 'NAV_ADM',
         },
         {
-          href: 'admin_sale',
-          text: 'NAV_SALES',
-        },
-        {
-          href: 'admin_short',
-          text: 'NAV_DAILY',
-        },
-        {
-          href: 'account',
-          text: 'HEADER_ADMIN_ACCOUNT',
+          href: 'admin_testimonials',
+          text: 'NAV_ADM_TESTIMONIALS',
         },
       ];
 
     } // activate
+
+    function _logout() {
+
+      var moduleName = '_logout';
+
+      $q.all({
+        logoutUser: UserService.logoutUser()
+      })
+        .then((rec) => {
+
+          // $log.info('logout user: ');
+          // $log.info(rec);
+          $state.go('home');
+        })
+        .catch((error) => {
+
+          // $log.info(_getFullModuleName(moduleName) + ', error: ');
+          // $log.info(error);
+        });
+    } // _logout
 
   }
 

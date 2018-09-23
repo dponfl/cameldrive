@@ -66,15 +66,15 @@ var jsFilesToInject = [
   'vendor/angular-auto-validate/dist/jcs-auto-validate.js',
 
   // Load ngInfiniteScroll
-  'vendor/ngInfiniteScroll/build/ng-infinite-scroll.js',
+  // 'vendor/ngInfiniteScroll/build/ng-infinite-scroll.js',
 
   // Load angular-spinner
-  'vendor/angular-spinner/dist/angular-spinner.js',
+  // 'vendor/angular-spinner/dist/angular-spinner.js',
 
   // Load angular-ladda
-  'vendor/ladda/js/spin.js',
-  'vendor/ladda/js/ladda.js',
-  'vendor/angular-ladda/dist/angular-ladda.js',
+  // 'vendor/ladda/js/spin.js',
+  // 'vendor/ladda/js/ladda.js',
+  // 'vendor/angular-ladda/dist/angular-ladda.js',
 
   // Load angular-strap
   'vendor/angular-strap/dist/angular-strap.js',

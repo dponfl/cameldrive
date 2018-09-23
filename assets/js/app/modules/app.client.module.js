@@ -15,7 +15,7 @@
 
 
     // todo: delete
-    $log.info('Cameldrive, setupGlobalScope...');
+    // $log.info('Cameldrive, setupGlobalScope...');
 
 
     //Generale
@@ -62,6 +62,8 @@
     $rootScope.admin.long.updateEditRecords = false;
     $rootScope.admin.long.FindActivated = false;
 
+    $rootScope.admin.testimonials = {};
+    $rootScope.admin.testimonials.showFoundNothing = false;
 
 
 

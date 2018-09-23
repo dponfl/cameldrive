@@ -205,8 +205,8 @@
 
       function successCb(data) {
 
-        $log.info('_putCarObject, successCb, data:');
-        $log.info(data);
+        // $log.info('_putCarObject, successCb, data:');
+        // $log.info(data);
 
         if (!_.isNumber(data.data.result.id)) {
           return new Error('_putCarObject, Cars data has wrong format');
@@ -265,8 +265,8 @@
 
     function _updateCarObject(reqObj) {
 
-      $log.info('_updateCarObject, reqObj:');
-      console.dir(reqObj);
+      // $log.info('_updateCarObject, reqObj:');
+      // console.dir(reqObj);
 
       // todo: return object having result code (200, 404, etc.) and data
 
@@ -275,8 +275,8 @@
 
       function successCb(data) {
 
-        $log.info('_updateCarObject, successCb, data:');
-        $log.info(data);
+        // $log.info('_updateCarObject, successCb, data:');
+        // $log.info(data);
 
         if (!_.isNumber(data.data.result[0].id)) {
           return new Error('_updateCarObject, Cars data has wrong format');

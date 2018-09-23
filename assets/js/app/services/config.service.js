@@ -12,7 +12,7 @@
 
 
     // todo: delete
-    console.log('GeneralConfigService');
+    // console.log('GeneralConfigService');
 
     var _ms = MajorService;
     var _ = lodash;

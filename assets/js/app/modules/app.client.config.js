@@ -2,30 +2,30 @@
   "use strict";
 
   angular.module('app.client.config', [])
-    .config(LaddaConfig)
+    // .config(LaddaConfig)
     .config(ModalConfig)
     .config(DynamicLocale)
     .provider('configCamel', configCamel);
 
-  LaddaConfig.$inject = ['laddaProvider', '$datepickerProvider'];
-  function LaddaConfig(laddaProvider, $datepickerProvider) {
-
-
-    // todo: delete
-    console.log('app.client.config');
-
-
-    laddaProvider.setOption({
-      style: 'contract',
-      spinnerSize: 35,
-      spinnerColor: '#ffffff'
-    });
-    angular.extend($datepickerProvider.defaults, {
-      dateFormat: 'dd/MM/yyyy',
-      autoclose: true,
-      startWeek: 1,
-    });
-  } // LaddaConfig
+  // LaddaConfig.$inject = ['laddaProvider', '$datepickerProvider'];
+  // function LaddaConfig(laddaProvider, $datepickerProvider) {
+  //
+  //
+  //   // todo: delete
+  //   // console.log('app.client.config');
+  //
+  //
+  //   laddaProvider.setOption({
+  //     style: 'contract',
+  //     spinnerSize: 35,
+  //     spinnerColor: '#ffffff'
+  //   });
+  //   angular.extend($datepickerProvider.defaults, {
+  //     dateFormat: 'dd/MM/yyyy',
+  //     autoclose: true,
+  //     startWeek: 1,
+  //   });
+  // } // LaddaConfig
 
   ModalConfig.$inject = ['$modalProvider'];
   function ModalConfig($modalProvider) {
@@ -45,12 +45,12 @@
     var _ = lodash;
     var configData;
 
-    console.log('configCamel...');
+    // console.log('configCamel...');
 
     this.initialize = function (data) {
 
-      console.log('configCamel.initialize...');
-      console.log(data);
+      // console.log('configCamel.initialize...');
+      // console.log(data);
 
       configData = _.assign(configData, data);
     };

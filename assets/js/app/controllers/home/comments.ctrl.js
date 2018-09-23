@@ -21,7 +21,7 @@
     vm.clear = _clear;
 
     this.$onInit = function () {
-      $log.info(vm.title + ', $onInit...');
+      // $log.info(vm.title + ', $onInit...');
       activate();
     };
 
@@ -71,14 +71,14 @@
 
     function _sendMessage() {
 
-      $log.info(vm.title + ', _sendMessage was activated...');
+      // $log.info(vm.title + ', _sendMessage was activated...');
 
       vm.busysendMessage = true;
 
-      $log.info('vm.formData');
-      $log.info(vm.formData);
+      // $log.info('vm.formData');
+      // $log.info(vm.formData);
 
-      let recData = {
+      var recData = {
         req_type: vm.formData.commentGroup.key || null,
         name: vm.formData.name || null,
         email: vm.formData.email || null,
@@ -89,8 +89,8 @@
       S_ReqService.createSReq(recData, recData.req_type)
         .then(function (res) {
 
-           $log.info('S_ReqService, res:');
-           $log.info(res);
+           // $log.info('S_ReqService, res:');
+           // $log.info(res);
 
           if (res.status === 200) {
             vm.busysendMessage = false;
@@ -118,7 +118,7 @@
     } // _sendMessage
 
     function _clear() {
-      $log.info(vm.title + ', _clear activated...');
+      // $log.info(vm.title + ', _clear activated...');
 
       vm.formData = {};
       vm.formData.email = '';

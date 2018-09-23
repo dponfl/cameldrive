@@ -49,54 +49,61 @@
           var rec = [];
           var tmpArray = [];
           var numRecToShow = _ms.getTestimonialsNumber();
+          var numLang = _ms.getNumLang(); // get number of languages used in the syster
+          var result = res;
 
-/*
-          $log.info('TestimonialsCtrl, activate, res:');
-          $log.info(res);
-*/
+          // $log.info('TestimonialsCtrl, activate, res:');
+          // $log.info(res);
 
           if (!res.performed &&
             (res.reason == 'notFound' || res.reason == 'serverError')) {
             return;
           }
 
-          numRecs = res.data.objs.en.length;
+          _.forEach(res.data.objs, (langVal, langKey) => {
 
-/*
-          $log.info('Number of records: ' + numRecs);
-*/
+            rec = [];
 
-          for (let i = 1; i <= numRecToShow; i++) {
+            // $log.info('Key: ');
+            // $log.info(langKey);
+            // $log.info('Val: ');
+            // $log.info(langVal);
 
-            var j = 0;
+            numRecs = langVal.length;
 
-            do {
-              j++;
-              randRec = _.random(numRecs-1);
-            } while (_some(randRec, rec) && j < 10000);
+            // $log.info('Number of records: ' + numRecs);
 
-            rec.push(randRec);
-          }
+            var useNumRecToShow = _.min([numRecs, numRecToShow]);
 
-/*
-          $log.info('Generated rec:');
-          $log.info(rec);
-*/
+            for (var i = 1; i <= useNumRecToShow; i++) {
 
-          for (var key in res.data.objs) {
+              var j = 0;
+
+              do {
+                j++;
+                randRec = _.random(numRecs-1);
+              } while (_some(randRec, rec) && j < 10000);
+
+              rec.push(randRec);
+            }
+
+             // $log.info('Generated rec:');
+             // $log.info(rec);
+
             tmpArray = [];
             rec.map(function (elem) {
-              tmpArray.push(res.data.objs[key][elem]);
+              tmpArray.push(langVal[elem]);
             });
-            res.data.objs[key]=tmpArray;
-          }
+            result.data.objs[langKey]=tmpArray;
 
-          var buildResult = _buildPanel(res);
 
-/*
-          $log.info('TestimonialsCtrl, activate, buildResult:');
-          $log.info(buildResult);
-*/
+          });
+
+
+          var buildResult = _buildPanel(result);
+
+          // $log.info('TestimonialsCtrl, activate, buildResult:');
+          // $log.info(buildResult);
 
           if (!buildResult.performed) return;
 
@@ -137,7 +144,7 @@
 
     function _update() {
 
-      let panelsAllLangs = _ms.getTestimonialsPanelsAllLangs();
+      var panelsAllLangs = _ms.getTestimonialsPanelsAllLangs();
       vm.panels = panelsAllLangs[_ms.getLang()];
       _ms.setTestimonialsPanels(vm.panels);
 
@@ -150,13 +157,12 @@
 
     function _performRequest() {
       return $q.all({
-        objs: TestimonialsService.getTestimonials({show: 1})
+        objs: TestimonialsService.getAllTestimonialsObjects({show: 1})
       })
         .then(function (results) {
-/*
-          $log.info('TestimonialsCtrl, __performRequest results:');
-          $log.info(results);
-*/
+
+          // $log.info('TestimonialsCtrl, __performRequest results:');
+          // $log.info(results);
 
           if (results.objs.status == 404) {
 
@@ -193,8 +199,9 @@
         })
         .catch(function (err) {
           // todo: change by Log
-          $log.warn(vm.title + ', Error...');
-          $log.error(err);
+
+          // $log.warn(vm.title + ', Error...');
+          // $log.error(err);
 
           return {
             performed: false,
@@ -221,7 +228,7 @@
 
       var langList = _ms.getLangList();
       langList.map(function (elem) {
-        result[elem] = __buildPanelOneLang(requestResult.data.objs[elem], elem);
+        result[elem] = __buildPanelOneLang(requestResult.data.objs[elem]);
       });
 
       return {
@@ -230,7 +237,7 @@
         data: result,
       };
 
-      function __buildPanelOneLang(panelObjs, lang) {
+      function __buildPanelOneLang(panelObjs) {
 
         var panels = [];
         var record = {};

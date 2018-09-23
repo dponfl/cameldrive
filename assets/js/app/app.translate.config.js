@@ -14,11 +14,49 @@ function translateConfig ($translateProvider) {
     'HEADER_ADMIN_ACCOUNT': 'Account',
     'BTN_ADMIN_LOGOUT': 'Logout',
     'BTN_ADMIN_CREATE': 'Create',
-    'BTN_ADMIN_UPDATE': 'Update record',
     'BTN_ADMIN_DECLINE': 'Cancel update',
     'BTN_ADMIN_LOGIN': 'Login',
     'BTN_ADMIN_CLEAR': 'Clear',
     'HEADER_PANEL_EDIT': 'Edit object #',
+    'NAV_ADM_TESTIMONIALS': 'Testimonials',
+    'NAV_ADM': 'Admin section',
+    'TITLE_SIGNIN': 'Sign in',
+    'TITLE_SIGNUP': 'Sign up',
+    'LOGIN_LABEL': 'User name',
+    'LOGIN_TEXT': 'Enter user name',
+    'PASSWORD_LABEL': 'Password',
+    'PASSWORD_TEXT': 'Enter password',
+    'MSG_WRONG_PASSWORD': 'Wrong login/password',
+    'MSG_WRONG_SIGNUP': 'This profile was created already. Pls sign in at /login',
+    'MSG_WRONG_SIGNUP_2': 'This user does not exist. Pls contact administrator.',
+    'MSG_WRONG_SIGNUP_3': 'This user does not have Admin rights. Pls contact administrator.',
+    'MSG_WRONG_SIGNUP_4': 'Passwords are to be equal. Pls try again.',
+    'MSG_WRONG_SIGNUP_5': 'This user is authorized already.',
+    'MSG_WRONG_SIGNUP_6': 'Invalid login/password. Pls try again.',
+    'MSG_GEN_ERROR': 'Server error. Pls contact administrator.',
+    'HEADER_USER': 'User:',
+    'HEADER_LOGOUT': 'Logout',
+    'MSG_ADMIN_SECTION' : 'Admin section',
+    'MSG_ADMIN_SECTION_2' : 'Use menu on the top to select information to be edited',
+    'TESTIMONIALS_PAGE_HEADER_TITLE': 'Testimonials: create and edit',
+    'LBL_TESTIMONIAL_SHOW': 'To be shown',
+    'LBL_OBJ_LANG': 'Language',
+    'LBL_NAME': 'Name',
+    'OBJ_NAME_PLACEHOLDER': 'Enter name of the person',
+    'LBL_EMAIL': 'Email',
+    'OBJ_EMAIL_PLACEHOLDER': 'Enter email',
+    'LBL_PHONE': 'Phone',
+    'OBJ_PHONE_PLACEHOLDER': 'Enter phone number',
+    'LBL_MSG': 'Testimonial text',
+    'OBJ_MSG_PLACEHOLDER': 'Enter testimonial text',
+    'LBL_POSITION': 'Position',
+    'OBJ_POSITION_PLACEHOLDER': 'Enter position of the person',
+    'BTN_CANCEL': 'Cancel',
+    'BTN_ADMIN_UPDATE': 'Update',
+
+
+
+
 
     // Footer
     'FOOTER_ABOUT_COMPANY_TITLE': 'About us',
@@ -38,6 +76,7 @@ function translateConfig ($translateProvider) {
     'NAV_HOME': 'Home',
     'NAV_CONDITIONS': 'Vehicle Lease Terms',
     'NAV_INSURANCE': 'Types of Insurance',
+    'NAV_FEEDBACK': 'Leave feedback',
     'NAV_CARS': 'Cars',
     'NAV_DISCOUNT': 'Discount card',
     'NAV_SALES': 'Sales',
@@ -50,8 +89,8 @@ function translateConfig ($translateProvider) {
     'PANEL_HEADER': 'Choose',
     'LBL_DEAL': 'Deal type',
     'LBL_OBJ': 'Object type',
-    'LBL_SHOW': 'Show object',
-    'LBL_HOME': 'Place at home page',
+    'LBL_SHOW': 'Show testimonial',
+    'LBL_LANG': 'Language',
     'LBL_CITY': 'City',
     'LBL_ROOM': 'Number of rooms',
     'LBL_OBJ_NUM': 'Object number',
@@ -104,7 +143,7 @@ function translateConfig ($translateProvider) {
     'BTN_KNOWMORE': 'MORE INFO',
     'BTN_BOOK': 'BOOK NOW!',
     'BTN_BOOK_CAR': 'BOOK THIS CAR',
-    'BTN_CAR_SHOW_DETAILS': 'MORE INFO',
+    'BTN_CAR_SHOW_DETAILS': 'PRICE',
     'BTN_CAR_HIDE_DETAILS': 'GO BACK',
     'BTN_BOOK_PERFORM': 'BOOK THIS CAR',
     'HOME_TITLE_06': 'CAR BOOKING',
@@ -193,6 +232,9 @@ function translateConfig ($translateProvider) {
     'INS_004_3': 'The client drives the vehicle in rough terrain conditions and along difficult earth roads.',
     'INS_004_4': 'The client enters the territory of North Cyprus.',
 
+    // Feedback
+    'FEEDBACK_HEADER': 'Please leave your feedback using the form',
+
 
     // Discount card
     'DISCOUNT_HEADER': 'DISCOUNT CARD',
@@ -239,7 +281,6 @@ function translateConfig ($translateProvider) {
     'HEADER_ADMIN_ACCOUNT': 'Профиль',
     'BTN_ADMIN_LOGOUT': 'Выход',
     'BTN_ADMIN_CREATE': 'Создать',
-    'BTN_ADMIN_UPDATE': 'Обновить объект',
     'BTN_ADMIN_DECLINE': 'Отменить редактирование объекта',
     'BTN_ADMIN_LOGIN': 'Вход',
     'BTN_ADMIN_CLEAR': 'Очистить',
@@ -262,6 +303,46 @@ function translateConfig ($translateProvider) {
     'LBL_IMG_TBL_LABEL_STATUS': 'Статус',
     'LBL_IMG_TBL_LABEL_ACTION': 'Действие',
     'HEADER_PANEL_EDIT': 'Редактирование объекта #',
+    'NAV_ADM_TESTIMONIALS': 'Отзывы',
+    'NAV_ADM': 'Административный раздел',
+    'TITLE_SIGNIN': 'Авторизация',
+    'TITLE_SIGNUP': 'Активация профиля и создание пароля',
+    'LOGIN_LABEL': 'Логин',
+    'LOGIN_TEXT': 'Введите имя пользователя',
+    'PASSWORD_LABEL': 'Пароль',
+    'PASSWORD_TEXT': 'Введите пароль',
+    'MSG_WRONG_PASSWORD': 'Неверный логин/пароль',
+    'MSG_WRONG_SIGNUP': 'Этот профиль уже создан. Вы будете переведены на страницу авторизации.',
+    'MSG_WRONG_SIGNUP_2': 'Этот пользователь не существует. Свяжитесь с администратором.',
+    'MSG_WRONG_SIGNUP_3': 'Этот пользователь не имеет административных прав. Свяжитесь с администратором.',
+    'MSG_WRONG_SIGNUP_4': 'Пароли должны быть одинаковые. Попробуйте еще раз.',
+    'MSG_WRONG_SIGNUP_5': 'Этот пользователь уже авторизован',
+    'MSG_WRONG_SIGNUP_6': 'Неверный логин/пароль. Попробуйте снова.',
+    'MSG_GEN_ERROR': 'Серверная ошибка. Обратитесь к администратору.',
+    'HEADER_USER': 'Пользователь:',
+    'HEADER_LOGOUT': 'Выйти',
+    'MSG_ADMIN_SECTION' : 'Административный раздел',
+    'MSG_ADMIN_SECTION_2' : 'Используйте меню вверху страницы для выбора типа информации для редактирования',
+    'TESTIMONIALS_PAGE_HEADER_TITLE': 'Создание и редактирование отзывов',
+    'LBL_TESTIMONIAL_SHOW': 'Открыт для показа',
+    'LBL_OBJ_LANG': 'Язык отзыва',
+    'LBL_NAME': 'Имя',
+    'OBJ_NAME_PLACEHOLDER': 'Введите имя человека, оставившего отзыв',
+    'LBL_EMAIL': 'Email',
+    'OBJ_EMAIL_PLACEHOLDER': 'Введите email',
+    'LBL_PHONE': 'Телефон',
+    'OBJ_PHONE_PLACEHOLDER': 'Введите номер телефона',
+    'LBL_MSG': 'Отзыв',
+    'OBJ_MSG_PLACEHOLDER': 'Введите текст отзыва',
+    'LBL_POSITION': 'Должность',
+    'OBJ_POSITION_PLACEHOLDER': 'Введите должность человека, оставившего отзыв',
+    'BTN_CANCEL': 'Отменить',
+    'BTN_ADMIN_UPDATE': 'Обновить',
+
+
+
+
+
 
 
     // Footer
@@ -282,6 +363,7 @@ function translateConfig ($translateProvider) {
     'NAV_HOME': 'Главная',
     'NAV_CONDITIONS': 'Условия аренды автомобиля',
     'NAV_INSURANCE': 'Виды страхования',
+    'NAV_FEEDBACK': 'Оставить отзыв',
     'NAV_CARS': 'Автомобили',
     'NAV_DISCOUNT': 'Дисконтная карта',
     'NAV_SALES': 'Продажа',
@@ -294,8 +376,8 @@ function translateConfig ($translateProvider) {
     'PANEL_HEADER': 'Задайте условия поиска',
     'LBL_DEAL': 'Тип сделки',
     'LBL_OBJ': 'Тип объекта',
-    'LBL_SHOW': 'Показывать объект',
-    'LBL_HOME': 'Размещать на главной странице',
+    'LBL_SHOW': 'Показывать отзыв',
+    'LBL_LANG': 'Язык отзыва',
     'LBL_CITY': 'Город',
     'LBL_ROOM': 'Кол-во комнат',
     'LBL_OBJ_NUM': 'Номер объекта',
@@ -315,7 +397,7 @@ function translateConfig ($translateProvider) {
     'OBJ_DESCRIPTION_PLACEHOLDER': 'Введите общее объекта',
     'OBJ_INFO_PLACEHOLDER': 'Введите дополнительную информацию по объекту',
     'BTN_FIND': 'Найти',
-    'BTN_CLR': 'Очистить форму',
+    'BTN_CLR': 'Очистить',
     'AV_REQ': 'reqRu',
 
     // Callback or request forms
@@ -361,7 +443,7 @@ function translateConfig ($translateProvider) {
     'BTN_KNOWMORE': 'УЗНАТЬ БОЛЬШЕ',
     'BTN_BOOK': 'ЗАБРОНИРОВАТЬ',
     'BTN_BOOK_CAR': 'ЗАБРОНИРОВАТЬ',
-    'BTN_CAR_SHOW_DETAILS': 'УЗНАТЬ БОЛЬШЕ',
+    'BTN_CAR_SHOW_DETAILS': 'ЦЕНА',
     'BTN_CAR_HIDE_DETAILS': 'ВЕРНУТЬСЯ',
     'BTN_BOOK_PERFORM': 'ЗАБРОНИРОВАТЬ',
     'HOME_TITLE_06': 'Бронирование автомобиля',
@@ -451,6 +533,11 @@ function translateConfig ($translateProvider) {
     'INS_004_2': 'Вождения автомобиля в алкогольном или наркотическом опьянении.',
     'INS_004_3': 'Вождения автомобиля по бездорожью и грунтовым дорогам.',
     'INS_004_4': 'Выезда на территорию Северного Кипра.',
+
+    // Feedback
+    'FEEDBACK_HEADER': 'Здесь вы можете оставить свой отзыв',
+
+
 
     // Discount card
     'DISCOUNT_HEADER': 'ДИСКОНТНАЯ ПРОГРАММА',

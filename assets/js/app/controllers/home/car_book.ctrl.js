@@ -21,7 +21,7 @@
     vm.clear = _clear;
 
     this.$onInit = function () {
-      $log.info(vm.title + ', $onInit...');
+      // $log.info(vm.title + ', $onInit...');
       activate();
     };
 
@@ -33,7 +33,7 @@
         en: 'Group',
         ru: 'Категория',
       };
-      let groupsToUse = _ms.getConfig().groupList;
+      var groupsToUse = _ms.getConfig().groupList;
 
       _update();
 
@@ -50,7 +50,7 @@
         vm.langToUse = _ms.getLang(); // current language
 
         groupsToUse[vm.langToUse].map(function (elem) {
-          let groupNameVal = vm.groupName[vm.langToUse] || 'Group';
+          var groupNameVal = vm.groupName[vm.langToUse] || 'Group';
           vm.carGroupList.push({
             key: elem.key,
             val: groupNameVal + ' ' + elem.group + ': ' + elem.group_details,
@@ -76,16 +76,16 @@
 
     function _book() {
 
-      $log.info(vm.title + ', _book was activated...');
+      // $log.info(vm.title + ', _book was activated...');
 
       vm.busyBook = true;
 
       vm.formData.req_type = 'booking';
 
-      $log.info('vm.formData');
-      $log.info(vm.formData);
+      // $log.info('vm.formData');
+      // $log.info(vm.formData);
 
-      let recData = {
+      var recData = {
         req_type: vm.formData.req_type || null,
         car_group: vm.formData.carGroup.val || null,
         name: vm.formData.name || null,
@@ -102,8 +102,8 @@
       S_ReqService.createSReq(recData, recData.req_type)
         .then(function (res) {
 
-           $log.info('S_ReqService, res:');
-           $log.info(res);
+           // $log.info('S_ReqService, res:');
+           // $log.info(res);
 
           if (res.status === 200) {
             vm.busyBook = false;
@@ -133,7 +133,7 @@
     } // _book
 
     function _clear() {
-      $log.info(vm.title + ', _clear activated...');
+      // $log.info(vm.title + ', _clear activated...');
       vm.formData = {};
       vm.formData.email = '';
       vm.formData.req_type = 'booking';

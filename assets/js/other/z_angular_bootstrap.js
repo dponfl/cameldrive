@@ -1,14 +1,14 @@
 "use strict";
 
-  console.log('Cameldrive bootstrap...');
+  // console.log('Cameldrive bootstrap...');
 
   $.get('/config', config);
 
   config.$inject = ['data'];
 
   function config(data) {
-    console.log('Cameldrive bootstrap, config data:');
-    console.log(data);
+    // console.log('Cameldrive bootstrap, config data:');
+    // console.log(data);
 
 
     angular.module('Cameldrive')
@@ -20,8 +20,8 @@
 
       var _ = lodash;
 
-      console.log('CameldriveConfiguration...');
-      console.log(data);
+      // console.log('CameldriveConfiguration...');
+      // console.log(data);
 
       if (_.has(data, 'result') && _.has(data, 'data')) {
         if (data.result == 'ok') {
@@ -36,5 +36,10 @@
     } // CameldriveConfiguration
 
     angular.bootstrap(document, ['Cameldrive']);
+
+    // angular.element(document).ready(function() {
+    //   console.log('Angular manual bootstrap');
+    //   angular.bootstrap(document, ['Cameldrive']);
+    // });
 }
 

@@ -7,20 +7,20 @@
 
 var _ = require('lodash');
 
+var moduleName = 'TestimonialsController::';
+
+
 module.exports = {
 	find: function (req, res) {
 
-	  var rec = [];
-	  var numRecToShow = 1;
-
-    console.log('<== TestimonialsController.js:find ==>');
+    // console.log('<== TestimonialsController.js:find ==>');
 
     // todo: make parameters validation
-    var requestParams = req.allParams();
-    var whereObj = requestParams;
 
-    console.log('whereObj:');
-    console.dir(whereObj);
+    var whereObj = req.allParams();
+
+    // console.log('whereObj:');
+    // console.dir(whereObj);
 
     Testimonials.find({
       where: whereObj
@@ -31,140 +31,121 @@ module.exports = {
           return res.serverError(err);
         }
 
-        return res.ok({
-          code: 200,
-          message: 'OK',
-          result: data
-        });
+        if (_.isNil(data) || data.length == 0) {
+          return res.notFound('Not found');
+        }
+
+        return res.ok(data);
 
       });
+  }, // find
 
-/*    Testimonials.count({
-      where: whereObj
-    })
-      .exec(function (err, numRecs) {
+  findPager: function (req, res) {
 
-        // Generate array of numRecToShow random integers to be used
-        // as testimonials records numbers
+    console.log('<== TestimonialsController.js:findPager ==>');
+
+    // todo: make parameters validation
+
+    var requestParams = req.allParams();
+    var whereObj = requestParams.conditions;
+    var pager = requestParams.pager;
+    var reqObj = {
+      sort: 'id ASC'
+    };
+
+    if (!_.isEmpty(whereObj)) {
+      reqObj['where'] = whereObj;
+    }
+
+
+    console.log('requestParams:');
+    console.dir(requestParams);
+    console.log('whereObj:');
+    console.dir(whereObj);
+    console.log('pager:');
+    console.dir(pager);
+    console.log('reqObj:');
+    console.dir(reqObj);
+
+
+    Testimonials.find(reqObj)
+      .paginate({page: pager.page, limit: pager.limit})
+      .exec(function (err, data) {
 
         if (err) {
           return res.serverError(err);
         }
 
-        var randRec;
-
-        console.log('Number of records: ' + numRecs);
-
-        for (let i = 1; i <= numRecToShow; i++) {
-          var j = 0;
-
-          do {
-            j++;
-            randRec = _.random(numRecs);
-          } while (!_.some(rec, randRec) || j >=1000);
-
-          rec.push(randRec);
-          console.log('randRec: ' + randRec);
-          console.log('rec:');
-          console.dir(rec);
+        if (_.isNil(data) || data.length == 0) {
+          return res.notFound('Not found');
         }
 
-        console.log('Generated rec:');
-        console.dir(rec);
+        return res.ok(data);
+      });
+  }, // findPager
 
-        // Get testimonials records corresponding to rec array
+	findOne: function (req, res) {
 
-        Testimonials.find({
-          id: rec
-        })
-          .exec(function (err, data) {
-
-            if (err) {
-              return res.serverError(err);
-            }
-
-            return res.ok({
-              code: 200,
-              message: 'OK',
-              result: data
-            });
-
-          })
-      });*/
-
-  }, // find
-
-  put: function (req, res) {
-    /*
-     console.log('=======================');
-     console.log('req.body:');
-     console.dir(req.body);
-     console.log('req.headers:');
-     console.dir(req.headers);
-     console.log('req.ip:');
-     console.dir(req.ip);
-     console.log('req.ips:');
-     console.dir(req.ips);
-     console.log('req.method:');
-     console.dir(req.method);
-     console.log('req.params:');
-     console.dir(req.params);
-     console.log('req.allParams():');
-     console.dir(req.allParams());
-     */
-
-    console.log('<== TestimonialsController.js:put ==>');
+    // console.log('<== TestimonialsController.js:findOne ==>');
 
     // todo: make parameters validation
-    var newRecordParams = req.allParams();
-    var newObj = newRecordParams;
 
-    console.log('Ready to create new record:');
+    var whereObj = req.allParams();
+
+    // console.log('whereObj:');
+    // console.dir(whereObj);
+
+    Testimonials.findOne(whereObj)
+      .exec(function (err, data) {
+
+        if (err) {
+          return res.serverError(err);
+        }
+
+        if (_.isNil(data)) {
+          return res.notFound('Not found');
+        }
+
+        return res.ok(data);
+
+      });
+  }, // findOne
+
+  put: function (req, res) {
+
+	  var methodName = 'put';
+
+    // console.log(moduleName + methodName);
+
+    // todo: make parameters validation
+    var newObj = req.allParams();
+
+    console.log(moduleName + methodName + ', ready to create new record:');
     console.dir(newObj);
 
     Testimonials.create(newObj)
       .exec(function (err, data) {
+
         if (err) {
           return res.serverError(err);
         }
 
-        console.log('data: ');
+        console.log(moduleName + methodName + ', data: ');
         console.dir(data);
 
-        return res.created({
-          code: 201,
-          message: 'OK',
-          result: data});
+        return res.ok(data);
       });
   }, // put
 
   update: function (req, res) {
-    /*
-     console.log('=======================');
-     console.log('req.body:');
-     console.dir(req.body);
-     console.log('req.headers:');
-     console.dir(req.headers);
-     console.log('req.ip:');
-     console.dir(req.ip);
-     console.log('req.ips:');
-     console.dir(req.ips);
-     console.log('req.method:');
-     console.dir(req.method);
-     console.log('req.params:');
-     console.dir(req.params);
-     console.log('req.allParams():');
-     console.dir(req.allParams());
-     */
 
-    console.log('<== TestimonialsController.js:update ==>');
+    // console.log('<== TestimonialsController.js:update ==>');
 
     // todo: make parameters validation
-    var newRecordParams = req.allParams();
-    var newObj = newRecordParams;
+    var newObj = req.allParams();
 
-    console.log('Ready to update record:');
-    console.dir(newObj);
+    // console.log('Ready to update record:');
+    // console.dir(newObj);
 
     var findCriteria = {
       id: newObj.id,
@@ -176,13 +157,10 @@ module.exports = {
           return res.serverError(err);
         }
 
-        console.log('data: ');
-        console.dir(data);
+        // console.log('data: ');
+        // console.dir(data);
 
-        return res.json({
-          code: 200,
-          message: 'OK',
-          result: data});
+        return res.ok(data);
       });
 
   }, // update

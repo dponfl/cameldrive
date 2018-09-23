@@ -4,8 +4,8 @@ var Mailgun = require('mailgun-js');
 
 module.exports = {
   test: function(options, cb) {
-    console.log('EmailService:');
-    console.log(options);
+    // console.log('EmailService:');
+    // console.log(options);
     return cb({emailOptions: options});
   },
   sendEmail: function (subject, html) {
@@ -13,8 +13,9 @@ module.exports = {
     var domain = process.env.MAILGUN_DOMAIN || 'none';
 
     var data = {
-      from: 'info@cameldrive.com',
+      // from: 'dponfl@gmail.com',
       // to: 'dshchfl@gmail.com',
+      from: 'info@cameldrive.com',
       to: 'info@cameldrive.com',
       subject: subject,
       html: html,
@@ -23,16 +24,16 @@ module.exports = {
     var mailgun = new Mailgun({apiKey: api_key, domain: domain});
 
     mailgun.messages().send(data, function (err, body) {
-      console.log('EmailService, sendEmail');
+      // console.log('EmailService, sendEmail');
 
       if (err) {
-        console.log('Error:');
-        console.dir(err);
+        // console.log('Error:');
+        // console.dir(err);
         return;
       }
 
-      console.log('Mail was successfully sent!');
-      console.dir(body);
+      // console.log('Mail was successfully sent!');
+      // console.dir(body);
     });
 
   }

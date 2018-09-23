@@ -40,7 +40,7 @@ module.exports.routes = {
     view: 'index'
   },
 
-  '/discount': {
+  '/insurance': {
     view: 'index'
   },
 
@@ -48,9 +48,10 @@ module.exports.routes = {
     view: 'index'
   },
 
-  '/account': {
+  '/signup': {
     view: 'index'
   },
+
 
 
   /***************************************************************************
@@ -69,26 +70,21 @@ module.exports.routes = {
   'POST /cars/update': 'CarsController.update',
 
   'POST /testimonials/find': 'TestimonialsController.find',
+  'POST /testimonials/findp': 'TestimonialsController.findPager',
+  'POST /testimonials/findone': 'TestimonialsController.findOne',
   'POST /testimonials/put': 'TestimonialsController.put',
   'POST /testimonials/update': 'TestimonialsController.update',
+
+  'POST /user/find': 'UserController.find',
+  'POST /user/update': 'UserController.update',
+  'POST /user/logout': 'UserController.logout',
+  'POST /user/check': 'UserController.check',
 
 
   'POST /sreq/create': 'S_reqController.create',
   'POST /sreq/createInfo': 'S_reqController.createInfo',
 
   'GET /config': 'ConfigController.loadConfig',
-
-  // orange-sails-auth
-
-  'POST /register': 'UserController.create',
-  'GET /me': 'UserController.me',
-
-  'POST /update': 'UserController.update',
-
-  'POST /logout': 'AuthController.logout',
-
-  'POST /auth/local': 'AuthController.callback',
-  'POST /auth/local/:action': 'AuthController.callback',
 
   // FileUpload
 
